@@ -21,6 +21,11 @@
 
 .next-header__primary-tools__item--logged-in {
 	position: relative;
+	display: none;
+
+	.is-logged-in & {
+		display: inline-block;
+	}
 
 	// Because there's sadly no :first-of-class selector
 	& ~ & {
@@ -37,10 +42,10 @@
 	}
 }
 
-.next-header__primary-tools__item--account {
+.next-header__primary-tools__item--logged-out {
 	display: none;
 
-	&.is-visible {
+	.is-logged-out & {
 		display: inline-block;
 	}
 }

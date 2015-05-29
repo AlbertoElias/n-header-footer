@@ -6,30 +6,12 @@ function getSessionValidity() {
 	return session.validate();
 }
 
-function addClass(selector, className) {
-	var items = document.querySelectorAll(selector);
-
-	Array.prototype.forEach.call(items, function(item) {
-		item.classList.add(className);
-	});
-}
-
-function showLoggedOutItems() {
-	addClass('.js-logged-out-tool', 'is-visible');
-}
-
-function showLoggedInItems() {
-	addClass('.js-logged-in-tool', 'is-visible');
-}
-
 function init() {
+	var primaryTools = document.querySelector('.js-primary-tools');
+
 	getSessionValidity()
 		.then(function(sessionIsValid){
-			if (sessionIsValid) {
-				showLoggedInItems();
-			} else {
-				showLoggedOutItems();
-			}
+			primaryTools.classList.add(sessionIsValid ? 'is-logged-in' : 'is-logged-out');
 		}).catch(function(err) {
 			setTimeout(function() {
 				throw err;
