@@ -1,0 +1,18 @@
+.next-header {
+	font-family: $fontSans;
+	position: relative;
+	z-index: 20;
+}
+.next-header__row--inner {
+	position: relative;
+}
+.next-header__row--primary {
+	background: $next-header-primary-bg;
+}
+.next-header__row--secondary {
+	background: $next-header-secondary-bg;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: $next-header-primary-height;
+}

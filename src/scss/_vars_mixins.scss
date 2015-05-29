@@ -1,0 +1,38 @@
+$next-header-primary-height: 45px;
+$next-header-primary-bg: #222222;
+$next-header-secondary-bg: oColorsGetPaletteColor(grey-tint5);
+
+@mixin nextHeaderNavItem() {
+	font-family: $fontSans;
+	color: $next-white;
+	text-decoration: none;
+	display: block;
+	line-height: $next-header-primary-height;
+	padding: 0 4px;
+	font-size: 14px;
+	background: none;
+	border: 0;
+	cursor: pointer;
+
+	&:hover,
+	&:focus,
+	&[aria-pressed] {
+		background: $next-header-secondary-bg;
+	}
+
+	@include oGridRespondTo(M) {
+		padding: 0 7px;
+		font-size: 16px;
+	}
+}
+
+@mixin nextHeaderOldIe () {
+	// ie8
+	@media \0screen {
+		@content;
+	}
+	// ie7
+	*+html {
+		@content;
+	}
+}

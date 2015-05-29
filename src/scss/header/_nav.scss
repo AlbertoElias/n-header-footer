@@ -1,0 +1,8 @@
+.next-header__primary-nav {
+	float: left;
+}
+.next-navigation--nav .next-navigation__group__items {
+	@include oGridRespondTo(L) {
+		margin-left: 50px;
+	}
+}

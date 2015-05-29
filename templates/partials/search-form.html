@@ -1,0 +1,5 @@
+<form action="/search" class="js-search next-header__search-form" data-trackable="search-form">
+	<input id="search" type="search" name="q" class="next-header__search-form__input o-forms-text" placeholder="Search"{{#if searchQuery}} value="{{searchQuery}}"{{/if}} autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+	data-trackable="search-input" {{#ifAll headerData headerData.searchTerm}}{{#ifEquals headerData.searchTerm true}}{{else}} value="{{headerData.searchTerm}}"{{/ifEquals}}{{/ifAll}}/>
+	<button class="next-header__search-form__button" for="search" data-trackable="search-button"></button>
+</form>

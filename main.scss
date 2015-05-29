@@ -1,0 +1,13 @@
+$o-forms-is-silent: false;
+
+@import "next-sass-setup/main";
+@import "o-forms/main";
+@import "next-navigation/main";
+
+@import "src/scss/vars_mixins";
+@import "src/scss/header/base";
+@import "src/scss/header/logo";
+@import "src/scss/header/nav";
+@import "src/scss/header/primary-tools";
+@import "src/scss/header/print";
+@import "src/scss/footer/main";

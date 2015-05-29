@@ -1,0 +1,195 @@
+/*global fetch*/
+"use strict";
+
+var Delegate = require('dom-delegate');
+var isOutside = require('./is-outside');
+
+var debounce = function(fn,delay){
+		var timeoutId;
+		return function debounced(){
+				if(timeoutId){
+						clearTimeout(timeoutId);
+				}
+				var args = arguments;
+				timeoutId = setTimeout(function() {
+						fn.apply(this, args);
+				}.bind(this), delay);
+		};
+};
+
+function Suggest(el, dataSrc) {
+	this.container = el;
+	this.searchEl = el.querySelector('input[type="search"]');
+	this.dataSrc = dataSrc;
+	this.minLength = 3;
+	this.init();
+}
+
+Suggest.prototype.init = function () {
+	var self = this;
+
+	this.suggestions = [];
+	this.suggestionList = document.createElement('ul');
+	this.suggestionList.classList.add('typeahead');
+	this.container.querySelector('form').appendChild(this.suggestionList);
+	this.delegate = new Delegate(this.container);
+	this.bodyDelegate = new Delegate(document.body);
+	this.suggest = this.suggest.bind(this);
+	this.onType = debounce(this.onType, 150).bind(this);
+	this.onDownArrow = this.onDownArrow.bind(this);
+	this.onSuggestionKey = this.onSuggestionKey.bind(this);
+	this.onSuggestionClick = this.onSuggestionClick.bind(this);
+
+	this.delegate.on('keyup', 'input[type="search"]', function(ev) {
+		switch(ev.which) {
+			case 13 : return; // enter
+			case 9 : return; // tab
+			case 40 :
+				self.onDownArrow(ev);
+			break;
+			default :
+				self.onType(ev);
+			break;
+		}
+	});
+
+	this.delegate.on('focus', 'input[type="search"]', function(ev) {
+		ev.target.setSelectionRange ? ev.target.setSelectionRange(0, ev.target.value.length) : ev.target.select();
+		self.reshow();
+	});
+
+
+	this.delegate.on('click', 'input[type="search"]', function(ev) {
+		ev.target.setSelectionRange ? ev.target.setSelectionRange(0, ev.target.value.length) : ev.target.select();
+		self.reshow();
+	});
+
+	this.bodyDelegate.on('click', function (ev) {
+		if (isOutside(ev.target, self.container)) {
+			self.hide();
+		}
+	});
+
+	this.bodyDelegate.on('focus', function (ev) {
+		if (isOutside(ev.target, self.container)) {
+			self.hide();
+			document.querySelector('.next-header').classList.remove('next-header--searching');
+		}
+	});
+
+	this.delegate.on('keyup', '.typeahead a', this.onSuggestionKey);
+	this.delegate.on('click', '.typeahead a', this.onSuggestionClick);
+};
+
+/*** event handlers ***/
+
+Suggest.prototype.reshow = function () {
+	this.suggest(this.suggestions);
+};
+
+Suggest.prototype.onType = function () {
+	this.searchTerm = this.searchEl.value;
+	this.getSuggestions(this.searchTerm);
+	[].forEach.call(this.suggestionList.querySelectorAll('li'), function (el) {
+		el.setAttribute('data-trackable-meta', '{"search-term":"' + this.searchTerm + '"}');
+	}.bind(this));
+};
+
+Suggest.prototype.onDownArrow = function () {
+	if (this.suggestions.length) {
+		this.suggestionList.querySelector('a').focus();
+	}
+};
+
+Suggest.prototype.onSuggestionClick = function (ev) {
+	this.chooseSuggestion(ev.target);
+	// we don't prevent default as the link's url is a link to the search page
+};
+
+Suggest.prototype.onSuggestionKey = function (ev) {
+	if (ev.which === 13) { // Enter pressed
+		this.chooseSuggestion(ev.target);
+		ev.stopPropagation();
+		// we don't prevent default as the link's url is a link to the search page
+		return;
+	}
+
+	if (ev.which === 40) { // down arrow pressed
+		var nextLi = ev.target.parentNode.nextSibling;
+		if (nextLi) {
+			nextLi.firstChild.focus();
+		}
+		return;
+	}
+
+	if (ev.which === 38) { // up arrow pressed
+		var previousLi = ev.target.parentNode.previousSibling;
+		if (previousLi) {
+			previousLi.firstChild.focus();
+		} else {
+			this.searchEl.focus();
+		}
+		return;
+	}
+};
+
+/*** internals ***/
+Suggest.prototype.getSuggestions = function (value) {
+	value = value.trim();
+	if (value.length >= this.minLength) {
+		fetch(this.dataSrc + value.replace(' ', '+'))
+			.then(function (response) {
+				if (!response.ok) {
+					throw new Error(response.statusText);
+				}
+				return response.json();
+			})
+			.then(this.suggest)
+			.catch(function (err) {
+				setTimeout(function () {
+					throw err;
+				});
+			});
+	} else {
+		this.unsuggest();
+	}
+};
+
+Suggest.prototype.suggest = function (suggestions) {
+	var self = this;
+	this.suggestionList.innerHTML = '';
+	this.suggestions = suggestions;
+	if (this.suggestions.length) {
+		this.suggestions.slice(0, 5).forEach(function(suggestion){
+			if (suggestion){
+				var url = suggestion.url || ('/stream/' + suggestion.taxonomy + '/' + suggestion.name);
+				self.suggestionList.insertAdjacentHTML('beforeend', '<li class="typeahead__item"><a class="typeahead__link" data-trackable="typeahead" data-trackable-meta="{&quot;search-term&quot;:&quot;' +
+						this.searchTerm + '&quot;}" data-concept-id="' + suggestion.taxonomy + '&quot;' + encodeURIComponent(suggestion.name) + '&quot;" href="' + url + '">' +
+						suggestion.name + '</a></li>');
+			}
+		}.bind(this));
+		this.show();
+	} else {
+		this.hide();
+	}
+};
+
+Suggest.prototype.unsuggest = function () {
+	this.hide();
+};
+
+Suggest.prototype.hide = function () {
+	this.suggestionList.classList.remove('typeahead--active');
+};
+
+Suggest.prototype.show = function () {
+	this.suggestionList.classList.add('typeahead--active');
+};
+
+Suggest.prototype.chooseSuggestion = function (suggestionEl){
+	this.searchEl.value = suggestionEl.textContent;
+	this.hide();
+	this.searchEl.focus();
+};
+
+module.exports = Suggest;

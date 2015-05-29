@@ -1,0 +1,20 @@
+{
+  "name": "n-header-footer",
+  "dependencies": {
+    "o-forms": "^1.0.2",
+    "dom-delegate": "^2.0.3",
+    "next-sass-setup": "^6.0.0",
+    "next-navigation": "^3.1.0",
+    "next-session-client": "Financial-Times/next-session-client#^1.0.0"
+  },
+  "main": [
+    "main.scss",
+    "main.js"
+  ],
+  "resolutions": {
+    "next-sass-setup": "^6.0.0",
+    "o-ft-icons": "next",
+    "o-fonts": "^2.0.0",
+    "fetch": "^0.8.2"
+  }
+}
