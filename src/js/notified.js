@@ -31,23 +31,24 @@ module.exports = {
 		document.addEventListener('myft.articleFromFollow.load', function(ev) {
 			var notifications = ev.detail;
 			var count = parseInt(notifications.Count, 10);
-			var myPageLink = document.querySelector('.js-mypage-link');
-			var myPageLinkAnchor = myPageLink.querySelector('.next-header__primary-tools__my-page-link');
+			var myPageLink = document.querySelector('.js-my-page-tool');
 
 			var seenCount = getSeenCount();
 			setSeenCount(count);
 
 			if (count > 0) {
 				myPageLink.classList.add('next-header__primary-tools__mypage--notification');
+
 				if (flags.get('myFTHeaderAnimation') && count > seenCount) {
 					myPageLink.classList.remove('next-header__primary-tools__mypage--pulse');
 					myPageLink.classList.add('next-header__primary-tools__mypage--pulse');
 				}
-				myPageLinkAnchor.setAttribute('data-trackable', 'my-ft | notification');
+
+				myPageLink.setAttribute('data-trackable', 'my-ft | notification');
 			} else {
 				myPageLink.classList.remove('next-header__primary-tools__mypage--notification');
 				myPageLink.classList.remove('next-header__primary-tools__mypage--pulse');
-				myPageLinkAnchor.setAttribute('data-trackable', 'my-ft');
+				myPageLink.setAttribute('data-trackable', 'my-ft');
 			}
 		});
 	}
