@@ -2,6 +2,7 @@
 
 module.exports = function (fixtures) {
 	return {
-		'header': {}
+		'header': {},
+		'footer': {}
 	};
 };
