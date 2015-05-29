@@ -7,11 +7,9 @@ function getSessionValidity() {
 }
 
 function init() {
-	var primaryTools = document.querySelector('.js-primary-tools');
-
 	getSessionValidity()
 		.then(function(sessionIsValid){
-			primaryTools.classList.add(sessionIsValid ? 'is-logged-in' : 'is-logged-out');
+			document.documentElement.setAttribute('data-next-is-logged-in', sessionIsValid);
 		}).catch(function(err) {
 			setTimeout(function() {
 				throw err;

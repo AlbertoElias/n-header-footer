@@ -23,7 +23,7 @@
 	position: relative;
 	display: none;
 
-	.is-logged-in & {
+	[data-next-is-logged-in=true] {
 		display: inline-block;
 	}
 
@@ -45,7 +45,7 @@
 .next-header__primary-tools__item--logged-out {
 	display: none;
 
-	.is-logged-out & {
+	[data-next-is-logged-in=false] & {
 		display: inline-block;
 	}
 }
