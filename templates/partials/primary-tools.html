@@ -1,24 +1,29 @@
-<nav class="next-header__primary-tools">
+<nav class="next-header__primary-tools js-primary-tools">
 	<ul class="next-header__primary-tools__items">
-		<li class="js-mypage-link next-header__primary-tools__mypage next-header__primary-tools__item">
-			<a class="next-header__primary-tools__my-page-link next-header__primary-tools__link" href="/mypage" data-trackable="my-ft">
-				<i class="next-header__primary-tools__my-page-icon"></i>
-				<abbr title="My FT"></abbr>
+
+		<li class="next-header__primary-tools__item next-header__primary-tools__item--account next-header__primary-tools__item--logged-out">
+			<a class="next-header__primary-tools__link" href="/login" data-trackable="login">Sign in</a>
+		</li>
+
+		<li class="next-header__primary-tools__item next-header__primary-tools__item--account next-header__primary-tools__item--logged-in">
+			<a class="next-header__primary-tools__link" href="/mypage" data-trackable="my-ft">
+				<span class="next-header__primary-tools__my-page js-my-page-tool">
+					<i class="next-header__primary-tools__my-page__icon"></i>
+					<abbr title="My FT"></abbr>
+				</span>
 			</a>
 		</li>
 
-		<li class="next-header__primary-tools__item next-header__primary-tools__account">
-			<span class="next-header__primary-tools__divider">|</span>
-			<a class="next-header__primary-tools__link next-header__primary-tools__account-link next-header__primary-tools__login-link" href="/login" data-trackable="login">Sign in</a>
-			<a class="next-header__primary-tools__link next-header__primary-tools__account-link next-header__primary-tools__logout-link" href="/logout" data-trackable="logout">Sign Out</a>
-			<span class="next-header__primary-tools__my-account-link">
-				<span class="next-header__primary-tools__divider">|</span>
-				<a class="next-header__primary-tools__account-link next-header__primary-tools__link" href="http://registration.ft.com/registration/selfcare/" data-trackable="my-account">My Account</a>
-			</span>
-
+		<li class="next-header__primary-tools__item next-header__primary-tools__item--account next-header__primary-tools__item--logged-in">
+			<a class="next-header__primary-tools__link" href="/logout" data-trackable="logout">Sign Out</a>
 		</li>
+
+		<li class="next-header__primary-tools__item next-header__primary-tools__item--account next-header__primary-tools__item--logged-in">
+			<a class="next-header__primary-tools__link" href="http://registration.ft.com/registration/selfcare/" data-trackable="my-account">My Account</a>
+		</li>
+
 		{{#if @root.flags.search}}
-			<li class="js-search next-header__primary-tools__search next-header__primary-tools__item">
+			<li class="next-header__primary-tools__item next-header__primary-tools__search js-search">
 				<button class="next-header__search-toggle" data-trackable="search-toggle">Search</button>
 				{{>n-header-footer/templates/partials/search-form}}
 			</li>
