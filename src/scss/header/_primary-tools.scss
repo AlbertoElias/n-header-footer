@@ -23,7 +23,7 @@
 	position: relative;
 	display: none;
 
-	[data-next-is-logged-in=true] {
+	[data-next-is-logged-in=true] & {
 		display: inline-block;
 	}
 
