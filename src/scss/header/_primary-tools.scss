@@ -19,6 +19,12 @@
 	display: inline-block;
 }
 
+.next-header__primary-tools__item--my-account {
+	@include oGridRespondTo($until: M) {
+		display: none !important;
+	}
+}
+
 .next-header__primary-tools__item--logged-in {
 	position: relative;
 	display: none;
