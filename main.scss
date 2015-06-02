@@ -1,8 +1,9 @@
+@import "next-sass-setup/main";
+
 $o-forms-is-silent: false;
 @import "o-forms/main";
 @import "o-grid/main";
 
-@import "next-sass-setup/main";
 @import "next-navigation/main";
 
 @import "src/scss/vars_mixins";
