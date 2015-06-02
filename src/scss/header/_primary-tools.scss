@@ -54,9 +54,15 @@
 	@include nextHeaderNavItem;
 }
 
+[data-next-anonymous-myft=on] .next-header__primary-tools__myft {
+	display: inline-block;
+}
+
 .next-header__primary-tools__mypage {
 	position: relative;
 }
+
+
 
 .next-header__primary-tools__mypage--notification {
 	&:after {
