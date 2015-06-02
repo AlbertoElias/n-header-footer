@@ -10,7 +10,7 @@ function init(flags) {
 	subNav.init(flags);
 	search.init(flags);
 	notified.init(flags);
-	account.init(flags);
+	account.init();
 }
 
 module.exports.init = init;

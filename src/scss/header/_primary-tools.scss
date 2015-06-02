@@ -58,10 +58,6 @@
 	position: relative;
 }
 
-[data-next-anonymous-myft=on] .next-header__primary-tools__mypage {
-	display: inline-block;
-}
-
 .next-header__primary-tools__mypage--notification {
 	&:after {
 		content: '';
