@@ -162,7 +162,10 @@ Suggest.prototype.suggest = function (suggestions) {
 	if (this.suggestions.length) {
 		this.suggestions.slice(0, 5).forEach(function(suggestion){
 			if (suggestion){
-				var url = suggestion.url || ('/stream/' + suggestion.taxonomy + '/' + suggestion.name);
+				var url = suggestion.url;
+				if (!url) {
+					url = suggestion.id ? ('/stream/' + suggestion.taxonomy + 'Id/' + suggestion.id) : ('/stream/' + suggestion.taxonomy + '/' + suggestion.name);
+				}
 				self.suggestionList.insertAdjacentHTML('beforeend', '<li class="typeahead__item"><a class="typeahead__link" data-trackable="typeahead" data-trackable-meta="{&quot;search-term&quot;:&quot;' +
 						this.searchTerm + '&quot;}" data-concept-id="' + suggestion.taxonomy + '&quot;' + encodeURIComponent(suggestion.name) + '&quot;" href="' + url + '">' +
 						suggestion.name + '</a></li>');
