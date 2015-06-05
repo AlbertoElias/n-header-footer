@@ -21,7 +21,7 @@ function Suggest(el, dataSrc) {
 	this.container = el;
 	this.searchEl = el.querySelector('input[type="search"]');
 	this.dataSrc = dataSrc;
-	this.minLength = 3;
+	this.minLength = 2;
 	this.init();
 }
 
