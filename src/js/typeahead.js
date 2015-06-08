@@ -17,11 +17,12 @@ var debounce = function(fn,delay){
 		};
 };
 
-function Suggest(el, dataSrc) {
+function Suggest(el, dataSrc, useConceptId) {
 	this.container = el;
 	this.searchEl = el.querySelector('input[type="search"]');
 	this.dataSrc = dataSrc;
 	this.minLength = 2;
+	this.useConceptId = useConceptId;
 	this.init();
 }
 
@@ -162,12 +163,10 @@ Suggest.prototype.suggest = function (suggestions) {
 	if (this.suggestions.length) {
 		this.suggestions.slice(0, 5).forEach(function(suggestion){
 			if (suggestion){
-				var url = suggestion.url;
-				if (!url) {
-					url = suggestion.id ? ('/stream/' + suggestion.taxonomy + 'Id/' + suggestion.id) : ('/stream/' + suggestion.taxonomy + '/' + suggestion.name);
-				}
+				var url = suggestion.url || ('/stream/' + suggestion.taxonomy + 'Id/' + suggestion.id);
+				var id = this.useConceptId ? suggestion.id : (suggestion.taxonomy + '&quot;' + encodeURIComponent(suggestion.name) + '&quot;');
 				self.suggestionList.insertAdjacentHTML('beforeend', '<li class="typeahead__item"><a class="typeahead__link" data-trackable="typeahead" data-trackable-meta="{&quot;search-term&quot;:&quot;' +
-						this.searchTerm + '&quot;}" data-concept-id="' + suggestion.taxonomy + '&quot;' + encodeURIComponent(suggestion.name) + '&quot;" href="' + url + '">' +
+						this.searchTerm + '&quot;}" data-concept-id="' + id + '" href="' + url + '">' +
 						suggestion.name + '</a></li>');
 			}
 		}.bind(this));
