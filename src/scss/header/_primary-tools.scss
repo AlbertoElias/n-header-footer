@@ -68,8 +68,6 @@
 	position: relative;
 }
 
-
-
 .next-header__primary-tools__mypage--notification {
 	&:after {
 		content: '';
@@ -94,7 +92,7 @@
 	@include nextIcon(myft-bolder, oColorsGetPaletteColor('white'), 16);
 	content: '';
 	width: 34px;
-	margin: 0 8px -5px;
+	margin: 0 0 -5px;
 }
 
 .next-header__primary-tools__search {
@@ -147,11 +145,10 @@
 }
 
 .next-header__search-form__input {
+	width: 150px;
 	height: 30px;
 	line-height: 30px;
 	border-radius: 2px;
-	position: relative;
-	top: 0;
 	padding: 1px 26px 1px 5px;
 }
 
