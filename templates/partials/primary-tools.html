@@ -12,17 +12,21 @@
 			</li>
 		{{/if}}
 
-		<li class="next-header__primary-tools__item next-header__primary-tools__item--account next-header__primary-tools__item--logged-out">
-			<a class="next-header__primary-tools__link" href="/login" data-trackable="login">Sign in</a>
-		</li>
+		{{#if navigationModel.signIn}}
+			<li class="next-header__primary-tools__item next-header__primary-tools__item--account next-header__primary-tools__item--logged-out">
+				<a class="next-header__primary-tools__link" href="/login" data-trackable="login">Sign in</a>
+			</li>
+		{{/if}}
 
 		<li class="next-header__primary-tools__item next-header__primary-tools__item--account next-header__primary-tools__item--logged-in">
 			<a class="next-header__primary-tools__link" href="/logout" data-trackable="logout">Sign Out</a>
 		</li>
 
-		<li class="next-header__primary-tools__item next-header__primary-tools__item--account next-header__primary-tools__item--my-account next-header__primary-tools__item--logged-in">
-			<a class="next-header__primary-tools__link" href="http://registration.ft.com/registration/selfcare/" data-trackable="my-account">My Account</a>
-		</li>
+		{{#if navigationModel.myAccount}}
+			<li class="next-header__primary-tools__item next-header__primary-tools__item--account next-header__primary-tools__item--my-account next-header__primary-tools__item--logged-in">
+				<a class="next-header__primary-tools__link" href="http://registration.ft.com/registration/selfcare/" data-trackable="my-account">My Account</a>
+			</li>
+		{{/if}}
 
 		{{#if @root.flags.search}}
 			<li class="next-header__primary-tools__item next-header__primary-tools__search js-search">
