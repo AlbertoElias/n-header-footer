@@ -145,11 +145,14 @@
 }
 
 .next-header__search-form__input {
-	width: 150px;
 	height: 30px;
 	line-height: 30px;
 	border-radius: 2px;
 	padding: 1px 26px 1px 5px;
+
+	@include oGridRespondTo (M) {
+		width: 150px;
+	}
 }
 
 .next-header__search-form__button {
