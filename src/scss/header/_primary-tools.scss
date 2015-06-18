@@ -144,6 +144,18 @@
 	}
 }
 
+.next-header__search-form__label {
+	// .visuallyhidden from HTML5BP
+	position: absolute;
+	border: 0;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+}
+
 .next-header__search-form__input {
 	height: 30px;
 	line-height: 30px;
