@@ -32,7 +32,10 @@ module.exports = {
 			var notifications = ev.detail;
 			var count = parseInt(notifications.Count, 10);
 			var myPageLink = document.querySelector('.js-my-page-tool');
-
+			// Handle anonymous user
+			if (!myPageLink) {
+				return;
+			}
 			var seenCount = getSeenCount();
 			setSeenCount(count);
 
