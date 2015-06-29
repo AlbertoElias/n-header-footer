@@ -33,6 +33,10 @@ module.exports = {
 			var count = parseInt(notifications.Count, 10);
 			var myPageLink = document.querySelector('.js-my-page-tool');
 
+			// HACK: Handle anonymous user. Won't be needed once we're fully on the new membership APIs
+			if (!myPageLink) {
+				return;
+			}
 			var seenCount = getSeenCount();
 			setSeenCount(count);
 
