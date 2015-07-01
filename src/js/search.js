@@ -22,8 +22,7 @@ module.exports = {
 		if (flags.get('typeahead')) {
 			new Typeahead(
 				header.querySelector('.js-search'),
-				'//' + window.location.host + '/search-suggestions?flatten=true&limit=5&q=',
-				flags.get('userPrefsUseConceptId')
+				'//' + window.location.host + '/search-suggestions?flatten=true&limit=5&q='
 			);
 		}
 	}
