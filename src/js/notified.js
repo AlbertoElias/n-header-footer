@@ -26,6 +26,7 @@ module.exports = {
 
 	init: function(flags) {
 		session.uuid().then(function (obj) {
+			// HACK: shoudl do this properly for all myft links in n-myft-ui
 			var myftLink = document.querySelector('.next-header__primary-tools__myft a');
 			if (myftLink) {
 				myftLink.href = '/myft/' + obj.uuid;
