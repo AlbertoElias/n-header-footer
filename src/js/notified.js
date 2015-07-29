@@ -1,7 +1,7 @@
 'use strict';
 
 var supportsStorage = require('./supports-storage');
-
+var session = require('next-session-client');
 var seenKey = 'ftNextNotificationCount';
 
 function getSeenCount() {
@@ -25,6 +25,14 @@ function setSeenCount(count) {
 module.exports = {
 
 	init: function(flags) {
+		session.uuid().then(function (obj) {
+			// HACK: shoudl do this properly for all myft links in n-myft-ui
+			var myftLink = document.querySelector('.next-header__primary-tools__myft a');
+			if (myftLink) {
+				myftLink.href = '/myft/' + obj.uuid;
+			}
+
+		});
 
 		// Listen for the notification poller to report the number of new items
 		// Not wrapped in flag as it's inert if user prefs not on
