@@ -1,11 +1,3 @@
-@keyframes pulse {
-	0% { transform: scale(1); }
-	25% { transform: scale(0.8); }
-	50% { transform: scale(1); }
-	75% { transform: scale(1.2); }
-	100% { transform: scale(1); }
-}
-
 .next-header__primary-tools {
 	float: right;
 }
@@ -66,26 +58,6 @@
 
 .next-header__primary-tools__mypage {
 	position: relative;
-}
-
-.next-header__primary-tools__mypage--notification {
-	&:after {
-		content: '';
-		width: 8px;
-		height: 8px;
-		background: oColorsGetPaletteColor('red-1');
-		position: absolute;
-		top: 12px;
-		right: 2px;
-		border-radius: 10px;
-		box-shadow: 0 0 5px 1px oColorsGetPaletteColor('red-1');
-	}
-}
-
-.next-header__primary-tools__mypage--pulse {
-	&:after {
-		animation: pulse 0.5s ease-in 3;
-	}
 }
 
 .next-header__primary-tools__my-page__icon {
