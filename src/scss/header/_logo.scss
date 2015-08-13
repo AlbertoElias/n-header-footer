@@ -36,15 +36,3 @@
 		border: 0;
 	}
 }
-
-@include nextHeaderOldIe {
-	.next-header__logo__name {
-		text-indent: 0;
-		text-align: center;
-		color: $next-black;
-		font-family: $fontBrand;
-		line-height: 35px;
-		font-size: 30px;
-		background-image: none;
-	}
-}
