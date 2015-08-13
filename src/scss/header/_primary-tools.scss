@@ -165,6 +165,8 @@
 	right: 0px;
 
 	@include oGridRespondTo (M) {
+		left: inherit;
+		min-width: 300px;
 		margin: 0;
 	}
 }
