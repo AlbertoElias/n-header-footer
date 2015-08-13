@@ -12,16 +12,15 @@
 	position: relative;
 
 	&:after {
+		@include nTypeBravo(5);
 		content: 'ALPHA';
 		position: absolute;
 		bottom: 2px;
 		right: 0;
 		left: 0;
 		text-align: center;
-		font-family: $fontSans;
-		font-weight: 500;
 		font-size: 10px;
-		color: $next-black;
+		color: getColor('black');
 	}
 }
 
@@ -31,21 +30,9 @@
 	margin-left: 5px;
 
 	.next-header__logo--ft & {
-		@include nextIcon(brand-ft, $next-black, 35);
+		@include nextIcon(brand-ft, getColor('black'), 35);
 		background-size: 35px 20px;
 		background-position: 0 8px;
 		border: 0;
-	}
-}
-
-@include nextHeaderOldIe {
-	.next-header__logo__name {
-		text-indent: 0;
-		text-align: center;
-		color: $next-black;
-		font-family: $fontBrand;
-		line-height: 35px;
-		font-size: 30px;
-		background-image: none;
 	}
 }

@@ -3,7 +3,7 @@
 }
 
 .next-footer__nav {
-	background-color: $next-grey-dark;
+	background-color: getColor('cold-2');
 	display: none;
 
 	.no-js & {
@@ -21,15 +21,13 @@
 .next-footer__back-to-top {
 	margin: 5px;
 	a {
-		font-family: $fontSans;
-		color: $next-grey-lighter;
+		color: getColor('white');
 		text-decoration: none;
 		padding: 5px;
 		display: inline-block;
-		font-weight: 300;
+
 		&:hover {
-			background-color: $next-blue;
-			color: $next-white;
+			text-decoration: underline;
 		}
 	}
 }
