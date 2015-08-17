@@ -1,3 +1,11 @@
+.next-header__masthead {
+	display: none;
+
+	@include oGridRespondTo(M) {
+		display: block;
+	}
+}
+
 .next-header__masthead__logo {
 	text-align: center;
 
@@ -15,3 +23,36 @@
 		}
 	}
 }
+
+.next-header__masthead__logo--mobile {
+	display: block;
+	margin: 15px 0;
+
+	@include oGridRespondTo(S) {
+		margin: 10px 0;
+	}
+
+	@include oGridRespondTo(M) {
+		display: none;
+	}
+
+	.next-header__logo__link {
+		@include nextIcon(brand-ft-masthead, getColor('white'));
+		display: block;
+		height: 14px;
+		width: 177px;
+		margin: 0 auto;
+		overflow: hidden;
+		color: transparent;
+
+		&:after {
+			content: none;
+		}
+
+		@include oGridRespondTo(S) {
+			height: 21px;
+			width: 265px;
+		}
+	}
+}
+

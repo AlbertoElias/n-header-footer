@@ -10,7 +10,7 @@
 {{/if}}
 
 <header
-	class="next-header"
+	class="next-header {{#if @root.flags.mastheadV2}}next-header--v2{{/if}}"
 	data-trackable="header" >
 	{{#if @root.flags.mastheadV2}}
 		<div class="next-header__masthead">
@@ -33,6 +33,13 @@
 				{{/unless}}
 				{{>n-header-footer/templates/partials/primary-nav}}
 				{{>n-header-footer/templates/partials/primary-tools}}
+				{{#if @root.flags.mastheadV2}}
+					<h1 class="next-header__masthead__logo--mobile">
+						<a class="next-header__logo__link" data-trackable="logo-large" href="/" title="Go to homepage">
+							Financial Times
+						</a>
+					</h1>
+				{{/if}}
 			</div>
 		</div>
 	</div>

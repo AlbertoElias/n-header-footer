@@ -95,6 +95,32 @@
 	}
 }
 
+// FIXME cleanup when removing mastheadV2 toggle
+
+.next-header--v2 {
+	.next-header__primary-tools__item--account {
+		display: none;
+
+		@include oGridRespondTo(M) {
+			display: inline-block;
+		}
+	}
+
+	.next-header__search-toggle {
+		width: 45px;
+		height: 45px;
+		overflow: hidden;
+
+		&:before {
+			@include nextIcon(search, #ffffff, 20);
+			content: '';
+			position: relative;
+			top: 5px;
+			margin-right: 0;
+		}
+	}
+}
+
 .next-header__search-form {
 	display: none;
 	margin-bottom: 0;

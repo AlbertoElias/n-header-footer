@@ -6,3 +6,26 @@
 		margin-left: 50px;
 	}
 }
+
+// HACK this really belongs to next-navigation
+// but actually next-navigation's view layer should live in
+// n-header-footer. This is temporary until that gets done.
+
+.next-header--v2 .next-navigation__link__text--mobile {
+	display: block;
+	width: 45px;
+	height: 45px;
+	overflow: hidden;
+
+	&:before {
+		@include nextIcon(hamburger, #ffffff, 20);
+		content: '';
+		position: relative;
+		top: 5px;
+		margin-right: 0;
+	}
+
+	@include oGridRespondTo(L) {
+		display: none;
+	}
+}
