@@ -1,17 +1,36 @@
 <a class="u-visually-hidden" href="#primary-nav">Skip to navigation</a>
 <a class="u-visually-hidden" href="#site-content">Skip to content</a>
-<div class="ad-placeholder ad-placeholder__banlb ad-placeholder__{{__name}}"></div>
+
+{{#if @root.flags.mastheadV2}}
+	<div class="next-header__ad-container">
+		<div class="ad-placeholder ad-placeholder__banlb ad-placeholder__{{__name}}"></div>
+	</div>
+{{else}}
+	<div class="ad-placeholder ad-placeholder__banlb ad-placeholder__{{__name}}"></div>
+{{/if}}
+
 <header
 	class="next-header"
 	data-trackable="header" >
+	{{#if @root.flags.mastheadV2}}
+		<div class="next-header__masthead">
+			<h1 class="next-header__masthead__logo">
+				<a class="next-header__logo__link" data-trackable="logo-large" href="/" title="Go to homepage">
+					Financial Times
+				</a>
+			</h1>
+		</div>
+	{{/if}}
 	<div class="next-header__row next-header__row--primary">
 		<div class="next-header__row--inner o-grid-row">
 			<div data-o-grid-colspan="12">
-				<div class="next-header__logo next-header__logo--ft">
-					<a class="next-header__logo__link" data-trackable="logo" href="/" title="Go to homepage">
-						<abbr class="next-header__logo__name" title="Financial Times">FT</abbr>
-					</a>
-				</div>
+				{{#unless @root.flags.mastheadV2}}
+					<div class="next-header__logo next-header__logo--ft">
+						<a class="next-header__logo__link" data-trackable="logo" href="/" title="Go to homepage">
+							<abbr class="next-header__logo__name" title="Financial Times">FT</abbr>
+						</a>
+					</div>
+				{{/unless}}
 				{{>n-header-footer/templates/partials/primary-nav}}
 				{{>n-header-footer/templates/partials/primary-tools}}
 			</div>

@@ -1,0 +1,17 @@
+.next-header__masthead__logo {
+	text-align: center;
+
+	.next-header__logo__link {
+		@include nextIcon(brand-ft-masthead, getColor('black'));
+		display: block;
+		margin: 17px auto;
+		height: 27px;
+		width: 336px;
+		overflow: hidden;
+		color: transparent;
+
+		&:after {
+			content: none;
+		}
+	}
+}
