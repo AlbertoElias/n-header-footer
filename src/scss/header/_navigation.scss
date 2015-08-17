@@ -6,6 +6,10 @@
 @include oColorsSetUseCase(sub-nav-hover, background, 'cold-2');
 @include oColorsSetUseCase(header, border, 'grey-tint3');
 
+.next-header__primary-nav {
+	float: left;
+}
+
 .next-navigation,
 .next-navigation__group__items {
 	list-style: none;
@@ -100,6 +104,25 @@
 		display: none;
 	}
 }
+// FIXME clean up after removing mastheadV2 toggle
+.next-header--v2 .next-navigation__link__text--mobile {
+	display: block;
+	width: 45px;
+	height: 45px;
+	overflow: hidden;
+
+	&:before {
+		@include nextIcon(hamburger, #ffffff, 20);
+		content: '';
+		position: relative;
+		top: 5px;
+		margin-right: 0;
+	}
+
+	@include oGridRespondTo(L) {
+		display: none;
+	}
+}
 .next-navigation__link__text--desktop {
 	display: none;
 
@@ -121,6 +144,10 @@
 	left: 0;
 	box-shadow: 3px 3px 3px 2px oColorsGetColorFor(sub-nav, background);
 	transition: 0.2s opacity 0.25s ease, 0s left 0.25s step-end;
+
+	@include oGridRespondTo(L) {
+		margin-left: 50px;
+	}
 
 	.next-navigation--nav & {
 		visibility: hidden;
