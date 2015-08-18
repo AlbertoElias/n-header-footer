@@ -3,6 +3,17 @@
 		<p class="next-footer__back-to-top o-grid-row">
 			<a href="#" data-o-colspan="12" data-trackable="Back to top">Back to top</a>
 		</p>
-		{{> n-header-footer/templates/partials/navigation/all}}
+
+		<ol class="next-navigation next-navigation--all next-navigation__group__items">
+			{{#if @root.flags.mastheadV2}}
+				<li class="next-navigation next-navigation__membership-tools">
+					<ol>
+						{{> n-header-footer/templates/partials/membership-tools}}
+					</ol>
+				</li>
+			{{/if}}
+
+			{{> n-header-footer/templates/partials/navigation/all}}
+		</ol>
 	</div>
 </footer>

@@ -26,7 +26,11 @@
 
 .next-header__masthead__logo--mobile {
 	display: block;
-	margin: 15px 0;
+	margin: 16px 0;
+
+	@include oGridRespondTo(XS) {
+		margin: 15px 0;
+	}
 
 	@include oGridRespondTo(S) {
 		margin: 10px 0;
@@ -39,14 +43,19 @@
 	.next-header__logo__link {
 		@include nextIcon(brand-ft-masthead, getColor('white'));
 		display: block;
-		height: 14px;
-		width: 177px;
+		height: 12px;
+		width: 151px;
 		margin: 0 auto;
 		overflow: hidden;
 		color: transparent;
 
 		&:after {
 			content: none;
+		}
+
+		@include oGridRespondTo(XS) {
+			height: 14px;
+			width: 177px;
 		}
 
 		@include oGridRespondTo(S) {
