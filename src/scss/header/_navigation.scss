@@ -107,7 +107,7 @@
 // FIXME clean up after removing mastheadV2 toggle
 .next-header--v2 .next-navigation__link__text--mobile {
 	display: block;
-	width: 45px;
+	width: 40px;
 	height: 45px;
 	overflow: hidden;
 
@@ -192,6 +192,10 @@
 	list-style: none;
 }
 
+.next-header--v2 .next-header__primary-tools__myft {
+	display: inline-block;
+}
+
 .next-header--v2 .next-navigation__membership-tools {
 	margin-bottom: 0.5em;
 
@@ -199,7 +203,7 @@
 		padding: 0;
 	}
 
-	.next-header__primary-tools__item, .next-header__primary-tools__item--account {
+	.next-header__primary-tools__item, .next-header__primary-tools__item--logged-in.next-header__primary-tools__item--my-account {
 		display: inline-block;
 	}
 
