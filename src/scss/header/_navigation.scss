@@ -107,6 +107,7 @@
 }
 // FIXME clean up after removing mastheadV2 toggle
 .next-header--v2 .next-navigation__link__text--mobile {
+	padding-left: 10px;
 	display: block;
 	width: 40px;
 	height: 45px;
@@ -183,6 +184,10 @@
 		margin-bottom: 20px;
 	}
 }
+.next-header--v2 .next-navigation__group--more {
+	height: 45px;
+}
+
 .next-navigation__group__item--top-level {
 	@include oGridRespondTo(L) {
 		display: none;
