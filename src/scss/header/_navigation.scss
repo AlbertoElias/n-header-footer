@@ -18,6 +18,7 @@
 }
 .next-navigation {
 	@include oColorsFor(nav, text background);
+	font-size: 0; // ignore whitespace between <li>s
 }
 .next-navigation__group {
 	display: inline-block;

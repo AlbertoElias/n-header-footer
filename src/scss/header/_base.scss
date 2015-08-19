@@ -39,3 +39,19 @@
 	right: 0;
 	top: $next-header-primary-height;
 }
+
+// FIXME grid overrides to cater for both grid versions
+
+.next-header--v2 {
+	.next-header__row--inner {
+		min-width: 280px; // can't fit below that.
+
+		padding-left: 0;
+		padding-right: 0;
+
+		& > [data-o-grid-colspan] {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
