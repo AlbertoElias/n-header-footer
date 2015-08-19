@@ -49,10 +49,6 @@
 		overflow: hidden;
 		color: transparent;
 
-		&:after {
-			content: none;
-		}
-
 		@include oGridRespondTo(XS) {
 			height: 14px;
 			width: 177px;
@@ -62,6 +58,9 @@
 			height: 21px;
 			width: 265px;
 		}
+
+		&:after {
+			content: none;
+		}
 	}
 }
-

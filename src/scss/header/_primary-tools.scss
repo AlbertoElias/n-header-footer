@@ -105,11 +105,11 @@
 	.next-header__primary-tools__item--account {
 		display: none;
 
-		&.next-header__primary-tools__myft {
-			display: inline-block
+		@include oGridRespondTo(M) {
+			display: inline-block;
 		}
 
-		@include oGridRespondTo(M) {
+		&.next-header__primary-tools__myft {
 			display: inline-block;
 		}
 	}

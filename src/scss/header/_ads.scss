@@ -3,11 +3,11 @@
 	background-color: white;
 	padding: 10px;
 
-	.ad-placeholder {
-		margin: 0;
-	}
-
 	@include oGridRespondTo(M) {
 		display: block;
+	}
+
+	.ad-placeholder {
+		margin: 0;
 	}
 }

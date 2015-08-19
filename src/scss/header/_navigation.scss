@@ -111,16 +111,16 @@
 	height: 45px;
 	overflow: hidden;
 
+	@include oGridRespondTo(L) {
+		display: none;
+	}
+
 	&:before {
 		@include nextIcon(hamburger, #ffffff, 20);
 		content: '';
 		position: relative;
 		top: 5px;
 		margin-right: 0;
-	}
-
-	@include oGridRespondTo(L) {
-		display: none;
 	}
 }
 .next-navigation__link__text--desktop {
@@ -199,15 +199,16 @@
 .next-header--v2 .next-navigation__membership-tools {
 	margin-bottom: 0.5em;
 
+	@include oGridRespondTo(M) {
+		display: none;
+	}
+
 	ol {
 		padding: 0;
 	}
 
-	.next-header__primary-tools__item, .next-header__primary-tools__item--logged-in.next-header__primary-tools__item--my-account {
+	.next-header__primary-tools__item,
+	.next-header__primary-tools__item--logged-in.next-header__primary-tools__item--my-account {
 		display: inline-block;
-	}
-
-	@include oGridRespondTo(M) {
-		display: none;
 	}
 }

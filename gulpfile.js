@@ -1,3 +1,4 @@
+/* globals console */
 'use strict';
 
 var gulp = require('gulp');
@@ -25,9 +26,9 @@ gulp.task('build', function () {
 		return data;
 	}))
 	.pipe(handlebars({}, { batch: ['./templates/partials'] }))
-	.on('error', function(e) { console.log("Error compiling handlebars", e.message)})
+	.on('error', function(e) { console.log("Error compiling handlebars", e.message) })
 	.pipe(rename(function (path) {
 		path.basename = path.basename.replace('-template', '');
 	}))
-	.pipe(gulp.dest('./templates/partials/navigation'))
+	.pipe(gulp.dest('./templates/partials/navigation'));
 });
