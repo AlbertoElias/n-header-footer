@@ -2,6 +2,30 @@
 	position: relative;
 	z-index: 20;
 }
+.next-header--v2 {
+	padding-bottom: 46px;
+
+	@include oGridRespondTo(M) {
+		padding-bottom: 0;
+	}
+
+	.next-header__row--primary {
+		position: fixed;
+		left: 0;
+		right: 0;
+		transition: transform 150ms;
+
+		@include oGridRespondTo(M) {
+			position: static;
+		}
+
+		@include oGridRespondTo($until: M) {
+			&.next-header__row--primary--hidden {
+				transform: translateY(-100%);
+			}
+		}
+	}
+}
 .next-header__row--inner {
 	position: relative;
 }
