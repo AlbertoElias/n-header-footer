@@ -1,5 +1,7 @@
 'use strict';
 
+var verticalStep = 50; // roughly the height of the header
+
 module.exports = {
 	el: null,
 	className: "",
@@ -36,7 +38,7 @@ module.exports = {
 
 	scroll: function() {
 		// always show on top of the page
-		if(document.body.scrollTop < 50) {
+		if(document.body.scrollTop < verticalStep) {
 			this.el.classList.remove(this.className);
 			return;
 		}
@@ -44,7 +46,7 @@ module.exports = {
 		// only respond to a scoll larger than the head itself
 		var delta = document.body.scrollTop - this.lastPosition;
 
-		if(delta > 50) {
+		if(delta > verticalStep) {
 			this.el.classList.add(this.className);
 			this.lastPosition = document.body.scrollTop;
 		}
@@ -52,7 +54,7 @@ module.exports = {
 		// ignore bounceback past the page height
 		if(document.body.scrollTop + window.innerHeight > document.body.offsetHeight) return;
 
-		if(delta < -50) {
+		if(delta < -verticalStep) {
 			this.el.classList.remove(this.className);
 			this.lastPosition = document.body.scrollTop;
 		}
