@@ -1,6 +1,6 @@
 'use strict';
 
-var nav = require('next-navigation/main');
+var nav = require('./navigation');
 
 module.exports = {
 

@@ -2,6 +2,30 @@
 	position: relative;
 	z-index: 20;
 }
+.next-header--v2 {
+	padding-bottom: 46px;
+
+	@include oGridRespondTo(M) {
+		padding-bottom: 0;
+	}
+
+	.next-header__row--primary {
+		position: fixed;
+		left: 0;
+		right: 0;
+		transition: transform 150ms;
+
+		@include oGridRespondTo(M) {
+			position: static;
+		}
+
+		@include oGridRespondTo($until: M) {
+			&.next-header__row--primary--hidden {
+				transform: translateY(-100%);
+			}
+		}
+	}
+}
 .next-header__row--inner {
 	position: relative;
 }
@@ -14,4 +38,20 @@
 	left: 0;
 	right: 0;
 	top: $next-header-primary-height;
+}
+
+// FIXME grid overrides to cater for both grid versions
+
+.next-header--v2 {
+	.next-header__row--inner {
+		min-width: 280px; // can't fit below that.
+
+		padding-left: 0;
+		padding-right: 0;
+
+		& > [data-o-grid-colspan] {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
 }

@@ -11,18 +11,18 @@
 	display: inline-block;
 }
 
-.next-header__primary-tools__item--my-account {
-	@include oGridRespondTo($until: M) {
-		display: none !important;
-	}
-}
-
 .next-header__primary-tools__item--logged-in {
 	position: relative;
 	display: none;
 
 	[data-next-is-logged-in=true] & {
 		display: inline-block;
+
+		@include oGridRespondTo($until: M) {
+			&.next-header__primary-tools__item--my-account {
+				display: none;
+			}
+		}
 	}
 
 	// Because there's sadly no :first-of-class selector
@@ -75,6 +75,10 @@
 	}
 }
 
+.next-header--v2 .next-header__primary-tools__search {
+	margin-left: 0;
+}
+
 .next-header__search-toggle {
 	@include nextHeaderNavItem;
 
@@ -92,6 +96,36 @@
 
 	.next-header--searching & {
 		background: $next-header-secondary-bg;
+	}
+}
+
+// FIXME cleanup when removing mastheadV2 toggle
+
+.next-header--v2 {
+	.next-header__primary-tools__item--account {
+		display: none;
+
+		@include oGridRespondTo(M) {
+			display: inline-block;
+		}
+
+		&.next-header__primary-tools__myft {
+			display: inline-block;
+		}
+	}
+
+	.next-header__search-toggle {
+		width: 30px;
+		height: 45px;
+		overflow: hidden;
+
+		&:before {
+			@include nextIcon(search, #ffffff, 20);
+			content: '';
+			position: relative;
+			top: 5px;
+			margin-right: 0;
+		}
 	}
 }
 

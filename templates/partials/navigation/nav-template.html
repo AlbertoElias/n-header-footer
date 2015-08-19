@@ -1,0 +1,19 @@
+{{#each nav}}
+<li class="next-navigation__group next-navigation__group--sections" data-trackable="group--sections">
+	<a class="next-navigation__link next-navigation__link--top-level" href="{{href}}" data-trackable="{{name}}">{{name}}</a>
+		{{#if children}}
+		<ol class="next-navigation__group__items" data-trackable="secondary-navigation">
+				<li class="next-navigation__group__item">
+						<a class="next-navigation__link next-navigation__link--sub-level" href="{{../href}}" data-trackable="All {{../name}}">All {{../name}}</a>
+				</li>
+				{{#each children}}
+				<li class="next-navigation__group__item">
+						<a class="next-navigation__link next-navigation__link--sub-level" href="{{href}}" data-trackable="{{name}}">{{name}}</a>
+				</li>
+				{{/each}}
+		</ol>
+		{{/if}}
+</li>
+{{/each}}
+
+
