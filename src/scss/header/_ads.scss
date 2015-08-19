@@ -1,10 +1,13 @@
 .next-header__ad-container {
 	display: none;
 	background-color: white;
-	padding: 10px;
 
 	@include oGridRespondTo(M) {
 		display: block;
+	}
+
+	.o-ads {
+		padding: 10px;
 	}
 
 	.ad-placeholder {
