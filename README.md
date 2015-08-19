@@ -18,6 +18,16 @@ headerFooter.init();
 @import 'n-header-footer/main';
 ```
 
+## Build
+
+To build the n-header-footer run
+
+```
+make build
+```
+
+This will also rebuild the navigation templates using data from `next-navigation`.
+
 ## Feature flags
 
 To use feature flags pass in an instance of the next-feature-flags-client (which should already have been initialised) like so:
