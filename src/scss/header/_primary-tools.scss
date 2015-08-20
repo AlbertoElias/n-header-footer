@@ -72,6 +72,8 @@
 
 	@include oGridRespondTo(M) {
 		margin-left: 0;
+		margin-top: 8px;
+		margin-right: 8px;
 	}
 }
 
@@ -111,6 +113,41 @@
 
 		&.next-header__primary-tools__myft {
 			display: inline-block;
+
+			@include oGridRespondTo(M) {
+				display: none;
+			}
+		}
+	}
+
+	.next-header__primary-tools--masthead {
+		float: none;
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		.next-header__primary-tools__item {
+			display: inline-block;
+		}
+
+		.next-header__primary-tools__item--logged-in ~ .next-header__primary-tools__item--logged-in:before {
+			background-color: black;
+		}
+
+		.next-header__primary-tools__link {
+			color: black;
+		}
+
+		.next-header__primary-tools__link:hover,
+		.next-header__primary-tools__link:focus {
+			background-color: transparent;
+		}
+
+		.next-header__primary-tools__my-page__icon {
+			@include nextIcon(myft-bolder, oColorsGetPaletteColor('black'), 16);
+			content: '';
+			width: 34px;
+			margin: 0 0 -5px;
 		}
 	}
 

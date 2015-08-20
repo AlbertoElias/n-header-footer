@@ -1,5 +1,8 @@
 .next-header__masthead {
 	display: none;
+	padding-left: 0;
+	padding-right: 0;
+	position: relative;
 
 	@include oGridRespondTo(M) {
 		display: block;
