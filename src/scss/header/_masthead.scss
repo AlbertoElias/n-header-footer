@@ -1,9 +1,16 @@
 .next-header__masthead {
 	display: none;
+	padding-left: 0;
+	padding-right: 0;
+	position: relative;
 
 	@include oGridRespondTo(M) {
 		display: block;
 	}
+}
+
+.next-header--light-on-dark {
+	background-color: getColor('grey-tint5');
 }
 
 .next-header__masthead__logo {
@@ -17,6 +24,13 @@
 		width: 336px;
 		overflow: hidden;
 		color: transparent;
+
+		.next-header--light-on-dark & {
+			@include nextIcon(brand-ft-masthead, $next-header-light-bg);
+			display: block;
+			height: 27px;
+			width: 336px;
+		}
 
 		&:after {
 			content: none;

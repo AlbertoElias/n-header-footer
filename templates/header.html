@@ -10,15 +10,21 @@
 {{/if}}
 
 <header
-	class="next-header {{#if @root.flags.mastheadV2}}next-header--v2{{/if}}"
+	class="next-header {{#if @root.flags.mastheadV2}}next-header--v2{{/if}} {{#if @root.flags.mastheadV2whiteOnBlack}}next-header--light-on-dark{{/if}}"
 	data-trackable="header" >
 	{{#if @root.flags.mastheadV2}}
-		<div class="next-header__masthead">
+		<div class="next-header__masthead o-grid-row">
 			<h1 class="next-header__masthead__logo">
 				<a class="next-header__logo__link" data-trackable="logo-large" href="/" title="Go to homepage">
 					Financial Times
 				</a>
 			</h1>
+			<nav class="next-header__primary-tools next-header__primary-tools--masthead js-primary-tools" role="navigation" aria-label="Useful tools">
+				<ul class="next-header__primary-tools__items">
+					{{> n-header-footer/templates/partials/myft-tools }}
+					{{> n-header-footer/templates/partials/membership-tools }}
+				</ul>
+			</nav>
 		</div>
 	{{/if}}
 	<div class="next-header__row next-header__row--primary">
