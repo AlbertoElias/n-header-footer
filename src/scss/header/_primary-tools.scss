@@ -166,6 +166,23 @@
 	}
 }
 
+.next-header--v2.next-header--light-on-dark .next-header__primary-tools--masthead {
+	.next-header__primary-tools__item--logged-in ~ .next-header__primary-tools__item--logged-in:before {
+		background-color: $next-header-light-bg;
+	}
+
+	.next-header__primary-tools__link {
+		color: $next-header-light-bg;
+	}
+
+	.next-header__primary-tools__my-page__icon {
+		@include nextIcon(myft-bolder, $next-header-light-bg, 16);
+		content: '';
+		width: 34px;
+		margin: 0 0 -5px;
+	}
+}
+
 .next-header__search-form {
 	display: none;
 	margin-bottom: 0;

@@ -10,7 +10,7 @@
 {{/if}}
 
 <header
-	class="next-header {{#if @root.flags.mastheadV2}}next-header--v2{{/if}}"
+	class="next-header {{#if @root.flags.mastheadV2}}next-header--v2{{/if}} {{#if @root.flags.mastheadV2whiteOnBlack}}next-header--light-on-dark{{/if}}"
 	data-trackable="header" >
 	{{#if @root.flags.mastheadV2}}
 		<div class="next-header__masthead o-grid-row">
