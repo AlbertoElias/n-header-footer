@@ -7,6 +7,11 @@
 	@include oGridRespondTo(M) {
 		display: block;
 	}
+
+	&:before {
+			content: ' ';
+			display: table;
+	}
 }
 
 .next-header--light-on-dark {
