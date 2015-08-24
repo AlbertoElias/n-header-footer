@@ -1,8 +1,8 @@
 @include oColorsSetUseCase(nav, text, 'white');
-@include oColorsSetUseCase(nav, background, 'cold-3');
+@include oColorsSetUseCase(nav, background, 'cold-2');
 @include oColorsSetUseCase(link-hover, text, 'blue-2');
 @include oColorsSetUseCase(sub-nav, text, 'white');
-@include oColorsSetUseCase(sub-nav, background, 'cold-3');
+@include oColorsSetUseCase(sub-nav, background, 'cold-2');
 @include oColorsSetUseCase(sub-nav-hover, background, 'cold-2');
 @include oColorsSetUseCase(header, border, 'grey-tint3');
 
@@ -16,10 +16,8 @@
 	margin: 0;
 	padding: 0;
 }
-.next-navigation {
-	@include oColorsFor(nav, text background);
+.next-navigation { }
 	font-size: 0; // ignore whitespace between <li>s
-}
 .next-navigation__group {
 	display: inline-block;
 	// Because <button> elements sit on high baseline in FF
@@ -28,7 +26,7 @@
 .next-navigation__link {
 	display: block;
 	position: relative;
-	color: inherit;
+	color: oColorsGetPaletteColor('white');
 	font-family: inherit;
 	text-decoration: none;
 	font-size: 14px;
@@ -45,7 +43,7 @@
 }
 .next-navigation__link--top-level {
 	display: inline-block;
-	color: inherit;
+	color: oColorsGetPaletteColor('white');
 	line-height: 45px;
 	background: none;
 	border: 0;
