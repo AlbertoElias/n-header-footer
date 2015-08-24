@@ -18,7 +18,7 @@
 	[data-next-is-logged-in=true] & {
 		display: inline-block;
 
-		@include oGridRespondTo($until: M) {
+		@include oGridRespondTo($until: L) {
 			&.next-header__primary-tools__item--my-account {
 				display: none;
 			}
@@ -107,14 +107,14 @@
 	.next-header__primary-tools__item--account {
 		display: none;
 
-		@include oGridRespondTo(M) {
+		@include oGridRespondTo(L) {
 			display: inline-block;
 		}
 
 		&.next-header__primary-tools__myft {
 			display: inline-block;
 
-			@include oGridRespondTo(M) {
+			@include oGridRespondTo(L) {
 				display: none;
 			}
 		}
@@ -125,6 +125,10 @@
 		position: absolute;
 		top: 0;
 		right: 0;
+
+		@include oGridRespondTo($until: L) {
+			display: none;
+		}
 
 		.next-header__primary-tools__item {
 			display: inline-block;

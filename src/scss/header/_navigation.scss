@@ -205,7 +205,7 @@
 .next-header--v2 .next-navigation__membership-tools {
 	margin-bottom: 0.5em;
 
-	@include oGridRespondTo(M) {
+	@include oGridRespondTo(L) {
 		display: none;
 	}
 
