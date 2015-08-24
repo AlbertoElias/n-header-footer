@@ -27,6 +27,7 @@
 			</nav>
 		</div>
 	{{/if}}
+
 	<div class="next-header__row next-header__row--primary">
 		<div class="next-header__row--inner o-grid-row">
 			<div data-o-grid-colspan="12">
@@ -37,7 +38,6 @@
 						</a>
 					</div>
 				{{/unless}}
-				{{>n-header-footer/templates/partials/primary-nav}}
 				{{>n-header-footer/templates/partials/primary-tools}}
 				{{#if @root.flags.mastheadV2}}
 					<h1 class="next-header__masthead__logo--mobile">
@@ -48,5 +48,10 @@
 				{{/if}}
 			</div>
 		</div>
+		{{#if @root.flags.mastheadV2}}
+			{{>n-header-footer/templates/partials/primary-navv2}}
+		{{else}}
+			{{>n-header-footer/templates/partials/primary-nav}}
+		{{/if}}
 	</div>
 </header>

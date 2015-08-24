@@ -15,7 +15,7 @@ module.exports = {
 				var innerHTML = toggleEl.innerHTML;
 				var classes = toggleEl.className;
 				var dataTrackable = toggleEl.getAttribute('data-trackable');
-				toggleEl.outerHTML = '<button class="' + classes + '" data-trackable="' + dataTrackable +'">' + innerHTML + '</button>';
+				toggleEl.outerHTML = '<button class="' + classes + '" data-trackable="' + dataTrackable + '">' + innerHTML + '</button>';
 			});
 			var nav = document.querySelector('.js-global-nav');
 			var currentSubNav;
@@ -27,8 +27,23 @@ module.exports = {
 
 			nav.addEventListener('oExpander.expand', function (ev) {
 				currentSubNav = ev.target;
+				if(currentSubNav.attributes['data-on-expanded'].value === 'noscroll-body') {
+					document.querySelector('html').style.overflow = 'hidden';
+					document.body.style.overflow = 'hidden';
+					document.body.style.position = 'fixed';
+				}
 			});
-			// close if clicking outside the dropdown
+
+			nav.addEventListener('oExpander.collapse', function (ev) {
+				if(ev.target.attributes['data-on-expanded'].value === 'noscroll-body') {
+					document.querySelector('html').style.overflow = '';
+					document.body.style.overflow = '';
+					document.body.style.position = 'static';
+
+				}
+			});
+
+						// close if clicking outside the dropdown
 			document.addEventListener('click', function (ev) {
 				if (currentSubNav && isOutside(ev.target, currentSubNav)) {
 					// close the currently open sub nav
