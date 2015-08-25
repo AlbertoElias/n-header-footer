@@ -1,12 +1,16 @@
 {{#if @root.flags.globalNavigation}}
 	<nav id="primary-nav" class="next-header__primary-nav" data-trackable="primary-nav" role="navigation" aria-label="Primary navigation">
 		<ol class="next-navigation next-navigation--nav js-global-nav">
-
+			<li class="next-navigation__group next-navigation__group--sections">
+				<a class="next-navigation__link next-navigation__link--top-level" href="/" data-trackable="Home">Home</a>
+			</li>
+			{{> n-header-footer/templates/partials/navigation/nav ~}}
 			<li class="next-navigation__group next-navigation__group--more" data-o-component="o-expander" data-trackable="group--more">
 				<a href="#next-footer__nav" class="next-navigation__link next-navigation__link--top-level js-sub-nav-toggle" data-trackable="More">
 					<span class="next-navigation__link__text--mobile">Menu</span>
 					<span class="next-navigation__link__text--desktop">More</span>
 				</a>
+
 				<ol class="next-navigation__group__items next-navigation__group__items--nested o-expander__content" data-trackable="secondary-navigation">
 					{{#if @root.flags.mastheadV2}}
 						<li class="next-navigation next-navigation__membership-tools">
@@ -16,15 +20,8 @@
 						</li>
 					{{/if}}
 					{{> n-header-footer/templates/partials/navigation/all ~}}
-						{{> n-header-footer/templates/partials/navigation/all-templatev2 nav=navigation.nav all=navigation.all}}
-					{{else}}
-						{{> n-header-footer/templates/partials/navigation/all-template nav=navigation.nav all=navigation.all}}
-					{{/if}}
 				</ol>
 			</li>
-
-			{{> n-header-footer/templates/partials/navigation/nav-template nav=navigation.nav all=navigation.all}}
-
 		</ol>
 	</nav>
 {{/if}}

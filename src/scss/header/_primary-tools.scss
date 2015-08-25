@@ -28,7 +28,7 @@
 	// Because there's sadly no :first-of-class selector
 	& ~ & {
 		&:before {
-			content: '';
+			content: ' ';
 			position: absolute;
 			width: 2px;
 			height: 14px;
@@ -77,7 +77,7 @@
 	}
 }
 
-.next-header--v2 .next-header__primary-tools__search {
+.next-header-v2 .next-header__primary-tools__search {
 	margin-left: 0;
 }
 
@@ -103,7 +103,7 @@
 
 // FIXME cleanup when removing mastheadV2 toggle
 
-.next-header--v2 {
+.next-header-v2 {
 	.next-header__primary-tools__item--account {
 		display: none;
 
@@ -170,7 +170,7 @@
 	}
 }
 
-.next-header--v2.next-header--light-on-dark .next-header__primary-tools--masthead {
+.next-header-v2.next-header--light-on-dark .next-header__primary-tools--masthead {
 	.next-header__primary-tools__item--logged-in ~ .next-header__primary-tools__item--logged-in:before {
 		background-color: $next-header-light-bg;
 	}

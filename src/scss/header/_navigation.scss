@@ -16,8 +16,9 @@
 	margin: 0;
 	padding: 0;
 }
-.next-navigation { }
+.next-navigation {
 	font-size: 0; // ignore whitespace between <li>s
+}
 .next-navigation__group {
 	display: inline-block;
 	// Because <button> elements sit on high baseline in FF
@@ -44,9 +45,9 @@
 .next-navigation__link--top-level {
 	display: inline-block;
 	color: oColorsGetPaletteColor('white');
-	line-height: 45px;
 	background: none;
 	border: 0;
+	line-height: 43px;
 	cursor: pointer;
 
 	&:after {

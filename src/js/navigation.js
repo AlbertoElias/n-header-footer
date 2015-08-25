@@ -27,9 +27,12 @@ module.exports = {
 
 			nav.addEventListener('oExpander.expand', function (ev) {
 				currentSubNav = ev.target;
-				if(currentSubNav.attributes['data-on-expanded'].value === 'noscroll-body') {
+				if(
+					currentSubNav.attributes['data-on-expanded'].value === 'noscroll-body' &&
+					window.innerWidth < 650
+				) {
 					document.querySelector('html').style.overflow = 'hidden';
-					document.body.style.overflow = 'hidden';
+					document.body.style['overflow-y'] = 'hidden';
 					document.body.style.position = 'fixed';
 				}
 			});
@@ -37,7 +40,7 @@ module.exports = {
 			nav.addEventListener('oExpander.collapse', function (ev) {
 				if(ev.target.attributes['data-on-expanded'].value === 'noscroll-body') {
 					document.querySelector('html').style.overflow = '';
-					document.body.style.overflow = '';
+					document.body.style['overflow-y'] = '';
 					document.body.style.position = 'static';
 
 				}

@@ -12,10 +12,14 @@
 @include oColorsSetUseCase(sub-nav-hover, background, 'nav-warm-1');
 @include oColorsSetUseCase(header, border, 'grey-tint3');
 
-.next-header__primary-nav {
-	position: absolute;
-	top: 0;
-	left: 0;
+.next-header-v2__primary-nav {
+	float: left;
+
+	@include oGridRespondTo($until: M) {
+		position: absolute;
+	  top: 0;
+	  left: 0;
+	}
 }
 
 .next-navigation-v2,
@@ -25,6 +29,9 @@
 	padding: 0;
 	height: 100%;
 	background: linear-gradient(90deg, oColorsGetPaletteColor('cold-2') 41.667%, oColorsGetPaletteColor('nav-warm-1') 41.667%);
+	@include oGridRespondTo(M) {
+		background: oColorsGetPaletteColor('cold-2');
+	};
 }
 .next-navigation-v2 { @include oColorsFor(nav, text background); }
 .next-navigation-v2__group {
@@ -55,10 +62,10 @@
 .next-navigation-v2__link--top-level {
 	display: inline-block;
 	color: inherit;
-	line-height: 45px;
 	background: none;
 	border: 0;
 	cursor: pointer;
+	line-height: 43px;
 	background-color: oColorsGetPaletteColor('cold-2');
 
 	// Just incase a <button> is used
@@ -66,12 +73,25 @@
 		border: 0;
 		padding: 0;
 	}
+	@include oGridRespondTo(L) {
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			width: 2px;
+			height: 14px;
+			top: 50%;
+			right: -1px;
+			margin-top: -7px;
+			background-color: #ffffff;
+		}
+	}
 }
 .next-navigation-v2__link--sub-level {
 	@include oColorsFor(header, border);
 	padding-right: 15px;
-	min-height: 38px;
-	line-height: 38px;
+	min-height: 32px;
+	line-height: 32px;
 	font-weight: 500;
 	font-size: 14px;
 
@@ -92,7 +112,7 @@
 		padding-left: 20px;
 	}
 	@include oGridRespondTo($until: M) {
-		@include oColorsFor(sub-nav, text);
+		color: oColorsGetPaletteColor('white');
 		text-align: right;
 
 		&:hover {
@@ -114,7 +134,7 @@
 	}
 }
 // FIXME clean up after removing mastheadV2 toggle
-.next-header--v2 .next-navigation-v2__link__text--mobile {
+.next-header-v2 .next-navigation-v2__link__text--mobile {
 	display: block;
 	overflow: hidden;
 
@@ -209,26 +229,30 @@
 }
 
 .next-navigation-v2__group__sub-item { display: block; }
-.next-header--v2 .next-header__primary-tools__myft { display: inline-block; }
-.next-header--v2 .next-navigation-v2__membership-tools {
+.next-header-v2 .next-header-v2__primary-tools__myft { display: inline-block; }
+.next-header-v2 .next-navigation-v2__membership-tools {
 	@include oGridRespondTo(M) { display: none; }
 
 	ol { padding: 0; }
 
-	.next-header__primary-tools__item,
-	.next-header__primary-tools__item--logged-in.next-header__primary-tools__item--my-account {
+	.next-header-v2__primary-tools__item,
+	.next-header-v2__primary-tools__item--logged-in.next-header-v2__primary-tools__item--my-account {
 		display: inline-block;
 	}
 }
 
 .next-navigation-v2__sub-nav {
 	border-spacing: 0;
-	position: absolute;
-	top: 40px;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	overflow-x: scroll;
+
+	@include oGridRespondTo($until: M) {
+		position: absolute;
+		top: 40px;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		overflow-x: scroll;
+	}
+
 	td {
 		vertical-align: middle;
 		min-height: 38px;
@@ -236,27 +260,29 @@
 }
 
 .next-header--expanded {
-	.next-header__row {
-		position: fixed;
-		top: 0;
-		right: 0;
-		left: 0;
-		z-index: 30;
-	}
+	@include oGridRespondTo($until: M) {
+		.next-header-v2__row {
+			position: fixed;
+			top: 0;
+			right: 0;
+			left: 0;
+			z-index: 30;
+		}
 
-	.next-navigation-v2__group__items {
-		position: fixed;
-		top: 44px;
-		bottom: 0;
-		right: 0;
-		left: 0;
-		z-index: 1;
-	}
+		.next-navigation-v2__group__items {
+			position: fixed;
+			top: 44px;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			z-index: 1;
+		}
 
-	.next-navigation-v2__link--top-level.js-sub-nav-toggle {
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 30;
+		.next-navigation-v2__link--top-level.js-sub-nav-toggle {
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 30;
+		}
 	}
 }

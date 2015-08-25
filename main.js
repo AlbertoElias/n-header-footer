@@ -9,8 +9,8 @@ function init(flags) {
 	subNav.init(flags);
 	search.init(flags);
 
-	var nav = document.querySelector('.next-header__row--primary');
-	sticky.init(nav, "next-header__row--primary--hidden", flags);
+	var nav = document.querySelector('.next-header-v2__row--primary');
+	if(nav) { sticky.init(nav, "next-header__row--primary--hidden", flags); }
 }
 
 module.exports.init = init;

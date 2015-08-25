@@ -2,7 +2,7 @@
 	position: relative;
 	z-index: 20;
 }
-.next-header--v2 {
+.next-header-v2 {
 	padding-bottom: 46px;
 
 	@include oGridRespondTo(M) {
@@ -31,6 +31,14 @@
 }
 .next-header__row--primary {
 	background: $next-header-primary-bg;
+	&::after {
+		visibility: hidden;
+	  display: block;
+	  font-size: 0;
+	  content: " ";
+	  clear: both;
+	  height: 0
+	}
 }
 .next-header__row--secondary {
 	background: $next-header-secondary-bg;
