@@ -33,11 +33,11 @@
 	background: $next-header-primary-bg;
 	&::after {
 		visibility: hidden;
-	  display: block;
-	  font-size: 0;
-	  content: " ";
-	  clear: both;
-	  height: 0
+		display: block;
+		font-size: 0;
+		content: " ";
+		clear: both;
+		height: 0;
 	}
 }
 .next-header__row--secondary {

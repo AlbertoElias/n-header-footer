@@ -17,8 +17,8 @@
 
 	@include oGridRespondTo($until: M) {
 		position: absolute;
-	  top: 0;
-	  left: 0;
+		top: 0;
+		left: 0;
 	}
 }
 
@@ -31,7 +31,7 @@
 	background: linear-gradient(90deg, oColorsGetPaletteColor('cold-2') 41.667%, oColorsGetPaletteColor('nav-warm-1') 41.667%);
 	@include oGridRespondTo(M) {
 		background: oColorsGetPaletteColor('cold-2');
-	};
+	}
 }
 .next-navigation-v2 { @include oColorsFor(nav, text background); }
 .next-navigation-v2__group {
@@ -68,11 +68,6 @@
 	line-height: 43px;
 	background-color: oColorsGetPaletteColor('cold-2');
 
-	// Just incase a <button> is used
-	&::-moz-focus-inner {
-		border: 0;
-		padding: 0;
-	}
 	@include oGridRespondTo(L) {
 		&:after {
 			content: '';
@@ -85,6 +80,12 @@
 			margin-top: -7px;
 			background-color: #ffffff;
 		}
+
+	// Just incase a <button> is used
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
 	}
 }
 .next-navigation-v2__link--sub-level {
@@ -115,13 +116,15 @@
 		color: oColorsGetPaletteColor('white');
 		text-align: right;
 
-		&:hover {
+		&:hover,
+		&:focus {
+			@include oColorsFor(sub-nav-hover, background);
 			text-decoration: none;
 			font-weight: bold;
-			@include oColorsFor(sub-nav-hover, background);
 			color: oColorsGetPaletteColor('grey-tint5');
 		}
-		&:hover + .next-navigation-v2__group__sub-items {
+		&:hover + .next-navigation-v2__group__sub-items,
+		&:focus + .next-navigation-v2__group__sub-items {
 			display: block;
 		}
 	}
@@ -217,15 +220,6 @@
 	}
 
 	&:hover { display: block; }
-}
-
-.overlay {
-	position: absolute;
-	background: rgba(255,255,255,0.8);
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
 }
 
 .next-navigation-v2__group__sub-item { display: block; }
