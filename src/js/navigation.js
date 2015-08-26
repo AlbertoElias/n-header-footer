@@ -9,7 +9,25 @@ function $(selector) {
 
 module.exports = {
 	init: function (flags) {
-		if (flags.get('globalNavigation')) {
+
+		if (flags.get('mastheadV2')) {
+			document
+				.querySelector('.next-navigation-v2__checkbox')
+				.addEventListener('change', function(e) {
+					var checked = e.target.checked;
+					if(checked && (window.innerWidth <= 720)) {
+						document.querySelector('html').style.overflow = 'hidden';
+						document.body.style['overflow-y'] = 'hidden';
+						document.body.style.position = 'fixed';
+					} else {
+						document.querySelector('html').style.overflow = '';
+						document.body.style['overflow-y'] = '';
+						document.body.style.position = 'static';
+					}
+				});
+		}
+
+		if (flags.get('globalNavigation') && !flags.get('mastheadV2')) {
 			// convert top level links to button
 			$('.js-sub-nav-toggle').forEach(function (toggleEl) {
 				var innerHTML = toggleEl.innerHTML;
@@ -27,25 +45,7 @@ module.exports = {
 
 			nav.addEventListener('oExpander.expand', function (ev) {
 				currentSubNav = ev.target;
-				if(
-					currentSubNav.attributes['data-on-expanded'].value === 'noscroll-body' &&
-					window.innerWidth < 650
-				) {
-					document.querySelector('html').style.overflow = 'hidden';
-					document.body.style['overflow-y'] = 'hidden';
-					document.body.style.position = 'fixed';
-				}
 			});
-
-			nav.addEventListener('oExpander.collapse', function (ev) {
-				if(ev.target.attributes['data-on-expanded'].value === 'noscroll-body') {
-					document.querySelector('html').style.overflow = '';
-					document.body.style['overflow-y'] = '';
-					document.body.style.position = 'static';
-
-				}
-			});
-
 						// close if clicking outside the dropdown
 			document.addEventListener('click', function (ev) {
 				if (currentSubNav && isOutside(ev.target, currentSubNav)) {

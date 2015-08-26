@@ -3,15 +3,17 @@
 		<ol class="next-navigation-v2 next-navigation-v2--nav js-global-nav">
 			<li
 				class="next-navigation-v2__group next-navigation-v2__group--more"
-				data-o-component="o-expander"
 				data-trackable="group--more"
 				data-on-expanded="noscroll-body"
 			>
-				<a href="#next-footer__nav" class="next-navigation-v2__link next-navigation-v2__link--top-level js-sub-nav-toggle" data-trackable="More">
-					<span class="next-navigation-v2__link__text--mobile">
-						<span class="next-navigation-v2__link__inner-text">Menu</span>
-					</span>
-				</a>
+				<label class="next-navigation-v2__toggle" for="sub-nav">
+					<a href="#next-footer__nav" class="next-navigation-v2__link next-navigation-v2__link--top-level js-sub-nav-toggle" data-trackable="More">
+						<span class="next-navigation-v2__link__text--mobile">
+							<span class="next-navigation-v2__link__inner-text">Menu</span>
+						</span>
+					</a>
+				</label>
+				<input class="next-navigation-v2__checkbox" type="checkbox" id="sub-nav" name="sub-nav" value="">
 				<ol class="next-navigation-v2__group__items next-navigation-v2__group__items--nested o-expander__content" data-trackable="secondary-navigation">
 					<li class="next-navigation-v2 next-navigation-v2__membership-tools">
 						<ol>
@@ -20,7 +22,7 @@
 					</li>
 
 					{{> n-header-footer/templates/partials/navigation/all-templatev2 nav=navigation.nav all=navigation.all}}
-			</ol>
+				</ol>
 			</li>
 
 			{{> n-header-footer/templates/partials/navigation/nav-template nav=navigation.nav all=navigation.all}}

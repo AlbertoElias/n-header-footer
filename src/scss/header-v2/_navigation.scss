@@ -18,7 +18,7 @@
 	@include oGridRespondTo($until: M) {
 		position: absolute;
 		top: 0;
-		left: 0;
+		left: 7px;
 	}
 }
 
@@ -162,7 +162,6 @@ label > * {
 // FIXME clean up after removing mastheadV2 toggle
 .next-header-v2 .next-navigation-v2__link__text--mobile {
 	display: block;
-	overflow: hidden;
 
 	&:before {
 		@include nextIcon(hamburger, #ffffff, 20);
@@ -202,7 +201,7 @@ label > * {
 		@include oGridRespondTo(L) { width: 100%; }
 	}
 	.next-navigation-v2__group--sections:hover &,
-	&[aria-expanded="true"] {
+	.next-navigation-v2__checkbox:checked ~ & {
 		visibility: visible;
 		opacity: 1;
 		height: auto;
@@ -279,30 +278,29 @@ label > * {
 	}
 }
 
-.next-header--expanded {
-	@include oGridRespondTo($until: M) {
-		.next-header-v2__row {
-			position: fixed;
-			top: 0;
-			right: 0;
-			left: 0;
-			z-index: 30;
-		}
+.next-navigation-v2__toggle {
+	display: block;
+}
+.next-navigation-v2__checkbox {
+	display: none;
 
-		.next-navigation-v2__group__items {
-			position: fixed;
-			top: 44px;
-			bottom: 0;
-			right: 0;
-			left: 0;
-			z-index: 1;
-		}
+	&:checked {
+		@include oGridRespondTo($until: M) {
+			& ~ .next-navigation-v2__group__items {
+				position: fixed;
+				top: 44px;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				z-index: 1;
+			}
 
-		.next-navigation-v2__link--top-level.js-sub-nav-toggle {
-			position: fixed;
-			top: 0;
-			left: 0;
-			z-index: 30;
+			& ~ label .next-navigation-v2__link--top-level.js-sub-nav-toggle {
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 30;
+			}
 		}
 	}
 }
