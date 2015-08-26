@@ -1,26 +1,38 @@
 <div class="next-navigation-v2__sub-nav">
   {{#each all}}
-    <li class="next-navigation-v2__group__item">
-        {{#if children}}
-          <input class="next-navigation-v2__link--radio" type="radio" id="{{id}}" name="nav-item" value="{{name}}" {{#unless @index}}checked{{/unless}} />
-          <label class="next-navigation-v2__link--sub-level-header" for="{{id}}">
-            <span class="next-navigation-v2__link next-navigation-v2__link--sub-level" data-trackable="{{name}}" >{{name}}</span>
-          </label>
-          <ol class="next-navigation-v2__group__sub-items">
+    {{#if children}}
+      <li class="next-navigation-v2__group__item">
+        <input class="next-navigation-v2__link--radio" type="radio" id="{{id}}" name="nav-item" value="{{name}}" {{#unless @index}}checked{{/unless}} />
+        <label class="next-navigation-v2__link--sub-level-header" for="{{id}}">
+          <span class="next-navigation-v2__link next-navigation-v2__link--sub-level" data-trackable="{{name}}" >{{name}}</span>
+        </label>
+        <ol class="next-navigation-v2__group__sub-items">
+          <li class="next-navigation-v2__group__sub-item">
+            <a class=" next-navigation-v2__link next-navigation-v2__link--sub-level" href="{{href}}" data-trackable="{{name}}">All {{name}}</a>
+          </li>
+          {{#each children}}
             <li class="next-navigation-v2__group__sub-item">
-              <a class=" next-navigation-v2__link next-navigation-v2__link--sub-level" href="{{href}}" data-trackable="{{name}}">All {{name}}</a>
+                <a class="next-navigation-v2__link next-navigation-v2__link--sub-level" href="{{href}}" data-trackable="{{name}}">{{name}}</a>
             </li>
-            {{#each children}}
-              <li class="next-navigation-v2__group__sub-item">
-                  <a class="next-navigation-v2__link next-navigation-v2__link--sub-level" href="{{href}}" data-trackable="{{name}}">{{name}}</a>
-              </li>
-            {{/each}}
-          </ol>
-        {{else}}
+          {{/each}}
+        </ol>
+      </li>
+    {{else}}
+      <li class="next-navigation-v2__group__item next-navigation-v2__group__item--mobile">
         <span class="next-navigation-v2__link--sub-level-header">
           <a class="next-navigation-v2__link next-navigation-v2__link--sub-level" href={{href}} data-trackable="{{name}}" >{{name}} > </a>
         </span>
-        {{/if}}
-    </li>
+      </li>
+    {{/if}}
   {{/each}}
+
+  <li class="next-navigation-v2__group__item next-navigation-v2__group__item--desktop">
+    {{#each all}}
+      {{#unless children}}
+        <span class="next-navigation-v2__link--sub-level-header">
+          <a class="next-navigation-v2__link next-navigation-v2__link--sub-level" href={{href}} data-trackable="{{name}}" >{{name}} > </a>
+        </span>
+      {{/unless}}
+    {{/each}}
+  </li>
 </div>

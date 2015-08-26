@@ -217,6 +217,15 @@ label > * {
 		&:nth-child(4n+1) { clear: both; }
 	}
 
+	&--desktop {
+		display: none;
+		@include oGridRespondTo(M) { display: block; }
+	}
+	&--mobile {
+		display: block;
+		@include oGridRespondTo(M) { display: none; }
+	}
+
 }
 .next-navigation-v2__group__item--top-level {
 	@include oGridRespondTo(L) { display: none; }
@@ -295,7 +304,6 @@ label > * {
 		top: 5px;
 		margin-right: 9px;
 	}
-
 }
 
 .next-navigation-v2__toggle { display: block; }
