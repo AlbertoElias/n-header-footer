@@ -22,6 +22,10 @@
 	}
 }
 
+label > * {
+	pointer-events: none;
+}
+
 @mixin dark_border_bottom {
 	content: "";
 	height: 1px;
@@ -136,7 +140,7 @@
 		display: none;
 
 		@include oGridRespondTo($until: M) {
-			&:checked ~ label .next-navigation-v2__link--sub-level-header {
+			&:checked ~ .next-navigation-v2__link--sub-level-header {
 				@include oColorsFor(sub-nav-hover, background);
 				text-decoration: none;
 				font-weight: bold;

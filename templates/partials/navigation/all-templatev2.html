@@ -3,10 +3,8 @@
     <li class="next-navigation-v2__group__item">
         {{#if children}}
           <input class="next-navigation-v2__link--radio" type="radio" id="{{id}}" name="nav-item" value="{{name}}" {{#unless @index}}checked{{/unless}} />
-          <label for="{{id}}">
-            <span class="next-navigation-v2__link--sub-level-header">
-              <span class="next-navigation-v2__link next-navigation-v2__link--sub-level" data-trackable="{{name}}" >{{name}}</span>
-            </span>
+          <label class="next-navigation-v2__link--sub-level-header" for="{{id}}">
+            <span class="next-navigation-v2__link next-navigation-v2__link--sub-level" data-trackable="{{name}}" >{{name}}</span>
           </label>
           <ol class="next-navigation-v2__group__sub-items">
             <li class="next-navigation-v2__group__sub-item">
