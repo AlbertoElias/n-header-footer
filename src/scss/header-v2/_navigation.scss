@@ -155,12 +155,9 @@ label > * {
 
 .next-navigation-v2__link__text--mobile {
 	@include oGridRespondTo(L) { display: none; }
-	.next-navigation-v2__link__inner-text {
-		@include oGridRespondTo($until: M) { display: none; }
-	}
 }
 // FIXME clean up after removing mastheadV2 toggle
-.next-header-v2 .next-navigation-v2__link__text--mobile {
+.next-navigation-v2__link__text--mobile {
 	display: block;
 
 	&:before {
@@ -278,9 +275,30 @@ label > * {
 	}
 }
 
-.next-navigation-v2__toggle {
-	display: block;
+.next-navigation-v2__link__inner-text--open {
+	display: none;
+	@include oGridRespondTo(M) { display: inline; }
 }
+.next-navigation-v2__link__inner-text--close { display: none; }
+
+.next-header-v2--expanded {
+	.next-navigation-v2__link__inner-text--open { display: none; }
+
+	@include oGridRespondTo(M) {
+		.next-navigation-v2__link__inner-text--close { display: inline; }
+	};
+
+	.next-navigation-v2__link__text--mobile:before {
+		@include nextIcon(cross, #ffffff, 20);
+		content: '';
+		position: relative;
+		top: 5px;
+		margin-right: 9px;
+	}
+
+}
+
+.next-navigation-v2__toggle { display: block; }
 .next-navigation-v2__checkbox {
 	display: none;
 
@@ -295,7 +313,7 @@ label > * {
 				z-index: 1;
 			}
 
-			& ~ label .next-navigation-v2__link--top-level.js-sub-nav-toggle {
+			& ~ .next-navigation-v2__toggle .next-navigation-v2__link--top-level.js-sub-nav-toggle {
 				position: fixed;
 				top: 0;
 				left: 0;
