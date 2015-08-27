@@ -255,23 +255,50 @@ label > * {
 
 .next-navigation-v2__group__sub-item { display: block; }
 .next-header-v2 .next-header-v2__primary-tools__myft { display: inline-block; }
-.next-header-v2 .next-navigation-v2__membership-tools {
-	@include oGridRespondTo(M) { display: none; }
+.next-navigation-v2__sub-nav {
+	.next-header__primary-tools__item.next-header__primary-tools__item--account {
+		&.next-header__primary-tools__item--logged-in,
+		&.next-header__primary-tools__item--logged-out {
+			display: none;
+			@include oGridRespondTo($until: M) {
 
-	ol { padding: 0; }
+				display: block;
 
-	.next-header-v2__primary-tools__item,
-	.next-header-v2__primary-tools__item--logged-in.next-header-v2__primary-tools__item--my-account {
-		display: inline-block;
+				&::before { display: none; }
+
+				.next-header__primary-tools__link {
+					@include oGridColumn(5);
+					text-align: right;
+					padding: 0;
+					line-height: 34px;
+					clear: both;
+					padding-right: 1px;
+					&::after { @include dark_border_bottom; }
+
+					&:hover,
+					&:focus {
+						background: none;
+						text-decoration: underline;
+					}
+				}
+
+
+				.next-header__primary-tools__link--inner {
+					padding-right: 15px;
+				}
+			}
+		}
 	}
 }
 
 .next-navigation-v2__sub-nav {
 	border-spacing: 0;
+	padding: 0;
+  list-style: none;
 
 	@include oGridRespondTo($until: M) {
 		position: absolute;
-		top: 40px;
+		top: 2px;
 		bottom: 0;
 		left: 0;
 		right: 0;

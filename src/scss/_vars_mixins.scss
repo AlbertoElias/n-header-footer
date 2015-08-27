@@ -21,6 +21,11 @@ $next-header-light-bg: #fdf8f2;
 	}
 
 	@include oGridRespondTo(M) {
+		padding: 0 6px;
+		font-size: 13px;
+	}
+
+	@include oGridRespondTo(L) {
 		padding: 0 7px;
 		font-size: 16px;
 	}

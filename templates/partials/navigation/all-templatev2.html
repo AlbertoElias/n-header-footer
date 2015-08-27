@@ -1,4 +1,4 @@
-<div class="next-navigation-v2__sub-nav">
+<ul class="next-navigation-v2__sub-nav">
   {{#each all}}
     {{#if children}}
       <li class="next-navigation-v2__group__item">
@@ -26,6 +26,8 @@
     {{/if}}
   {{/each}}
 
+  {{> n-header-footer/templates/partials/membership-tools}}
+
   <li class="next-navigation-v2__group__item next-navigation-v2__group__item--desktop">
     {{#each all}}
       {{#unless children}}
@@ -35,4 +37,4 @@
       {{/unless}}
     {{/each}}
   </li>
-</div>
+</ul>

@@ -107,14 +107,14 @@
 	.next-header__primary-tools__item--account {
 		display: none;
 
-		@include oGridRespondTo(L) {
+		@include oGridRespondTo(M) {
 			display: inline-block;
 		}
 
 		&.next-header__primary-tools__myft {
 			display: inline-block;
 
-			@include oGridRespondTo(L) {
+			@include oGridRespondTo(M) {
 				display: none;
 			}
 		}
@@ -126,7 +126,7 @@
 		top: 0;
 		right: 0;
 
-		@include oGridRespondTo($until: L) {
+		@include oGridRespondTo($until: M) {
 			display: none;
 		}
 
