@@ -1,8 +1,8 @@
 @include oColorsSetUseCase(nav, text, 'white');
-@include oColorsSetUseCase(nav, background, 'cold-3');
+@include oColorsSetUseCase(nav, background, 'cold-2');
 @include oColorsSetUseCase(link-hover, text, 'blue-2');
 @include oColorsSetUseCase(sub-nav, text, 'white');
-@include oColorsSetUseCase(sub-nav, background, 'cold-3');
+@include oColorsSetUseCase(sub-nav, background, 'cold-2');
 @include oColorsSetUseCase(sub-nav-hover, background, 'cold-2');
 @include oColorsSetUseCase(header, border, 'grey-tint3');
 
@@ -17,7 +17,6 @@
 	padding: 0;
 }
 .next-navigation {
-	@include oColorsFor(nav, text background);
 	font-size: 0; // ignore whitespace between <li>s
 }
 .next-navigation__group {
@@ -28,7 +27,7 @@
 .next-navigation__link {
 	display: block;
 	position: relative;
-	color: inherit;
+	color: oColorsGetPaletteColor('white');
 	font-family: inherit;
 	text-decoration: none;
 	font-size: 14px;
@@ -45,10 +44,10 @@
 }
 .next-navigation__link--top-level {
 	display: inline-block;
-	color: inherit;
-	line-height: 45px;
+	color: oColorsGetPaletteColor('white');
 	background: none;
 	border: 0;
+	line-height: 43px;
 	cursor: pointer;
 
 	&:after {

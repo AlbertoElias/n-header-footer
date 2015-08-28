@@ -5,6 +5,8 @@ $o-forms-is-silent: false;
 
 @import "src/scss/helpers";
 @import "src/scss/vars_mixins";
+
+// Header
 @import "src/scss/header/base";
 @import "src/scss/header/ads";
 @import "src/scss/header/logo";
@@ -12,4 +14,8 @@ $o-forms-is-silent: false;
 @import "src/scss/header/navigation";
 @import "src/scss/header/primary-tools";
 @import "src/scss/header/print";
+
+// Header V2
+@import "src/scss/header-v2/navigation";
+
 @import "src/scss/footer/main";

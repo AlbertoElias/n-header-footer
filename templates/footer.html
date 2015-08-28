@@ -1,19 +1,12 @@
 <footer class="next-footer">
-	<div id="next-footer__nav" class="next-footer__nav">
-		<p class="next-footer__back-to-top o-grid-row">
-			<a href="#" data-o-colspan="12" data-trackable="Back to top">Back to top</a>
-		</p>
-
-		<ol class="next-navigation next-navigation--all next-navigation__group__items">
-			{{#if @root.flags.mastheadV2}}
-				<li class="next-navigation next-navigation__membership-tools">
-					<ol>
-						{{> n-header-footer/templates/partials/membership-tools}}
-					</ol>
-				</li>
-			{{/if}}
-
-			{{> n-header-footer/templates/partials/navigation/all}}
-		</ol>
-	</div>
+	{{#unless @root.flags.mastheadV2}}
+		<div id="next-footer__nav" class="next-footer__nav">
+			<p class="next-footer__back-to-top o-grid-row">
+				<a href="#" data-o-colspan="12" data-trackable="Back to top">Back to top</a>
+			</p>
+			<ol class="next-navigation next-navigation--all next-navigation__group__items">
+					{{> n-header-footer/templates/partials/navigation/all}}
+			</ol>
+		</div>
+	{{/unless}}
 </footer>

@@ -1,52 +1,26 @@
-<a class="u-visually-hidden" href="#primary-nav">Skip to navigation</a>
-<a class="u-visually-hidden" href="#site-content">Skip to content</a>
-
 {{#if @root.flags.mastheadV2}}
-	<div class="next-header__ad-container">
-		<div class="ad-placeholder ad-placeholder__banlb ad-placeholder__{{__name}}"></div>
-	</div>
+	{{>n-header-footer/templates/headerv2}}
 {{else}}
-	<div class="ad-placeholder ad-placeholder__banlb ad-placeholder__{{__name}}"></div>
-{{/if}}
+	<a class="u-visually-hidden" href="#primary-nav">Skip to navigation</a>
+	<a class="u-visually-hidden" href="#site-content">Skip to content</a>
 
-<header
-	class="next-header {{#if @root.flags.mastheadV2}}next-header--v2{{/if}} {{#if @root.flags.mastheadV2whiteOnBlack}}next-header--light-on-dark{{/if}}"
-	data-trackable="header" >
-	{{#if @root.flags.mastheadV2}}
-		<div class="next-header__masthead o-grid-row">
-			<h1 class="next-header__masthead__logo">
-				<a class="next-header__logo__link" data-trackable="logo-large" href="/" title="Go to homepage">
-					Financial Times
-				</a>
-			</h1>
-			<nav class="next-header__primary-tools next-header__primary-tools--masthead js-primary-tools" role="navigation" aria-label="Useful tools">
-				<ul class="next-header__primary-tools__items">
-					{{> n-header-footer/templates/partials/myft-tools }}
-					{{> n-header-footer/templates/partials/membership-tools }}
-				</ul>
-			</nav>
-		</div>
-	{{/if}}
-	<div class="next-header__row next-header__row--primary">
-		<div class="next-header__row--inner o-grid-row">
-			<div data-o-grid-colspan="12">
-				{{#unless @root.flags.mastheadV2}}
-					<div class="next-header__logo next-header__logo--ft">
-						<a class="next-header__logo__link" data-trackable="logo" href="/" title="Go to homepage">
-							<abbr class="next-header__logo__name" title="Financial Times">FT</abbr>
-						</a>
-					</div>
-				{{/unless}}
-				{{>n-header-footer/templates/partials/primary-nav}}
-				{{>n-header-footer/templates/partials/primary-tools}}
-				{{#if @root.flags.mastheadV2}}
-					<h1 class="next-header__masthead__logo--mobile">
-						<a class="next-header__logo__link" data-trackable="logo-large" href="/" title="Go to homepage">
-							Financial Times
-						</a>
-					</h1>
-				{{/if}}
+		<div class="ad-placeholder ad-placeholder__banlb ad-placeholder__{{__name}}"></div>
+
+	<header
+	class="next-header {{#if @root.flags.mastheadV2}}next-header--v2{{/if}} "
+		data-trackable="header" >
+		<div class="next-header__row next-header__row--primary">
+			<div class="next-header__row--inner o-grid-row">
+				<div data-o-grid-colspan="12">
+						<div class="next-header__logo next-header__logo--ft">
+							<a class="next-header__logo__link" data-trackable="logo" href="/" title="Go to homepage">
+								<abbr class="next-header__logo__name" title="Financial Times">FT</abbr>
+							</a>
+						</div>
+					{{>n-header-footer/templates/partials/primary-tools}}
+					{{>n-header-footer/templates/partials/primary-nav}}
+				</div>
 			</div>
 		</div>
-	</div>
-</header>
+	</header>
+{{/if}}
