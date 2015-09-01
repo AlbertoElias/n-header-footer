@@ -16,7 +16,7 @@
 		transition: transform 150ms;
 
 		@include oGridRespondTo(M) {
-			position: static;
+			position: relative;
 		}
 
 		@include oGridRespondTo($until: M) {
@@ -50,8 +50,9 @@
 
 // FIXME grid overrides to cater for both grid versions
 
-.next-header--v2 {
+.next-header-v2 {
 	.next-header__row--inner {
+		// @include dark_border_vert;
 		min-width: 280px; // can't fit below that.
 
 		padding-left: 0;
