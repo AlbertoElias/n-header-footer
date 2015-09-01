@@ -1,4 +1,4 @@
-@include oColorsSetColor('nav-warS', #f6f4f0);
+@include oColorsSetColor('nav-warm,', #f6f4f0);
 @include oColorsSetColor('nav-heading', #e1e0dc);
 @include oColorsSetColor('sub-nav-border', #cdceca);
 @include oColorsSetColor('nav-warm-1', #e6ded4);
@@ -70,11 +70,16 @@ label > * {
 		font-size: 16px;
 	}
 
+	&.next-navigation__link--active {
+		background: oColorsGetPaletteColor('cold-1');
+	}
+
 	&:hover,
 	&:focus {
 		text-decoration: underline;
 	}
 }
+
 .next-navigation__link--top-level.v2 {
 	display: inline-block;
 	color: inherit;
@@ -82,8 +87,16 @@ label > * {
 	border: 0;
 	cursor: pointer;
 	line-height: 43px;
-	background-color: oColorsGetPaletteColor('cold-2');
 	text-transform: uppercase;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+
+	&.next-navigation__link--active {
+		background: oColorsGetPaletteColor('cold-1');
+	}
 
 	// Just incase a <button> is used
 	&::-moz-focus-inner {
