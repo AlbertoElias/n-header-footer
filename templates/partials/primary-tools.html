@@ -1,8 +1,8 @@
 <nav class="next-header__primary-tools js-primary-tools" role="navigation" aria-label="Useful tools">
 	<ul class="next-header__primary-tools__items">
-		{{> n-header-footer/templates/partials/myft-tools }}
 
 		{{#unless @root.flags.mastheadV2}}
+			{{> n-header-footer/templates/partials/myft-tools }}
 			{{> n-header-footer/templates/partials/membership-tools }}
 		{{/unless}}
 
