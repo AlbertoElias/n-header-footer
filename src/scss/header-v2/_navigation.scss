@@ -67,11 +67,11 @@ label > * {
 	@include oGridRespondTo(M) {
 		padding: 0 7px;
 		font-size: 16px;
+		&.next-navigation__link--active {
+			background: oColorsGetPaletteColor('cold-1');
+		}
 	}
 
-	&.next-navigation__link--active {
-		background: oColorsGetPaletteColor('cold-1');
-	}
 
 	&:hover,
 	&:focus {
