@@ -12,14 +12,14 @@ var transitionEventName = function(el) {
 	  transition = 'transitionend';
 	} else if('onwebkittransitionend' in window) {
 	  transition = 'webkitTransitionEnd';
-	} else if('onotransitionend' in el || navigator.appName == 'Opera') {
+	} else if('onotransitionend' in el || navigator.appName === 'Opera') {
 	  transition = 'oTransitionEnd';
 	} else {
 	  transition = false;
 	}
 
 	return transition;
-}
+};
 
 module.exports = {
 
