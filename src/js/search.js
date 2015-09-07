@@ -9,13 +9,13 @@ var transitionEventName = function(el) {
 	var transition;
 
 	if('ontransitionend' in window) {
-	  transition = 'transitionend';
+		transition = 'transitionend';
 	} else if('onwebkittransitionend' in window) {
-	  transition = 'webkitTransitionEnd';
+		transition = 'webkitTransitionEnd';
 	} else if('onotransitionend' in el || navigator.appName === 'Opera') {
-	  transition = 'oTransitionEnd';
+		transition = 'oTransitionEnd';
 	} else {
-	  transition = false;
+		transition = false;
 	}
 
 	return transition;
@@ -36,9 +36,9 @@ module.exports = {
 			}
 		});
 
-		var form = document.querySelector('.next-header-v2__search-form');
-		var toggle = document.querySelector('.next-header-v2__search-toggle');
-		var input = document.querySelector('.next-header-v2__search-form #search-term');
+		var form = document.querySelector('.js-search');
+		var toggle = document.querySelector('.js-search-toggle');
+		var input = document.querySelector('#search-term');
 
 		var transition = transitionEventName(form);
 		var transitionHandler = function() {
