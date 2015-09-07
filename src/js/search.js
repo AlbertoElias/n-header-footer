@@ -5,7 +5,7 @@ var Typeahead = require('./typeahead');
 var isOutside = require('./is-outside');
 
 // Source: https://gist.github.com/davidcalhoun/702826
-var transitionEvenName = function(el) {
+var transitionEventName = function(el) {
 	var transition;
 
 	if('ontransitionend' in window) {
@@ -40,12 +40,18 @@ module.exports = {
 		var toggle = document.querySelector('.next-header-v2__search-toggle');
 		var input = document.querySelector('.next-header-v2__search-form #search-term');
 
-		var transition = transitionEvenName(form);
-		form.addEventListener(transition, function() {
+		var transition = transitionEventName(form);
+		var transitionHandler = function() {
 			var visibility = getComputedStyle(form, null).getPropertyValue('visibility');
 
-			if(visibility == 'visible')
+			if(visibility === 'visible')
 				input.focus();
+
+			form.removeEventListener(transition, transitionHandler);
+		};
+
+		toggle.addEventListener('click', function() {
+			form.addEventListener(transition, transitionHandler);
 		});
 
 		if (flags.get('typeahead')) {
