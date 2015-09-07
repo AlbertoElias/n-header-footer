@@ -50,9 +50,11 @@ module.exports = {
 			form.removeEventListener(transition, transitionHandler);
 		};
 
-		toggle.addEventListener('click', function() {
-			form.addEventListener(transition, transitionHandler);
-		});
+		if(toggle) {
+			toggle.addEventListener('click', function() {
+				form.addEventListener(transition, transitionHandler);
+			});
+		}
 
 		if (flags.get('typeahead')) {
 			new Typeahead(
