@@ -4,6 +4,23 @@
 var Typeahead = require('./typeahead');
 var isOutside = require('./is-outside');
 
+// Source: https://gist.github.com/davidcalhoun/702826
+var transitionEvenName = function(el) {
+	var transition;
+
+	if('ontransitionend' in window) {
+	  transition = 'transitionend';
+	} else if('onwebkittransitionend' in window) {
+	  transition = 'webkitTransitionEnd';
+	} else if('onotransitionend' in el || navigator.appName == 'Opera') {
+	  transition = 'oTransitionEnd';
+	} else {
+	  transition = false;
+	}
+
+	return transition;
+}
+
 module.exports = {
 
 	init: function(flags) {
@@ -17,6 +34,18 @@ module.exports = {
 				header.classList.toggle('next-header--searching');
 				header.querySelector('.next-header__search-form__input').focus();
 			}
+		});
+
+		var form = document.querySelector('.next-header-v2__search-form');
+		var toggle = document.querySelector('.next-header-v2__search-toggle');
+		var input = document.querySelector('.next-header-v2__search-form #search-term');
+
+		var transition = transitionEvenName(form);
+		form.addEventListener(transition, function() {
+			var visibility = getComputedStyle(form, null).getPropertyValue('visibility');
+
+			if(visibility == 'visible')
+				input.focus();
 		});
 
 		if (flags.get('typeahead')) {

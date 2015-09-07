@@ -66,22 +66,33 @@
 	visibility: hidden;
 	position: absolute;
 	overflow: hidden;
-	padding: 0 52px;
+	padding: 0 50px;
 	top: 2px;
 	bottom: 2px;
-	right: -14px;
+	right: -10px;
 	width: 0;
 	z-index: 1;
 	transition: 0.2s width 0.25s ease-out, 0.2s left 0.25s ease-out, 0.2s right 0.25s ease-out;
 
+	// FIXME There is something weird going on with the alignment of things
+
+	@include oGridRespondTo(M) {
+		padding: 0 54px;
+	}
+
 	@include oGridRespondTo(L) {
-		right: -6px;
+		padding: 0 51px;
+		right: -4px;
 	};
 
 	.next-header-v2__search-checkbox:checked ~ & {
 		visibility: visible;
-		right: 52px;
+		right: 46px;
 		width: 100%;
+
+		@include oGridRespondTo(L) {
+			right: 40px;
+		};
 	}
 
 	.next-header__search-form__input {
@@ -92,10 +103,16 @@
 		padding: 0.5em;
 		border: 0;
 		border-radius: 0;
-		outline: none;
 		font-family: inherit;
 		font-size: inherit;
 		color: white;
+
+		&:focus,
+		&:active {
+			outline: none;
+			border: 0;
+	    box-shadow: inset 0 0 3px 1px #525151;
+		}
 	}
 
 	.next-header-v2__search-form__button {
