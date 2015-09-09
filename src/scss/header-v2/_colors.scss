@@ -14,3 +14,4 @@
 @include oColorsSetUseCase(header, border, 'grey-tint3');
 @include oColorsSetUseCase(nav-separator, border, 'nav-separator');
 @include oColorsSetUseCase(nav-separator, background, 'black');
+@include oColorsSetUseCase(nav-search-placeholder, text, 'warm-5');

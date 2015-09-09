@@ -6,9 +6,9 @@
 	</a>
 </label>
 <form action="/search" class="js-search next-header-v2__search-form" data-trackable="search-form" role="search">
-	<label for="search-term" class="u-visually-hidden">Site search</label>
-	<input id="search-term" type="search" name="q" class="next-header__search-form__input o-forms-text" placeholder="Start typing to search the Financial Times"{{#if searchQuery}} value="{{searchQuery}}"{{/if}} autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+	<input id="search-term" type="search" name="q" class="next-header__search-form__input o-forms-text" {{#if searchQuery}} value="{{searchQuery}}"{{/if}} autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
 	data-trackable="search-input" {{#ifAll headerData headerData.searchTerm}}{{#ifEquals headerData.searchTerm true}}{{else}} value="{{headerData.searchTerm}}"{{/ifEquals}}{{/ifAll}}/>
+	<label for="search-term" class="js-search-placeholder next-header__search-form__label">Type to search the Financial Times</label>
 	<button class="next-header-v2__search-form__button" for="search" data-trackable="search-button">
 		<span>Search</span>
 	</button>

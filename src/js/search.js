@@ -39,6 +39,7 @@ module.exports = {
 		var form = document.querySelector('.js-search');
 		var toggle = document.querySelector('.js-search-toggle');
 		var input = document.querySelector('#search-term');
+		var placeholder = document.querySelector('.js-search-placeholder');
 
 		var transition = transitionEventName(form);
 		var transitionHandler = function() {
@@ -49,6 +50,16 @@ module.exports = {
 
 			form.removeEventListener(transition, transitionHandler);
 		};
+
+		if(placeholder) {
+			input.addEventListener('keyup', function() {
+				if(input.value.length > 0) {
+					placeholder.style.display = 'none';
+				} else {
+					placeholder.style.display = 'block';
+				}
+			});
+		}
 
 		if(toggle) {
 			toggle.addEventListener('click', function() {
