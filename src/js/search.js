@@ -63,7 +63,11 @@ module.exports = {
 
 		if(toggle) {
 			toggle.addEventListener('click', function() {
-				form.addEventListener(transition, transitionHandler);
+				if(transition) {
+					form.addEventListener(transition, transitionHandler);
+				} else {
+					setTimeout(transitionHandler, 300);
+				}
 			});
 		}
 

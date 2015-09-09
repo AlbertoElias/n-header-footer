@@ -37,7 +37,7 @@ Suggest.prototype.init = function () {
 	if(this.showAllItem) {
 		this.viewAllItem = document.createElement('li');
 		this.viewAllItem.classList.add('typeahead__view-all');
-		this.viewAllItem.innerHTML = '<button type="submit" data-trackable="view-all">View All Results</button>';
+		this.viewAllItemInnerHTML = '<button type="submit" data-trackable="view-all">View All Results</button>';
 	}
 
 	this.delegate = new Delegate(this.container);
@@ -178,8 +178,10 @@ Suggest.prototype.suggest = function (suggestions) {
 			}
 		}.bind(this));
 
-		if(this.viewAllItem)
+		if(this.viewAllItem) {
 			self.suggestionList.appendChild(this.viewAllItem);
+			this.viewAllItem.innerHTML = this.viewAllItemInnerHTML; // IE seriously, WTF??
+		}
 
 		this.show();
 	} else {
