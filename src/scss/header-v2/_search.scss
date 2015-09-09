@@ -4,7 +4,7 @@
 .next-header-v2 .next-header__primary-tools__search {
 	line-height: 24px;
 
-	a:-webkit-any-link {
+	a {
 		text-decoration: none !important;
 	}
 }
@@ -73,6 +73,7 @@
 .next-header-v2__search-form {
 	@include oColorsFor(nav, background);
 	visibility: hidden;
+	overflow: hidden;
 	position: absolute;
 	box-sizing: border-box;
 	padding: 0 50px;
