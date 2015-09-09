@@ -1,16 +1,4 @@
-@include oColorsSetColor('nav-warm,', #f6f4f0);
-@include oColorsSetColor('nav-heading', #e1e0dc);
-@include oColorsSetColor('sub-nav-border', #cdceca);
-@include oColorsSetColor('nav-warm-1', #e6ded4);
-
-@include oColorsSetUseCase(nav, text, 'white');
-@include oColorsSetUseCase(nav, background, 'grey-tint5');
-@include oColorsSetUseCase(link-hover, text, 'blue-2');
-@include oColorsSetUseCase(sub-nav, text, 'nav-warm-1');
-@include oColorsSetUseCase(sub-nav-heading, background, 'nav-warm');
-@include oColorsSetUseCase(sub-nav, background, 'cold-2');
-@include oColorsSetUseCase(sub-nav-hover, background, 'nav-warm-1');
-@include oColorsSetUseCase(header, border, 'grey-tint3');
+@import 'colors';
 
 label > * {
 	pointer-events: none;
@@ -79,7 +67,7 @@ label > * {
 	}
 }
 
-.next-navigation__link--top-level.v2 {
+.next-header-v2 .next-navigation__link--top-level {
 	display: inline-block;
 	color: inherit;
 	background: none;
@@ -109,7 +97,6 @@ label > * {
 	padding-right: 15px;
 	min-height: 32px;
 	line-height: 32px;
-	font-weight: 500;
 	font-size: 14px;
 
 	@include oGridRespondTo(M) {

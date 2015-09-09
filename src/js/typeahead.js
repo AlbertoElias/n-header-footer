@@ -17,11 +17,12 @@ var debounce = function(fn,delay){
 		};
 };
 
-function Suggest(el, dataSrc) {
+function Suggest(el, dataSrc, flags) {
 	this.container = el;
 	this.searchEl = el.querySelector('input[type="search"]');
 	this.dataSrc = dataSrc;
 	this.minLength = 2;
+	this.showAllItem = flags.get('mastheadV2');
 	this.init();
 }
 
@@ -32,6 +33,13 @@ Suggest.prototype.init = function () {
 	this.suggestionList = document.createElement('ul');
 	this.suggestionList.classList.add('typeahead');
 	this.container.querySelector('form').appendChild(this.suggestionList);
+
+	if(this.showAllItem) {
+		this.viewAllItem = document.createElement('li');
+		this.viewAllItem.classList.add('typeahead__view-all');
+		this.viewAllItemInnerHTML = '<button type="submit" data-trackable="view-all">View All Results</button>';
+	}
+
 	this.delegate = new Delegate(this.container);
 	this.bodyDelegate = new Delegate(document.body);
 	this.suggest = this.suggest.bind(this);
@@ -169,6 +177,12 @@ Suggest.prototype.suggest = function (suggestions) {
 						suggestion.name + '</a></li>');
 			}
 		}.bind(this));
+
+		if(this.viewAllItem) {
+			self.suggestionList.appendChild(this.viewAllItem);
+			this.viewAllItem.innerHTML = this.viewAllItemInnerHTML; // IE seriously, WTF??
+		}
+
 		this.show();
 	} else {
 		this.hide();
