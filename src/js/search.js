@@ -38,7 +38,7 @@ module.exports = {
 
 		var form = document.querySelector('.js-search');
 		var toggle = document.querySelector('.js-search-toggle');
-		var input = document.querySelector('#search-term');
+		var input = document.querySelector('.js-search-input');
 		var placeholder = document.querySelector('.js-search-placeholder');
 
 		var transition = transitionEventName(form);
@@ -72,11 +72,20 @@ module.exports = {
 		}
 
 		if (flags.get('typeahead')) {
-			new Typeahead(
-				header.querySelector('.js-search'),
+			var container = (flags.get('mastheadV2') ?  header.querySelector('.js-suggestions-container') : header.querySelector('.js-search'));
+
+			var typeahead = new Typeahead(
+				container,
+				input,
 				'//' + window.location.host + '/search-suggestions?flatten=true&limit=5&q=',
 				flags
 			);
+
+			if(toggle) {
+				toggle.addEventListener('click', function() {
+					typeahead.hide();
+				});
+			}
 		}
 	}
 

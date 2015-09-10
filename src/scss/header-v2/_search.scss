@@ -178,12 +178,13 @@
 		}
 }
 
-.next-header-v2__search-form {
+.next-header-v2 {
 	.typeahead {
 		list-style: none;
 		position: absolute;
-		left: 42px;
-		right: -50px;
+		left: 0;
+		right: 0;
+		top: 43px;
 		border: 0;
 		background-color: #fcfcfc;
 		color: oColorsGetPaletteColor('grey-tint5');
@@ -192,10 +193,6 @@
 		margin: 0px 5px;
 		padding: 0;
 		display: none;
-
-		@include oGridRespondTo(M) {
-			right: -44px;
-		}
 	}
 
 	.typeahead--active {
