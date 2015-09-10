@@ -38,7 +38,7 @@ module.exports = {
 
 		var form = document.querySelector('.js-search');
 		var toggle = document.querySelector('.js-search-toggle');
-		var input = document.querySelector('#search-term');
+		var input = document.querySelector('.js-search-input');
 		var placeholder = document.querySelector('.js-search-placeholder');
 
 		var transition = transitionEventName(form);
@@ -72,15 +72,7 @@ module.exports = {
 		}
 
 		if (flags.get('typeahead')) {
-			var container, input;
-
-			if (flags.get('mastheadV2')) {
-				container = header.querySelector('.js-primary-row > div');
-				input = header.querySelector('.js-search input[type="search"]');
-			} else {
-			 	container = header.querySelector('.js-search');
- 				input = container.querySelector('input[type="search"]');
-			}
+			var container = (flags.get('mastheadV2') ?  header.querySelector('.js-suggestions-container') : header.querySelector('.js-search'));
 
 			var typeahead = new Typeahead(
 				container,
