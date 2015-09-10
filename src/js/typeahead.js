@@ -17,9 +17,9 @@ var debounce = function(fn,delay){
 		};
 };
 
-function Suggest(el, dataSrc, flags) {
-	this.container = el;
-	this.searchEl = el.querySelector('input[type="search"]');
+function Suggest(container, input, dataSrc, flags) {
+	this.container = container;
+	this.searchEl = input;
 	this.dataSrc = dataSrc;
 	this.minLength = 2;
 	this.showAllItem = flags.get('mastheadV2');
@@ -32,7 +32,7 @@ Suggest.prototype.init = function () {
 	this.suggestions = [];
 	this.suggestionList = document.createElement('ul');
 	this.suggestionList.classList.add('typeahead');
-	this.container.querySelector('form').appendChild(this.suggestionList);
+	this.container.appendChild(this.suggestionList);
 
 	if(this.showAllItem) {
 		this.viewAllItem = document.createElement('li');
