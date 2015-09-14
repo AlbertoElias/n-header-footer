@@ -28,6 +28,7 @@
 }
 .next-header__row--inner {
 	position: relative;
+	min-height: 45px;
 }
 .next-header__row--primary {
 	background: $next-header-primary-bg;
