@@ -134,6 +134,11 @@ label > * {
 				font-weight: bold;
 				color: oColorsGetPaletteColor('grey-tint5');
 			}
+
+			&:checked ~ .next-navigation-v2__link--sub-level-header:after {
+				background-color: oColorsGetColorFor(sub-nav-hover, background);
+				border-color: oColorsGetColorFor(sub-nav-hover, background);
+			}
 		}
 
 		&:checked ~ .next-navigation-v2__group__sub-items {
