@@ -83,6 +83,7 @@ module.exports = {
 				container,
 				input,
 				'//' + window.location.host + '/search-suggestions?flatten=true&limit=5&q=',
+				function(e) { form.submit(); },
 				flags
 			);
 
