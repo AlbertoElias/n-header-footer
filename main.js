@@ -8,9 +8,6 @@ var sticky = require('./src/js/sticky');
 function init(flags) {
 	subNav.init(flags);
 	search.init(flags);
-
-	var nav = document.querySelector('.next-header__row--primary');
-	if(nav) { sticky.init(nav, "next-header__row--primary--hidden", flags); }
 }
 
 module.exports.init = init;
