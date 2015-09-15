@@ -3,7 +3,6 @@
 
 var subNav = require('./src/js/sub-nav');
 var search = require('./src/js/search');
-var sticky = require('./src/js/sticky');
 
 function init(flags) {
 	subNav.init(flags);
