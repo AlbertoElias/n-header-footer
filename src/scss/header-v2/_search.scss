@@ -3,6 +3,7 @@
 
 .next-header-v2 .next-header__primary-tools__search {
 	line-height: 24px;
+	margin: 0;
 
 	a {
 		text-decoration: none !important;
@@ -11,6 +12,10 @@
 
 .next-header-v2__search-toggle {
 	cursor: pointer;
+	position: relative;
+	display: block;
+	height: 45px;
+	padding: 8px 0;
 
 	&:before {
 		content: "";
@@ -26,6 +31,7 @@
 	a:after {
 		@include nextIcon(search, oColorsGetPaletteColor('white'), 20);
 		content: '';
+		margin-top: 5px;
 	}
 
 	a {
@@ -35,10 +41,6 @@
 	a span {
 		width: 0;
 		overflow: hidden;
-
-		@include oGridRespondTo($until: M) {
-			line-height: 32px;
-		}
 	}
 
 	.next-header-v2__search-toggle-text--open {
@@ -77,32 +79,17 @@
 	position: absolute;
 	box-sizing: border-box;
 	padding: 0 50px;
-	top: 2px;
-	bottom: 2px;
+	top: 3px;
+	bottom: 3px;
 	right: -10px;
 	width: 0;
 	z-index: 1;
 	transition: 0.2s width 0.25s ease-out, 0.2s left 0.25s ease-out, 0.2s right 0.25s ease-out;
 
-	// FIXME There is something weird going on with the alignment of things
-
-	@include oGridRespondTo(M) {
-		padding: 0 54px;
-	}
-
-	@include oGridRespondTo(L) {
-		padding: 0 51px;
-		right: -4px;
-	};
-
 	.next-header-v2__search-checkbox:checked ~ & {
 		visibility: visible;
 		right: 46px;
 		width: 100%;
-
-		@include oGridRespondTo(L) {
-			right: 40px;
-		};
 	}
 
 	.next-header__search-form__input {
@@ -131,8 +118,11 @@
 		@include oColorsFor(nav, background);
 		margin-left: 40px;
 		position: absolute;
+		display: block;
+		padding: 2px 6px;
 		left: 0;
 		top: 0;
+		bottom: 0;
 		border: 0;
 		cursor: pointer;
 
@@ -190,7 +180,7 @@
 		color: oColorsGetPaletteColor('grey-tint5');
 		z-index: 11;
 		text-align: left;
-		margin: 0px 5px;
+		margin: 0px;
 		padding: 0;
 		display: none;
 	}

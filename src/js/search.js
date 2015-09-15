@@ -62,13 +62,18 @@ module.exports = {
 		}
 
 		if(toggle) {
-			toggle.addEventListener('click', function() {
+			var clickHandler = function() {
 				if(transition) {
 					form.addEventListener(transition, transitionHandler);
 				} else {
 					setTimeout(transitionHandler, 300);
 				}
-			});
+
+				return true;
+			};
+
+			toggle.addEventListener('touchend', clickHandler);
+			toggle.addEventListener('click', clickHandler);
 		}
 
 		if (flags.get('typeahead')) {
@@ -82,9 +87,12 @@ module.exports = {
 			);
 
 			if(toggle) {
-				toggle.addEventListener('click', function() {
+				var handler = function() {
 					typeahead.hide();
-				});
+				};
+
+				toggle.addEventListener('touchend', handler);
+				toggle.addEventListener('click', handler);
 			}
 		}
 	}
