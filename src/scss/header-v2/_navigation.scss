@@ -326,6 +326,7 @@ label > * {
 
 .next-navigation-v2__toggle {
 	display: block;
+	cursor: pointer;
 
 	@include oGridRespondTo(M) {
 		width: 90px;
