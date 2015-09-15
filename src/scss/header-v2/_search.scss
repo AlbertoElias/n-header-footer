@@ -156,6 +156,7 @@
 .next-header__search-form__label {
 		@include oColorsFor(nav-search-placeholder, text);
 		position: absolute;
+		display: none;
 		bottom: -8px;
 		left: 110px;
 		opacity: 0.8;

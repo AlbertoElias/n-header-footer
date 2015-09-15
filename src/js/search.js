@@ -52,6 +52,7 @@ module.exports = {
 		};
 
 		if(placeholder) {
+			placeholder.style.display = 'block';
 			input.addEventListener('keyup', function() {
 				if(input.value.length > 0) {
 					placeholder.style.display = 'none';
