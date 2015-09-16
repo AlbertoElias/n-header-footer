@@ -20,20 +20,20 @@
     {{else}}
       <li class="next-navigation-v2__group__item next-navigation-v2__group__item--mobile">
         <span class="next-navigation-v2__link--sub-level-header">
-          <a class="next-navigation-v2__link next-navigation-v2__link--sub-level {{#if selected}}next-navigation__link--active{{/if}}" href={{href}} data-trackable="{{name}}" >{{name}} > </a>
+          <a class="next-navigation-v2__link next-navigation-v2__link--sub-level next-navigation__link--outbound {{#if selected}}next-navigation__link--active{{/if}}" href={{href}} data-trackable="{{name}}" >{{name}}</a>
         </span>
       </li>
     {{/if}}
   {{/each}}
 
   {{> n-header-footer/templates/partials/myft-tools }}
-  {{> n-header-footer/templates/partials/membership-tools}}
+  {{> n-header-footer/templates/partials/membership-tools }}
 
   <li class="next-navigation-v2__group__item next-navigation-v2__group__item--desktop">
     {{#each all}}
       {{#unless children}}
         <span class="next-navigation-v2__link--sub-level-header">
-          <a class="next-navigation-v2__link next-navigation-v2__link--sub-level {{#if selected}}next-navigation__link--active{{/if}}" href={{href}} data-trackable="{{name}}" >{{name}} > </a>
+          <a class="next-navigation-v2__link next-navigation-v2__link--sub-level next-navigation__link--outbound {{#if selected}}next-navigation__link--active{{/if}}" href={{href}} data-trackable="{{name}}" >{{name}}</a>
         </span>
       {{/unless}}
     {{/each}}

@@ -125,26 +125,35 @@ label > * {
 		&:after { @include dark_border_bottom; }
 	}
 }
+
 .next-navigation-v2__link--radio {
-		display: none;
+	display: none;
 
-		@include oGridRespondTo($until: M) {
-			&:checked ~ .next-navigation-v2__link--sub-level-header {
-				@include oColorsFor(sub-nav-hover, background);
-				text-decoration: none;
-				font-weight: bold;
-				color: oColorsGetPaletteColor('grey-tint5');
-			}
-
-			&:checked ~ .next-navigation-v2__link--sub-level-header:after {
-				background-color: oColorsGetColorFor(sub-nav-hover, background);
-				border-color: oColorsGetColorFor(sub-nav-hover, background);
-			}
+	@include oGridRespondTo($until: M) {
+		&:checked ~ .next-navigation-v2__link--sub-level-header {
+			@include oColorsFor(sub-nav-hover, background);
+			text-decoration: none;
+			font-weight: bold;
+			color: oColorsGetPaletteColor('grey-tint5');
 		}
 
-		&:checked ~ .next-navigation-v2__group__sub-items {
-			display: block;
+		&:checked ~ .next-navigation-v2__link--sub-level-header:after {
+			background-color: oColorsGetColorFor(sub-nav-hover, background);
+			border-color: oColorsGetColorFor(sub-nav-hover, background);
 		}
+	}
+
+	&:checked ~ .next-navigation-v2__group__sub-items {
+		display: block;
+	}
+}
+
+.next-navigation__link--outbound:after {
+	@include nextIcon(arrow-right, oColorsGetColorFor(nav, text), 10);
+	content: '';
+	padding-left: 0.5em;
+	margin-bottom: -0.05em;
+	margin-right: -0.5em;
 }
 
 .next-navigation-v2__link__text--mobile {
