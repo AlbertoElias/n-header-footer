@@ -25,6 +25,27 @@ module.exports = {
 						document.body.style.position = 'static';
 					}
 				});
+
+			var decorateNavItem = function(el) {
+				var label = el.querySelector('.next-navigation-v2__link--sub-level-header');
+				var toggle = el.querySelector('.next-navigation-v2__link--radio');
+
+				if(!toggle || !label) return;
+
+				var handler = function() {
+					if(!toggle.checked) return;
+
+					document.location.href = label.dataset.navigationHref;
+				};
+
+				label.addEventListener('touchend', handler);
+				label.addEventListener('click', handler);
+			};
+
+			var headers = document.querySelectorAll('.next-navigation-v2__sub-nav .next-navigation-v2__group__item');
+			for(var i = 0; i < headers.length; i++) {
+				decorateNavItem(headers[i]);
+			}
 		}
 
 		if (flags.get('globalNavigation') && !flags.get('mastheadV2')) {

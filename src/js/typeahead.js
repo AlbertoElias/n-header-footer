@@ -17,9 +17,10 @@ var debounce = function(fn,delay){
 		};
 };
 
-function Suggest(container, input, dataSrc, flags) {
+function Suggest(container, input, dataSrc, showAllHandler, flags) {
 	this.container = container;
 	this.searchEl = input;
+	this.showAllHandler = showAllHandler;
 	this.dataSrc = dataSrc;
 	this.minLength = 2;
 	this.showAllItem = flags.get('mastheadV2');
@@ -181,6 +182,7 @@ Suggest.prototype.suggest = function (suggestions) {
 		if(this.viewAllItem) {
 			self.suggestionList.appendChild(this.viewAllItem);
 			this.viewAllItem.innerHTML = this.viewAllItemInnerHTML; // IE seriously, WTF??
+			this.viewAllItem.children[0].addEventListener('click', this.showAllHandler);
 		}
 
 		this.show();

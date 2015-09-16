@@ -52,6 +52,7 @@ module.exports = {
 		};
 
 		if(placeholder) {
+			placeholder.style.display = 'block';
 			input.addEventListener('keyup', function() {
 				if(input.value.length > 0) {
 					placeholder.style.display = 'none';
@@ -62,13 +63,18 @@ module.exports = {
 		}
 
 		if(toggle) {
-			toggle.addEventListener('click', function() {
+			var clickHandler = function() {
 				if(transition) {
 					form.addEventListener(transition, transitionHandler);
 				} else {
 					setTimeout(transitionHandler, 300);
 				}
-			});
+
+				return true;
+			};
+
+			toggle.addEventListener('touchend', clickHandler);
+			toggle.addEventListener('click', clickHandler);
 		}
 
 		if (flags.get('typeahead')) {
@@ -78,13 +84,17 @@ module.exports = {
 				container,
 				input,
 				'//' + window.location.host + '/search-suggestions?flatten=true&limit=5&q=',
+				function(e) { form.submit(); },
 				flags
 			);
 
 			if(toggle) {
-				toggle.addEventListener('click', function() {
+				var handler = function() {
 					typeahead.hide();
-				});
+				};
+
+				toggle.addEventListener('touchend', handler);
+				toggle.addEventListener('click', handler);
 			}
 		}
 	}
