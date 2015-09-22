@@ -37,6 +37,10 @@
 			width: 336px;
 		}
 
+		&:hover {
+			color: transparent;
+		}
+
 		&:after {
 			content: none;
 		}
@@ -75,6 +79,10 @@
 		@include oGridRespondTo(S) {
 			height: 21px;
 			width: 265px;
+		}
+
+		&:hover {
+			color: transparent;
 		}
 
 		&:after {

@@ -25,6 +25,14 @@
 			}
 		}
 	}
+
+	a {
+		border-bottom: 0;
+	}
+
+	a:hover {
+		color: inherit;
+	}
 }
 .next-header__row--inner {
 	position: relative;
