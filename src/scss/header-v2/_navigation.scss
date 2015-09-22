@@ -27,6 +27,12 @@ label > * {
 	height: 100%;
 	background: oColorsGetPaletteColor('cold-2');
 }
+.next-navigation-v2__group__items {
+	@include oGridRespondTo($until: M) {
+		background: center url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAAFCAYAAAC9+YhwAAAAAXNSR0IArs4c6QAAAIFJREFUaAXt16ENACAMBEBgpU6MZgG2gwVogqi8yk/z4tz3iDjNESBAgMCXwF7z688TAQIECBAg8BYY71hKgAABAgQIECBAgACBegEDpN5UIwECBAgQIECAAAECiYABksCICRAgQIAAAQIECBCoFzBA6k01EiBAgAABAgQIECCQCFyl4wOmY4gKVQAAAABJRU5ErkJggg==');
+		background-position: 42%;
+	}
+}
 .next-navigation-v2 { @include oColorsFor(nav, text background); }
 .next-navigation-v2__group {
 	display: inline-block;
@@ -95,7 +101,7 @@ label > * {
 
 	@include oGridRespondTo(M) {
 		min-height: 0;
-		line-height: 2.2;
+		line-height: 1.5;
 		font-size: 14px;
 	}
 }
@@ -103,7 +109,6 @@ label > * {
 .next-navigation-v2__link--sub-level-header {
 	@include oGridColumn(5);
 	padding: 0 15px 0 0;
-	text-transform: uppercase;
 	cursor: pointer;
 
 	@include oGridRespondTo(M) {
@@ -180,7 +185,7 @@ label > * {
 	padding: 0 0 20px;
 	position: absolute;
 	left: 0;
-	transition: 0.2s opacity 0.25s ease, 0s left 0.25s step-end;
+	transition: 0.1s opacity 0.25s ease, 0s left 0.25s step-end;
 
 	.next-navigation-v2--nav & {
 		visibility: hidden;
@@ -226,7 +231,7 @@ label > * {
 }
 
 .next-navigation-v2__group__sub-items {
-	padding: 0 0 10px 15px;
+	padding: 10px 0 10px 15px;
 	list-style: none;
 	text-transform: none;
 
@@ -249,7 +254,7 @@ label > * {
 
 .next-navigation-v2__group__sub-item { display: block; }
 .next-header-v2 .next-header-v2__primary-tools__myft { display: inline-block; }
-.next-navigation-v2__sub-nav {
+.next-navigation-v2 {
 	.next-header__primary-tools__item.next-header__primary-tools__item--account {
 		&.next-header__primary-tools__item--logged-in,
 		&.next-header__primary-tools__item--logged-out {
@@ -351,6 +356,7 @@ label > * {
 				right: 0;
 				left: 0;
 				z-index: 1;
+				overflow-y: scroll;
 			}
 
 			& ~ .next-navigation-v2__toggle .next-navigation-v2__link--top-level.js-sub-nav-toggle {
