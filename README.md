@@ -1,4 +1,4 @@
-# n-header-footer [![Build Status](https://travis-ci.org/Financial-Times/n-header-footer.svg?branch=new-header)](https://travis-ci.org/Financial-Times/n-header-footer)
+# n-header-footer [![Circle CI](https://circleci.com/gh/Financial-Times/n-header-footer/tree/master.svg?style=svg)](https://circleci.com/gh/Financial-Times/n-header-footer/tree/master)
 
 Header and footer for next.ft.com sites
 
