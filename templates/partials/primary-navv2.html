@@ -16,12 +16,11 @@
 				</label>
 				<input class="next-navigation-v2__checkbox" type="checkbox" id="sub-nav" name="sub-nav" value="">
 				<ol class="next-navigation-v2__group__items next-navigation-v2__group__items--nested o-expander__content" data-trackable="secondary-navigation">
-					{{> n-header-footer/templates/partials/navigation/all-templatev2 nav=topLevelNav all=nav}}
+					{{> n-header-footer/templates/partials/navigation/all-templatev2 nav=topLevelNavNew all=navNew}}
 				</ol>
 			</li>
 
-			{{> n-header-footer/templates/partials/navigation/nav-template nav=topLevelNav all=nav}}
-
+			{{> n-header-footer/templates/partials/navigation/nav-template nav=topLevelNavNew all=navNew}}
 		</ol>
 	</nav>
 {{/if}}
