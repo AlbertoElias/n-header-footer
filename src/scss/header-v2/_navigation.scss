@@ -19,7 +19,6 @@ label > * {
 }
 
 .next-header-v2 .next-header__row--primary {
-	&:before,
 	&:before { top: 0; }
 	&:after { bottom: 0; }
 }
@@ -194,6 +193,8 @@ label > * {
 	padding: 0 0 20px;
 	position: absolute;
 	left: 0;
+	// HACK: transition delay is necessary, otherwise the animation
+	// pretty much doesn't happen. Possibly a performance issue?
 	transition: 0.1s opacity 0.25s ease, 0s left 0.25s step-end;
 
 	.next-navigation-v2--nav & {
