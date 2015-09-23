@@ -18,17 +18,6 @@
 	padding: 8px 0;
 	box-sizing: border-box;
 
-	&:before {
-		content: "";
-		height: 100%;
-		background-color: oColorsGetPaletteColor('black');
-		width: 1px;
-		display: block;
-		border-right: 1px solid oColorsGetColorFor(nav-separator, border);
-		position: absolute;
-		top: 0;
-	}
-
 	a:after {
 		@include nextIcon(search, oColorsGetPaletteColor('white'), 20);
 		content: '';
@@ -97,7 +86,7 @@
 		background-color: transparent;
 		width: 100%;
 		height: 100%;
-		margin-left: 40px;
+		margin-left: 45px;
 		padding-top: 2px;
 		padding-left: 12px;
 		border: 0;
@@ -126,18 +115,6 @@
 		bottom: 0;
 		border: 0;
 		cursor: pointer;
-
-		&:before,
-		&:after {
-			@include oColorsFor(nav-separator, background);
-			content: "";
-			height: 100%;
-			width: 1px;
-			display: block;
-			border-right: 1px solid oColorsGetColorFor(nav-separator, border);
-			position: absolute;
-			top: 0;
-		}
 
 		&:after {
 			right: 0;

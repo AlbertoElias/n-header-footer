@@ -1,12 +1,11 @@
 /*jshint node:true,browser:true,-W030*/
-'use strict';
 
-var Typeahead = require('./typeahead');
-var isOutside = require('./is-outside');
+const Typeahead = require('./typeahead');
+const isOutside = require('./is-outside');
 
 // Source: https://gist.github.com/davidcalhoun/702826
-var transitionEventName = function(el) {
-	var transition;
+const transitionEventName = function(el) {
+	let transition;
 
 	if('ontransitionend' in window) {
 		transition = 'transitionend';
@@ -24,7 +23,7 @@ var transitionEventName = function(el) {
 module.exports = {
 
 	init: function(flags) {
-		var header = document.querySelector('.next-header');
+		const header = document.querySelector('.next-header');
 
 		// handle clicking outside the subnav to collapse
 		document.addEventListener('click', function (ev) {
@@ -36,14 +35,14 @@ module.exports = {
 			}
 		});
 
-		var form = document.querySelector('.js-search');
-		var toggle = document.querySelector('.js-search-toggle');
-		var input = document.querySelector('.js-search-input');
-		var placeholder = document.querySelector('.js-search-placeholder');
+		const form = document.querySelector('.js-search');
+		const toggle = document.querySelector('.js-search-toggle');
+		const input = document.querySelector('.js-search-input');
+		const placeholder = document.querySelector('.js-search-placeholder');
 
-		var transition = transitionEventName(form);
-		var transitionHandler = function() {
-			var visibility = getComputedStyle(form, null).getPropertyValue('visibility');
+		const transition = transitionEventName(form);
+		const transitionHandler = function() {
+			const visibility = getComputedStyle(form, null).getPropertyValue('visibility');
 
 			if(visibility === 'visible')
 				input.focus();
@@ -63,7 +62,7 @@ module.exports = {
 		}
 
 		if(toggle) {
-			var clickHandler = function() {
+			const clickHandler = function() {
 				if(transition) {
 					form.addEventListener(transition, transitionHandler);
 				} else {
@@ -78,18 +77,18 @@ module.exports = {
 		}
 
 		if (flags.get('typeahead')) {
-			var container = (flags.get('mastheadV2') ?  header.querySelector('.js-suggestions-container') : header.querySelector('.js-search'));
+			const container = (flags.get('mastheadV2') ? header.querySelector('.js-suggestions-container') : header.querySelector('.js-search'));
 
-			var typeahead = new Typeahead(
+			const typeahead = new Typeahead(
 				container,
 				input,
 				'//' + window.location.host + '/search-suggestions?flatten=true&limit=5&q=',
-				function(e) { form.submit(); },
+				function() { form.submit(); },
 				flags
 			);
 
 			if(toggle) {
-				var handler = function() {
+				const handler = function() {
 					typeahead.hide();
 				};
 

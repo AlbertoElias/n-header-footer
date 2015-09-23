@@ -1,13 +1,11 @@
-'use strict';
-
-var nav = require('./navigation');
+const nav = require('./navigation');
 
 module.exports = {
 
 	init: function (flags) {
 		nav.init(flags);
 
-		var header = document.querySelector('.next-header');
+		const header = document.querySelector('.next-header');
 
 		if (flags.get('mastheadV2')) {
 			document

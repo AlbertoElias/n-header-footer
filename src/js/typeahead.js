@@ -1,16 +1,14 @@
 /*global fetch*/
-"use strict";
+const Delegate = require('dom-delegate');
+const isOutside = require('./is-outside');
 
-var Delegate = require('dom-delegate');
-var isOutside = require('./is-outside');
-
-var debounce = function(fn,delay){
-		var timeoutId;
+const debounce = function(fn,delay){
+		let timeoutId;
 		return function debounced(){
 				if(timeoutId){
 						clearTimeout(timeoutId);
 				}
-				var args = arguments;
+				const args = arguments;
 				timeoutId = setTimeout(function() {
 						fn.apply(this, args);
 				}.bind(this), delay);
@@ -28,7 +26,7 @@ function Suggest(container, input, dataSrc, showAllHandler, flags) {
 }
 
 Suggest.prototype.init = function () {
-	var self = this;
+	const self = this;
 
 	this.suggestions = [];
 	this.suggestionList = document.createElement('ul');
@@ -124,7 +122,7 @@ Suggest.prototype.onSuggestionKey = function (ev) {
 	}
 
 	if (ev.which === 40) { // down arrow pressed
-		var nextLi = ev.target.parentNode.nextSibling;
+		const nextLi = ev.target.parentNode.nextSibling;
 		if (nextLi) {
 			nextLi.firstChild.focus();
 		}
@@ -132,7 +130,7 @@ Suggest.prototype.onSuggestionKey = function (ev) {
 	}
 
 	if (ev.which === 38) { // up arrow pressed
-		var previousLi = ev.target.parentNode.previousSibling;
+		const previousLi = ev.target.parentNode.previousSibling;
 		if (previousLi) {
 			previousLi.firstChild.focus();
 		} else {
@@ -143,6 +141,7 @@ Suggest.prototype.onSuggestionKey = function (ev) {
 };
 
 /*** internals ***/
+
 Suggest.prototype.getSuggestions = function (value) {
 	value = value.trim();
 	if (value.length >= this.minLength) {
@@ -165,14 +164,14 @@ Suggest.prototype.getSuggestions = function (value) {
 };
 
 Suggest.prototype.suggest = function (suggestions) {
-	var self = this;
+	const self = this;
 	this.suggestionList.innerHTML = '';
 	this.suggestions = suggestions;
 	if (this.suggestions.length) {
 		this.suggestions.slice(0, 5).forEach(function(suggestion){
 			if (suggestion){
-				var url = suggestion.url || ('/stream/' + suggestion.taxonomy + 'Id/' + suggestion.id);
-				var id = suggestion.id;
+				const url = suggestion.url || ('/stream/' + suggestion.taxonomy + 'Id/' + suggestion.id);
+				const id = suggestion.id;
 				self.suggestionList.insertAdjacentHTML('beforeend', '<li class="typeahead__item"><a class="typeahead__link" data-trackable="typeahead" data-trackable-meta="{&quot;search-term&quot;:&quot;' +
 						this.searchTerm + '&quot;}" data-concept-id="' + id + '" href="' + url + '">' +
 						suggestion.name + '</a></li>');

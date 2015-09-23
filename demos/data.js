@@ -1,6 +1,4 @@
-'use strict';
-
-module.exports = function (fixtures) {
+module.exports = function () {
 	return {
 		'header': {},
 		'footer': {}

@@ -1,19 +1,18 @@
 /* globals console */
-'use strict';
 
-var gulp = require('gulp');
-var data = require('gulp-data');
-var handlebars = require('gulp-compile-handlebars');
-var rename = require('gulp-rename');
+const gulp = require('gulp');
+const data = require('gulp-data');
+const handlebars = require('gulp-compile-handlebars');
+const rename = require('gulp-rename');
 
-var navigation = require('ft-next-navigation');
+const navigation = require('ft-next-navigation');
 
-var topLevelSections = ['world', 'companies', 'markets', 'opinion', 'work & career', 'life & arts'];
+const topLevelSections = ['world', 'companies', 'markets', 'opinion', 'work & career', 'life & arts'];
 
 gulp.task('build', function () {
 	return gulp.src('./templates/partials/navigation/**/*-template.html')
 	.pipe(data(function () {
-		var data = {
+		const data = {
 			all: navigation.items().map(function (navItem) {
 				navItem.isTopLevel = topLevelSections.indexOf(navItem.name.toLowerCase()) > -1;
 				return navItem;

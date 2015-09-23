@@ -25,6 +25,15 @@
 			}
 		}
 	}
+
+	a {
+		border-bottom: 0;
+	}
+
+	a:hover,
+	a:focus {
+		color: inherit;
+	}
 }
 .next-header__row--inner {
 	position: relative;
