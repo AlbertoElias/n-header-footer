@@ -1,5 +1,3 @@
-'use strict';
-
 function getNonMatcher(container) {
 	if (typeof container === 'string') {
 		return function (el) {
@@ -13,7 +11,7 @@ function getNonMatcher(container) {
 }
 
 module.exports = function (el, container) {
-	var doesntMatch = getNonMatcher(container);
+	const doesntMatch = getNonMatcher(container);
 
 	while (doesntMatch(el)) {
 		el = el.parentNode;

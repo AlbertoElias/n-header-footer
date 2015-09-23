@@ -1,7 +1,5 @@
-'use strict';
-
-var Expander = require('o-expander');
-var isOutside = require('./is-outside');
+const Expander = require('o-expander');
+const isOutside = require('./is-outside');
 
 function $(selector) {
 	return Array.prototype.slice.call(document.querySelectorAll(selector));
@@ -14,7 +12,7 @@ module.exports = {
 			document
 				.querySelector('.next-navigation-v2__checkbox')
 				.addEventListener('change', function(e) {
-					var checked = e.target.checked;
+					const checked = e.target.checked;
 					if(checked && (window.innerWidth <= 720)) {
 						document.querySelector('html').style.overflow = 'hidden';
 						document.body.style['overflow-y'] = 'hidden';
@@ -26,13 +24,13 @@ module.exports = {
 					}
 				});
 
-			var decorateNavItem = function(el) {
-				var label = el.querySelector('.next-navigation-v2__link--sub-level-header');
-				var toggle = el.querySelector('.next-navigation-v2__link--radio');
+			const decorateNavItem = function(el) {
+				const label = el.querySelector('.next-navigation-v2__link--sub-level-header');
+				const toggle = el.querySelector('.next-navigation-v2__link--radio');
 
 				if(!toggle || !label) return;
 
-				var handler = function() {
+				const handler = function() {
 					if(!toggle.checked) return;
 
 					document.location.href = label.dataset.navigationHref;
@@ -42,8 +40,8 @@ module.exports = {
 				label.addEventListener('click', handler);
 			};
 
-			var headers = document.querySelectorAll('.next-navigation-v2__sub-nav .next-navigation-v2__group__item');
-			for(var i = 0; i < headers.length; i++) {
+			const headers = document.querySelectorAll('.next-navigation-v2__sub-nav .next-navigation-v2__group__item');
+			for(let i = 0; i < headers.length; i++) {
 				decorateNavItem(headers[i]);
 			}
 		}
@@ -51,15 +49,15 @@ module.exports = {
 		if (flags.get('globalNavigation') && !flags.get('mastheadV2')) {
 			// convert top level links to button
 			$('.js-sub-nav-toggle').forEach(function (toggleEl) {
-				var innerHTML = toggleEl.innerHTML;
-				var classes = toggleEl.className;
-				var dataTrackable = toggleEl.getAttribute('data-trackable');
+				const innerHTML = toggleEl.innerHTML;
+				const classes = toggleEl.className;
+				const dataTrackable = toggleEl.getAttribute('data-trackable');
 				toggleEl.outerHTML = '<button class="' + classes + '" data-trackable="' + dataTrackable + '">' + innerHTML + '</button>';
 			});
-			var nav = document.querySelector('.js-global-nav');
-			var currentSubNav;
+			const nav = document.querySelector('.js-global-nav');
+			let currentSubNav;
 			// create expanders
-			var expanders = Expander.init(nav, {
+			const expanders = Expander.init(nav, {
 				toggleState: 'aria',
 				toggleSelector: '.js-sub-nav-toggle'
 			});
