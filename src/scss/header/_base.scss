@@ -30,7 +30,8 @@
 		border-bottom: 0;
 	}
 
-	a:hover {
+	a:hover,
+	a:focus {
 		color: inherit;
 	}
 }
