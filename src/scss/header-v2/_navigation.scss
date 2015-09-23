@@ -1,5 +1,9 @@
 @import 'colors';
 
+// width of the left column in mobile view of the menu
+// i.e. the headers of nav sections
+$mobile-header-width: 5;
+
 label > * {
 	pointer-events: none;
 }
@@ -30,7 +34,7 @@ label > * {
 .next-navigation-v2__group__items {
 	@include oGridRespondTo($until: M) {
 		background: center url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAAFCAYAAAC9+YhwAAAAAXNSR0IArs4c6QAAAIFJREFUaAXt16ENACAMBEBgpU6MZgG2gwVogqi8yk/z4tz3iDjNESBAgMCXwF7z688TAQIECBAg8BYY71hKgAABAgQIECBAgACBegEDpN5UIwECBAgQIECAAAECiYABksCICRAgQIAAAQIECBCoFzBA6k01EiBAgAABAgQIECCQCFyl4wOmY4gKVQAAAABJRU5ErkJggg==');
-		background-position: 42%;
+		background-position: percentage($mobile-header-width / 12);
 	}
 }
 .next-navigation-v2 { @include oColorsFor(nav, text background); }
@@ -107,7 +111,7 @@ label > * {
 }
 
 .next-navigation-v2__link--sub-level-header {
-	@include oGridColumn(5);
+	@include oGridColumn($mobile-header-width);
 	padding: 0 15px 0 0;
 	cursor: pointer;
 
@@ -241,7 +245,7 @@ label > * {
 	text-transform: none;
 
 	@include oGridRespondTo($until: M) {
-		@include oGridColumn(7);
+		@include oGridColumn(12 - $mobile-header-width);
 		@include oColorsFor(sub-nav-hover, background);
 		color: oColorsGetPaletteColor('grey-tint5');
 		display: none;
@@ -271,7 +275,7 @@ label > * {
 				&::before { display: none; }
 
 				.next-header__primary-tools__link {
-					@include oGridColumn(5);
+					@include oGridColumn($mobile-header-width);
 					text-align: right;
 					padding: 0;
 					line-height: 34px;
