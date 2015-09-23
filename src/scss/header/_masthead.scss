@@ -9,8 +9,8 @@
 	}
 
 	&:before {
-			content: ' ';
-			display: table;
+		content: ' ';
+		display: table;
 	}
 }
 
@@ -27,18 +27,12 @@
 		margin: 17px auto;
 		height: 27px;
 		width: 336px;
-		overflow: hidden;
-		color: transparent;
 
 		.next-header--light-on-dark & {
 			@include nextIcon(brand-ft-masthead, $next-header-light-bg);
 			display: block;
 			height: 27px;
 			width: 336px;
-		}
-
-		&:hover {
-			color: transparent;
 		}
 
 		&:after {
