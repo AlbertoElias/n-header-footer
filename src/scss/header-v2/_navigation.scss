@@ -1,5 +1,9 @@
 @import 'colors';
 
+// width of the left column in mobile view of the menu
+// i.e. the headers of nav sections
+$mobile-header-width: 5;
+
 label > * {
 	pointer-events: none;
 }
@@ -15,13 +19,6 @@ label > * {
 }
 
 .next-header-v2 .next-header__row--primary {
-	&:before,
-	&:after {
-		@include dark_border_bottom;
-		position: absolute;
-		z-index: 1;
-		visibility: visible;
-	}
 	&:before { top: 0; }
 	&:after { bottom: 0; }
 }
@@ -32,6 +29,12 @@ label > * {
 	padding: 0;
 	height: 100%;
 	background: oColorsGetPaletteColor('cold-2');
+}
+.next-navigation-v2__group__items {
+	@include oGridRespondTo($until: M) {
+		background: center url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAAFCAYAAAC9+YhwAAAAAXNSR0IArs4c6QAAAIFJREFUaAXt16ENACAMBEBgpU6MZgG2gwVogqi8yk/z4tz3iDjNESBAgMCXwF7z688TAQIECBAg8BYY71hKgAABAgQIECBAgACBegEDpN5UIwECBAgQIECAAAECiYABksCICRAgQIAAAQIECBCoFzBA6k01EiBAgAABAgQIECCQCFyl4wOmY4gKVQAAAABJRU5ErkJggg==');
+		background-position: percentage($mobile-header-width / 12);
+	}
 }
 .next-navigation-v2 { @include oColorsFor(nav, text background); }
 .next-navigation-v2__group {
@@ -85,11 +88,6 @@ label > * {
 		background: oColorsGetPaletteColor('cold-1');
 	}
 
-	// Just incase a <button> is used
-	&::-moz-focus-inner {
-		border: 0;
-		padding: 0;
-	}
 	&:after { display: none; }
 }
 .next-navigation-v2__link--sub-level {
@@ -101,15 +99,14 @@ label > * {
 
 	@include oGridRespondTo(M) {
 		min-height: 0;
-		line-height: 2.2;
+		line-height: 1.5;
 		font-size: 14px;
 	}
 }
 
 .next-navigation-v2__link--sub-level-header {
-	@include oGridColumn(5);
+	@include oGridColumn($mobile-header-width);
 	padding: 0 15px 0 0;
-	text-transform: uppercase;
 	cursor: pointer;
 
 	@include oGridRespondTo(M) {
@@ -118,11 +115,19 @@ label > * {
 		display: block;
 		.next-navigation-v2__link--sub-level { font-weight: bold; }
 	}
+
 	@include oGridRespondTo($until: M) {
 		color: oColorsGetPaletteColor('white');
 		text-align: right;
 		padding: 0 2px 0 0;
-		&:after { @include dark_border_bottom; }
+
+		span:after {
+			@include nextIcon(arrow-right, oColorsGetColorFor(nav, text), 10);
+			content: '';
+			padding-left: 1.3em;
+			margin-bottom: -0.05em;
+			margin-right: -1em;
+		}
 	}
 }
 
@@ -135,6 +140,10 @@ label > * {
 			text-decoration: none;
 			font-weight: bold;
 			color: oColorsGetPaletteColor('grey-tint5');
+
+			span:after {
+				@include nextIcon(arrow-right, oColorsGetPaletteColor('grey-tint5'), 10);
+			}
 		}
 
 		&:checked ~ .next-navigation-v2__link--sub-level-header:after {
@@ -146,14 +155,6 @@ label > * {
 	&:checked ~ .next-navigation-v2__group__sub-items {
 		display: block;
 	}
-}
-
-.next-navigation__link--outbound:after {
-	@include nextIcon(arrow-right, oColorsGetColorFor(nav, text), 10);
-	content: '';
-	padding-left: 0.5em;
-	margin-bottom: -0.05em;
-	margin-right: -0.5em;
 }
 
 .next-navigation-v2__link__text--mobile {
@@ -187,7 +188,9 @@ label > * {
 	padding: 0 0 20px;
 	position: absolute;
 	left: 0;
-	transition: 0.2s opacity 0.25s ease, 0s left 0.25s step-end;
+	// HACK: transition delay is necessary, otherwise the animation
+	// pretty much doesn't happen. Possibly a performance issue?
+	transition: 0.1s opacity 0.25s ease, 0s left 0.25s step-end;
 
 	.next-navigation-v2--nav & {
 		visibility: hidden;
@@ -233,12 +236,12 @@ label > * {
 }
 
 .next-navigation-v2__group__sub-items {
-	padding: 0 0 10px 15px;
+	padding: 10px 0 10px 15px;
 	list-style: none;
 	text-transform: none;
 
 	@include oGridRespondTo($until: M) {
-		@include oGridColumn(7);
+		@include oGridColumn(12 - $mobile-header-width);
 		@include oColorsFor(sub-nav-hover, background);
 		color: oColorsGetPaletteColor('grey-tint5');
 		display: none;
@@ -256,7 +259,7 @@ label > * {
 
 .next-navigation-v2__group__sub-item { display: block; }
 .next-header-v2 .next-header-v2__primary-tools__myft { display: inline-block; }
-.next-navigation-v2__sub-nav {
+.next-navigation-v2 {
 	.next-header__primary-tools__item.next-header__primary-tools__item--account {
 		&.next-header__primary-tools__item--logged-in,
 		&.next-header__primary-tools__item--logged-out {
@@ -268,13 +271,12 @@ label > * {
 				&::before { display: none; }
 
 				.next-header__primary-tools__link {
-					@include oGridColumn(5);
+					@include oGridColumn($mobile-header-width);
 					text-align: right;
 					padding: 0;
 					line-height: 34px;
 					clear: both;
 					padding-right: 2px;
-					&::after { @include dark_border_bottom; }
 
 					&:hover,
 					&:focus {
@@ -342,12 +344,6 @@ label > * {
 		width: 90px;
 		padding: 0 1px 0 4px;
 		position: relative;
-		&:after,
-		&:before {
-			@include dark_border_vert;
-			position: absolute;
-			top: 0;
-		}
 
 		&:before { left: 0; }
 		&:after { right: 0; }
@@ -365,6 +361,7 @@ label > * {
 				right: 0;
 				left: 0;
 				z-index: 1;
+				overflow-y: scroll;
 			}
 
 			& ~ .next-navigation-v2__toggle .next-navigation-v2__link--top-level.js-sub-nav-toggle {

@@ -1,6 +1,4 @@
-'use strict';
-
-var verticalStep = 50; // roughly the height of the header
+const verticalStep = 50; // roughly the height of the header
 
 module.exports = {
 	el: null,
@@ -9,7 +7,7 @@ module.exports = {
 	lastPosition: 0,
 	timer: null,
 
-	init: function(el, className, flags) {
+	init: function(el, className) {
 		this.el = el;
 		this.lastPosition = document.body.scrollTop;
 		this.className = className;
@@ -44,7 +42,7 @@ module.exports = {
 		}
 
 		// only respond to a scoll larger than the head itself
-		var delta = document.body.scrollTop - this.lastPosition;
+		const delta = document.body.scrollTop - this.lastPosition;
 
 		if(delta > verticalStep) {
 			this.el.classList.add(this.className);
