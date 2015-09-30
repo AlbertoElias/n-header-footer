@@ -350,7 +350,6 @@ label > * {
 	}
 }
 .next-navigation-v2__checkbox {
-	display: none;
 
 	&:checked {
 		@include oGridRespondTo($until: M) {
