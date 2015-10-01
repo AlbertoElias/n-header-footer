@@ -1,7 +1,5 @@
 .next-header__masthead {
 	display: none;
-	padding-left: 0;
-	padding-right: 0;
 	position: relative;
 
 	@include oGridRespondTo(M) {
@@ -43,14 +41,14 @@
 
 .next-header__masthead__logo--mobile {
 	display: block;
-	margin: 18px 0;
+	padding: 18px 0;
 
 	@include oGridRespondTo(XS) {
-		margin: 15px 0;
+		padding: 15px 0;
 	}
 
 	@include oGridRespondTo(S) {
-		margin: 12px 0;
+		padding: 12px 0;
 	}
 
 	@include oGridRespondTo(M) {
