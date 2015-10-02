@@ -14,9 +14,11 @@
 		left: 0;
 		right: 0;
 		transition: transform 150ms;
+		padding-right: 10px;
 
 		@include oGridRespondTo(M) {
 			position: relative;
+			padding-right: 0;
 		}
 
 		@include oGridRespondTo($until: M) {

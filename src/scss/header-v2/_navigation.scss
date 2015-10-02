@@ -14,7 +14,7 @@ label > * {
 	@include oGridRespondTo($until: M) {
 		position: absolute;
 		top: 0;
-		left: 7px;
+		left: 0;
 	}
 }
 
@@ -53,10 +53,10 @@ label > * {
 	font-family: inherit;
 	text-decoration: none;
 	font-size: 18px;
-	padding: 0 4px;
+	padding-right: 4px;
 
 	@include oGridRespondTo(M) {
-		padding: 0 7px;
+		padding-right: 7px;
 		font-size: 16px;
 		&.next-navigation__link--active {
 			background: oColorsGetPaletteColor('cold-1');
@@ -341,8 +341,8 @@ label > * {
 	cursor: pointer;
 
 	@include oGridRespondTo(M) {
-		width: 90px;
-		padding: 0 1px 0 4px;
+		width: 79px;
+		padding-right: 1px;
 		position: relative;
 
 		&:before { left: 0; }
@@ -363,10 +363,7 @@ label > * {
 				overflow-y: scroll;
 			}
 
-			& ~ .next-navigation-v2__toggle .next-navigation-v2__link--top-level.js-sub-nav-toggle {
-				position: fixed;
-				top: 0;
-				left: 0;
+			& ~ .next-navigation-v2__toggle .next-navigation-v2__link--top-level.js-sub-nav-toggle {;
 				z-index: 30;
 			}
 		}
