@@ -14,11 +14,13 @@
 		left: 0;
 		right: 0;
 		transition: transform 150ms;
-		padding-right: 10px;
 
+		&[data-o-grid-colspan] {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
 		@include oGridRespondTo(M) {
 			position: relative;
-			padding-right: 0;
 		}
 
 		@include oGridRespondTo($until: M) {

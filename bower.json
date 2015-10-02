@@ -3,19 +3,17 @@
   "dependencies": {
     "o-forms": "^1.0.2",
     "dom-delegate": "^2.0.3",
-    "next-sass-setup": "^6.0.0",
-    "o-expander": "^1.4.1",
-    "o-grid": "^3.1.6"
+    "next-sass-setup": "^7.0.0",
+    "o-expander": "^1.4.1"
   },
   "main": [
     "main.scss",
     "main.js"
   ],
   "resolutions": {
-    "next-sass-setup": "^6.0.0",
-    "o-ft-icons": "next",
     "o-fonts": "^2.0.0",
-    "fetch": "^0.8.2",
+    "o-ft-icons": "^2.3.4",
+    "o-grid": "^4.0.0",
     "lodash": "3.10.1-npm"
   }
 }
