@@ -128,7 +128,7 @@
 		float: none;
 		position: absolute;
 		top: 0;
-		right: 0;
+		right: 10px;
 
 		@include oGridRespondTo($until: M) {
 			display: none;
