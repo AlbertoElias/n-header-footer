@@ -105,7 +105,7 @@ label > * {
 }
 
 .next-navigation-v2__link--sub-level-header {
-	@include oGridColumn($mobile-header-width);
+	@include oGridColspan($mobile-header-width);
 	padding: 0 15px 0 0;
 	cursor: pointer;
 
@@ -215,7 +215,7 @@ label > * {
 	clear: both;
 	overflow: hidden;
 	@include oGridRespondTo(M) {
-		@include oGridColumn(3);
+		@include oGridColspan(3);
 		margin-top: 20px;
 		clear: none;
 		&:nth-child(4n+1) { clear: both; }
@@ -241,7 +241,7 @@ label > * {
 	text-transform: none;
 
 	@include oGridRespondTo($until: M) {
-		@include oGridColumn(12 - $mobile-header-width);
+		@include oGridColspan(12 - $mobile-header-width);
 		@include oColorsFor(sub-nav-hover, background);
 		color: oColorsGetPaletteColor('grey-tint5');
 		display: none;
@@ -271,7 +271,7 @@ label > * {
 				&::before { display: none; }
 
 				.next-header__primary-tools__link {
-					@include oGridColumn($mobile-header-width);
+					@include oGridColspan($mobile-header-width);
 					text-align: right;
 					padding: 0;
 					line-height: 34px;
