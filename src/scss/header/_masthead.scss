@@ -5,10 +5,6 @@
 	@include oGridRespondTo(M) {
 		display: block;
 	}
-	&[data-o-grid-colspan] {
-		padding-top: 0;
-		padding-bottom: 0;
-	}
 	&:before {
 		content: ' ';
 		display: table;
