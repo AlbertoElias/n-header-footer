@@ -77,7 +77,7 @@ module.exports = {
 		}
 
 		if (flags.get('typeahead')) {
-			const container = (flags.get('mastheadV2') ? header.querySelector('.js-suggestions-container') : header.querySelector('.js-search'));
+			const container = header.querySelector('.js-suggestions-container');
 
 			const typeahead = new Typeahead(
 				container,

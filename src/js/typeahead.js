@@ -15,13 +15,13 @@ const debounce = function(fn,delay){
 		};
 };
 
-function Suggest(container, input, dataSrc, showAllHandler, flags) {
+function Suggest(container, input, dataSrc, showAllHandler) {
 	this.container = container;
 	this.searchEl = input;
 	this.showAllHandler = showAllHandler;
 	this.dataSrc = dataSrc;
 	this.minLength = 2;
-	this.showAllItem = flags.get('mastheadV2');
+	this.showAllItem = true;
 	this.init();
 }
 

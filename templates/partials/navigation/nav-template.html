@@ -1,5 +1,5 @@
 {{#each nav}}
 <li class="next-navigation__group next-navigation__group--sections" data-trackable="group--sections">
-	<a class="next-navigation__link next-navigation__link--top-level {{#unless children}}next-navigation__link--promotion{{/unless}} {{#if selected}}next-navigation__link--active{{/if}}" href="{{href}}" data-trackable="{{name}}">{{name}}</a>
+	<a class="next-navigation__link next-navigation__link--top-level{{#unless children}} next-navigation__link--promotion{{/unless}}{{#if selected}} next-navigation__link--active{{/if}}" href="{{href}}" data-trackable="{{name}}">{{name}}</a>
 </li>
 {{/each}}
