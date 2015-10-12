@@ -15,7 +15,7 @@ const debounce = function(fn,delay){
 		};
 };
 
-function Suggest(container, input, dataSrc, showAllHandler, flags) {
+function Suggest(container, input, dataSrc, showAllHandler) {
 	this.container = container;
 	this.searchEl = input;
 	this.showAllHandler = showAllHandler;

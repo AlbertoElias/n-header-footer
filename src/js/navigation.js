@@ -1,12 +1,5 @@
-const Expander = require('o-expander');
-const isOutside = require('./is-outside');
-
-function $(selector) {
-	return Array.prototype.slice.call(document.querySelectorAll(selector));
-}
-
 module.exports = {
-	init: function (flags) {
+	init: function () {
 
 		document
 			.querySelector('.next-navigation-v2__checkbox')
