@@ -2,7 +2,7 @@
   "name": "n-header-footer",
   "dependencies": {
     "o-forms": "^2.0.0",
-    "dom-delegate": "^2.0.3",
+    "ftdomdelegate": "^2.0.3",
     "next-sass-setup": "^7.0.0",
     "o-expander": "^2.0.0"
   },

@@ -1,5 +1,5 @@
 /*global fetch*/
-const Delegate = require('dom-delegate');
+const Delegate = require('ftdomdelegate');
 const isOutside = require('./is-outside');
 
 const debounce = function(fn,delay){
