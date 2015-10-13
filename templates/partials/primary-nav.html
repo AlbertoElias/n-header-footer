@@ -12,13 +12,11 @@
 				</a>
 
 				<ol class="next-navigation__group__items next-navigation__group__items--nested o-expander__content" data-trackable="secondary-navigation">
-					{{#if @root.flags.mastheadV2}}
-						<li class="next-navigation next-navigation__membership-tools">
-							<ol>
-								{{> n-header-footer/templates/partials/membership-tools ~}}
-							</ol>
-						</li>
-					{{/if}}
+					<li class="next-navigation next-navigation__membership-tools">
+						<ol>
+							{{> n-header-footer/templates/partials/membership-tools ~}}
+						</ol>
+					</li>
 					{{> n-header-footer/templates/partials/navigation/all ~}}
 				</ol>
 			</li>
