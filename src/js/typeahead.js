@@ -145,7 +145,7 @@ Suggest.prototype.onSuggestionKey = function (ev) {
 Suggest.prototype.getSuggestions = function (value) {
 	value = value.trim();
 	if (value.length >= this.minLength) {
-		fetch(this.dataSrc + encodeURIComponent(value.replace(' ', '+')))
+		fetch(this.dataSrc + encodeURIComponent(value))
 			.then(function (response) {
 				if (!response.ok) {
 					throw new Error(response.statusText);
