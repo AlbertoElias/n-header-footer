@@ -1,18 +1,8 @@
 <nav class="next-header__primary-tools js-primary-tools" role="navigation" aria-label="Useful tools">
 	<ul class="next-header__primary-tools__items">
-
-		{{#unless @root.flags.mastheadV2}}
-			{{> n-header-footer/templates/partials/myft-tools }}
-			{{> n-header-footer/templates/partials/membership-tools }}
-		{{/unless}}
-
 		{{#if @root.flags.search}}
 			<li class="next-header__primary-tools__item next-header__primary-tools__search">
-				{{#if @root.flags.mastheadV2}}
-					{{>n-header-footer/templates/partials/search-formv2}}
-				{{else}}
-					{{>n-header-footer/templates/partials/search-form}}
-				{{/if}}
+				{{>n-header-footer/templates/partials/search-formv2}}
 			</li>
 		{{/if}}
 	</ul>
