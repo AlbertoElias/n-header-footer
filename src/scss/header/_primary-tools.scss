@@ -8,21 +8,24 @@
 }
 
 .next-header__primary-tools__item {
-	position: relative;
 	display: inline-block;
 
-	&:before {
-		content: ' ';
-		position: absolute;
-		width: 2px;
-		height: 14px;
-		top: 50%;
-		left: -3px;
-		margin-top: -7px;
-		background-color: getColor('warm-5');
-	}
-	&:first-child:before {
-		display: none;
+	.next-header__primary-tools--masthead & {
+		position: relative;
+
+		&:before {
+			content: ' ';
+			position: absolute;
+			width: 2px;
+			height: 14px;
+			top: 50%;
+			left: -3px;
+			margin-top: -7px;
+			background-color: getColor('warm-5');
+		}
+		&:first-child:before {
+			display: none;
+		}
 	}
 }
 
