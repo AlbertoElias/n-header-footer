@@ -314,6 +314,14 @@ label > * {
 	}
 }
 
+.next-navigation-v2__link__inner-text--open,
+.next-navigation-v2__link__inner-text--close {
+	.next-navigation-v2__checkbox:focus + .next-navigation-v2__toggle &,
+	.next-navigation-v2__group--more:hover & {
+		text-decoration: underline;
+	}
+}
+
 .next-navigation-v2__link__inner-text--open {
 	display: none;
 	@include oGridRespondTo(M) { display: inline; }

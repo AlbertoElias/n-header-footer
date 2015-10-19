@@ -8,7 +8,22 @@
 }
 
 .next-header__primary-tools__item {
+	position: relative;
 	display: inline-block;
+
+	&:before {
+		content: ' ';
+		position: absolute;
+		width: 2px;
+		height: 14px;
+		top: 50%;
+		left: -3px;
+		margin-top: -7px;
+		background-color: getColor('warm-5');
+	}
+	&:first-child:before {
+		display: none;
+	}
 }
 
 .next-header__primary-tools__item--logged-in {
@@ -24,20 +39,6 @@
 			}
 		}
 	}
-
-	// Because there's sadly no :first-of-class selector
-	& ~ & {
-		&:before {
-			content: ' ';
-			position: absolute;
-			width: 2px;
-			height: 14px;
-			top: 50%;
-			left: -1px;
-			margin-top: -7px;
-			background-color: #ffffff;
-		}
-	}
 }
 
 .next-header__primary-tools__item--logged-out {
@@ -50,6 +51,11 @@
 
 .next-header__primary-tools__link {
 	@include nextHeaderNavItem;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
 }
 
 [data-next-anonymous-myft=on] .next-header__primary-tools__myft {
@@ -138,10 +144,6 @@
 			display: inline-block;
 		}
 
-		.next-header__primary-tools__item--logged-in ~ .next-header__primary-tools__item--logged-in:before {
-			background-color: black;
-		}
-
 		.next-header__primary-tools__link {
 			color: black;
 		}
@@ -175,9 +177,6 @@
 }
 
 .next-header-v2.next-header--light-on-dark .next-header__primary-tools--masthead {
-	.next-header__primary-tools__item--logged-in ~ .next-header__primary-tools__item--logged-in:before {
-		background-color: $next-header-light-bg;
-	}
 
 	.next-header__primary-tools__link {
 		color: $next-header-light-bg;
