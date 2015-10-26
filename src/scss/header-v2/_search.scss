@@ -23,7 +23,6 @@
 		content: '';
 		margin: 5px 10px;
 
-		// FIXME this won't work on certain mobile webkit browsers :(
 		.next-header-v2__search-checkbox:checked + .next-header-v2__search__container & {
 			@include nextIcon(cross, oColorsGetPaletteColor('white'), 20);
 		}
