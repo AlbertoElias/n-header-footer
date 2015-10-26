@@ -33,11 +33,6 @@
 			position: relative;
 		}
 
-		@include oGridRespondTo($until: M) {
-			&.next-header__row--primary--hidden {
-				transform: translateY(-100%);
-			}
-		}
 		.next-header-before + & {
 			position: relative;
 		}
@@ -67,19 +62,11 @@
 		height: 0;
 	}
 }
-.next-header__row--secondary {
-	background: $next-header-secondary-bg;
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: $next-header-primary-height;
-}
 
 // FIXME grid overrides to cater for both grid versions
 
 .next-header-v2 {
 	.next-header__row--inner {
-		// @include dark_border_vert;
 		min-width: 280px; // can't fit below that.
 
 		padding-left: 0;

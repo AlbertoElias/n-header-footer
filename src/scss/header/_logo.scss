@@ -1,9 +1,3 @@
-.next-header__logo {
-	float: left;
-	width: 45px;
-	height: 45px;
-}
-
 .next-header__logo__link {
 	display: block;
 	height: 100%;
@@ -21,18 +15,5 @@
 		text-align: center;
 		font-size: 10px;
 		color: getColor('black');
-	}
-}
-
-.next-header__logo__name {
-	text-indent: -9999px;
-	overflow: hidden;
-	margin-left: 5px;
-
-	.next-header__logo--ft & {
-		@include nextIcon(brand-ft, getColor('black'), 35);
-		background-size: 35px 20px;
-		background-position: 0 8px;
-		border: 0;
 	}
 }
