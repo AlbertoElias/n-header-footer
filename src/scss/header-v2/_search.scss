@@ -23,7 +23,7 @@
 		content: '';
 		margin: 5px 10px;
 
-		.next-header-v2__search-checkbox:checked ~ & {
+		.next-header-v2__search-checkbox:checked + .next-header-v2__search__container & {
 			@include nextIcon(cross, oColorsGetPaletteColor('white'), 20);
 		}
 	}
@@ -37,7 +37,7 @@
 .next-header-v2__search-toggle-text--open {
 	display: inline-block;
 
-	.next-header-v2__search-checkbox:checked ~ & {
+	.next-header-v2__search-checkbox:checked + .next-header-v2__search__container & {
 		display: none;
 	}
 }
@@ -45,7 +45,7 @@
 .next-header-v2__search-toggle-text--close {
 	display: none;
 
-	.next-header-v2__search-checkbox:checked ~ & {
+	.next-header-v2__search-checkbox:checked + .next-header-v2__search__container & {
 		display: inline-block;
 	}
 }
@@ -61,10 +61,10 @@
 	bottom: 3px;
 	right: -10px;
 	width: 0;
-	z-index: 1;
+	z-index: 5;
 	transition: 0.2s width 0.25s ease-out, 0.2s left 0.25s ease-out, 0.2s right 0.25s ease-out;
 
-	.next-header-v2__search-checkbox:checked ~ & {
+	.next-header-v2__search-checkbox:checked + .next-header-v2__search__container & {
 		visibility: visible;
 		right: 46px;
 		width: 100%;
@@ -85,7 +85,6 @@
 
 		&:focus,
 		&:active {
-			@include oColorsFor(nav, background);
 			outline: none;
 			border: 0;
 			box-shadow: inset 0 0 3px 1px oColorsGetColorFor(nav-separator, border);
@@ -129,6 +128,7 @@
 		height: 100%;
 		overflow: hidden;
 		font-size: 70%;
+		z-index: -1;
 
 		@include oGridRespondTo(S) {
 			font-size: 100%;

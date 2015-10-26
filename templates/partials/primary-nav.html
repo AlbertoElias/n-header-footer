@@ -7,17 +7,19 @@
 				data-on-expanded="noscroll-body"
 			>
 				<input class="next-navigation-v2__checkbox n-util-visually-hidden" data-trackable="menu-toggle" type="checkbox" id="sub-nav" name="sub-nav" value="" aria-label="Expand menu" aria-controls="secondary-navigation"/>
-				<label class="next-navigation-v2__toggle" for="sub-nav" aria-hidden="true">
-					<span class="next-navigation-v2__link next-navigation-v2__link--top-level js-sub-nav-toggle">
-						<span class="next-navigation-v2__link__text--mobile">
-							<span class="next-navigation-v2__link__inner-text--open">Menu</span>
-							<span class="next-navigation-v2__link__inner-text--close">Close</span>
+				<div class="next-navigation-v2__container">
+					<label class="next-navigation-v2__toggle" for="sub-nav" aria-hidden="true">
+						<span class="next-navigation-v2__link next-navigation-v2__link--top-level js-sub-nav-toggle">
+							<span class="next-navigation-v2__link__text--mobile">
+								<span class="next-navigation-v2__link__inner-text--open">Menu</span>
+								<span class="next-navigation-v2__link__inner-text--close">Close</span>
+							</span>
 						</span>
-					</span>
-				</label>
-				<ol id="secondary-navigation" class="next-navigation-v2__group__items next-navigation-v2__group__items--nested o-expander__content" data-trackable="secondary-navigation">
-					{{> n-header-footer/templates/partials/all nav=topLevelNavNew all=navNew}}
-				</ol>
+					</label>
+					<ol id="secondary-navigation" class="next-navigation-v2__group__items next-navigation-v2__group__items--nested o-expander__content" data-trackable="secondary-navigation">
+						{{> n-header-footer/templates/partials/all nav=topLevelNavNew all=navNew}}
+					</ol>
+				</div>
 			</li>
 
 			{{> n-header-footer/templates/partials/nav nav=topLevelNavNew all=navNew}}

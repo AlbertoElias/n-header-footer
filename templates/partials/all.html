@@ -12,19 +12,21 @@
     {{#if children}}
       <li class="next-navigation-v2__group__item">
         <input class="next-navigation-v2__link--radio" type="radio" id="{{id}}" name="nav-item" value="{{name}}" {{#unless @index}}checked{{/unless}} />
-        <label class="next-navigation-v2__link--sub-level-header" for="{{id}}" data-navigation-href="{{href}}">
-          <span class="next-navigation-v2__link next-navigation-v2__link--sub-level" data-trackable="{{name}}" >{{name}}</span>
-        </label>
-        <ol class="next-navigation-v2__group__sub-items">
-          <li class="next-navigation-v2__group__sub-item">
-            <a class=" next-navigation-v2__link next-navigation-v2__link--sub-level {{#if selected}}next-navigation__link--active{{/if}}" href="{{href}}" data-trackable="{{name}}">All {{name}}</a>
-          </li>
-          {{#each children}}
+        <div class="next-navigation-v2__group__container">
+          <label class="next-navigation-v2__link--sub-level-header" for="{{id}}" data-navigation-href="{{href}}">
+            <span class="next-navigation-v2__link next-navigation-v2__link--sub-level" data-trackable="{{name}}" >{{name}}</span>
+          </label>
+          <ol class="next-navigation-v2__group__sub-items">
             <li class="next-navigation-v2__group__sub-item">
-                <a class="next-navigation-v2__link next-navigation-v2__link--sub-level {{#if selected}}next-navigation__link--active{{/if}}" href="{{href}}" data-trackable="{{name}}">{{name}}</a>
+              <a class=" next-navigation-v2__link next-navigation-v2__link--sub-level {{#if selected}}next-navigation__link--active{{/if}}" href="{{href}}" data-trackable="{{name}}">All {{name}}</a>
             </li>
-          {{/each}}
-        </ol>
+            {{#each children}}
+              <li class="next-navigation-v2__group__sub-item">
+                  <a class="next-navigation-v2__link next-navigation-v2__link--sub-level {{#if selected}}next-navigation__link--active{{/if}}" href="{{href}}" data-trackable="{{name}}">{{name}}</a>
+              </li>
+            {{/each}}
+          </ol>
+        </div>
       </li>
     {{else}}
       <li class="next-navigation-v2__group__item next-navigation-v2__group__item--mobile">
