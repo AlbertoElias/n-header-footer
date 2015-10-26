@@ -135,7 +135,7 @@ label > * {
 	display: none;
 
 	@include oGridRespondTo($until: M) {
-		&:checked ~ .next-navigation-v2__link--sub-level-header {
+		&:checked + .next-navigation-v2__group__container .next-navigation-v2__link--sub-level-header {
 			@include oColorsFor(sub-nav-hover, background);
 			text-decoration: none;
 			font-weight: bold;
@@ -146,13 +146,13 @@ label > * {
 			}
 		}
 
-		&:checked ~ .next-navigation-v2__link--sub-level-header:after {
+		&:checked + .next-navigation-v2__group__container .next-navigation-v2__link--sub-level-header:after {
 			background-color: oColorsGetColorFor(sub-nav-hover, background);
 			border-color: oColorsGetColorFor(sub-nav-hover, background);
 		}
 	}
 
-	&:checked ~ .next-navigation-v2__group__sub-items {
+	&:checked + .next-navigation-v2__group__container .next-navigation-v2__group__sub-items {
 		display: block;
 	}
 }
@@ -346,7 +346,7 @@ label > * {
 		}
 
 		& .next-navigation-v2__toggle .next-navigation-v2__link--top-level.js-sub-nav-toggle {
-			z-index: 30;
+			z-index: 3;
 		}
 	}
 
