@@ -369,6 +369,10 @@ label > * {
 				left: 0;
 				z-index: 1;
 				overflow-y: scroll;
+
+				.next-header-before + .next-header & {
+					top: 83px;
+				}
 			}
 
 			& ~ .next-navigation-v2__toggle .next-navigation-v2__link--top-level.js-sub-nav-toggle {;
