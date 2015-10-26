@@ -201,7 +201,7 @@ label > * {
 		@include oGridRespondTo(L) { width: 100%; }
 	}
 	.next-navigation-v2__group--sections:hover &,
-	.next-navigation-v2__checkbox:checked ~ & {
+	.next-navigation-v2__checkbox:checked + & {
 		visibility: visible;
 		opacity: 1;
 		height: auto;
@@ -375,7 +375,7 @@ label > * {
 				}
 			}
 
-			& ~ .next-navigation-v2__toggle .next-navigation-v2__link--top-level.js-sub-nav-toggle {;
+			& + .next-navigation-v2__toggle .next-navigation-v2__link--top-level.js-sub-nav-toggle {;
 				z-index: 30;
 			}
 		}
