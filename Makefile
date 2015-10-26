@@ -11,7 +11,6 @@ test:
 	obt verify
 
 build:
-	gulp build
 	obt build
 
 demo:
