@@ -1,7 +1,6 @@
 /*jshint node:true,browser:true,-W030*/
 
 const Typeahead = require('./typeahead');
-const isOutside = require('./is-outside');
 
 // Source: https://gist.github.com/davidcalhoun/702826
 const transitionEventName = function(el) {
