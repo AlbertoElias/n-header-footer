@@ -1,22 +1,22 @@
 {{#if @root.flags.globalNavigation}}
-	<nav id="primary-nav" class="next-header-v2__primary-nav" data-trackable="primary-nav" role="navigation" aria-label="Primary navigation">
-		<ol class="next-navigation-v2 next-navigation-v2--nav js-global-nav">
+	<nav id="primary-nav" class="next-header__primary-nav" data-trackable="primary-nav" role="navigation" aria-label="Primary navigation">
+		<ol class="next-navigation-menu next-navigation-menu--nav js-global-nav">
 			<li
-				class="next-navigation-v2__group next-navigation-v2__group--more"
+				class="next-navigation-menu__group next-navigation-menu__group--more"
 				data-trackable="group--more"
 				data-on-expanded="noscroll-body"
 			>
-				<input class="next-navigation-v2__checkbox n-util-visually-hidden" data-trackable="menu-toggle" type="checkbox" id="sub-nav" name="sub-nav" value="" aria-label="Expand menu" aria-controls="secondary-navigation"/>
-				<div class="next-navigation-v2__container">
-					<label class="next-navigation-v2__toggle" for="sub-nav" aria-hidden="true">
-						<span class="next-navigation-v2__link next-navigation-v2__link--top-level js-sub-nav-toggle">
-							<span class="next-navigation-v2__link__text--mobile">
-								<span class="next-navigation-v2__link__inner-text--open">Menu</span>
-								<span class="next-navigation-v2__link__inner-text--close">Close</span>
+				<input class="next-navigation-menu__checkbox n-util-visually-hidden" data-trackable="menu-toggle" type="checkbox" id="sub-nav" name="sub-nav" value="" aria-label="Expand menu" aria-controls="secondary-navigation"/>
+				<div class="next-navigation-menu__container">
+					<label class="next-navigation-menu__toggle" for="sub-nav" aria-hidden="true">
+						<span class="next-navigation-menu__link next-navigation-menu__link--top-level js-sub-nav-toggle">
+							<span class="next-navigation-menu__link__text--mobile">
+								<span class="next-navigation-menu__link__inner-text--open">Menu</span>
+								<span class="next-navigation-menu__link__inner-text--close">Close</span>
 							</span>
 						</span>
 					</label>
-					<ol id="secondary-navigation" class="next-navigation-v2__group__items next-navigation-v2__group__items--nested o-expander__content" data-trackable="secondary-navigation">
+					<ol id="secondary-navigation" class="next-navigation-menu__group__items next-navigation-menu__group__items--nested o-expander__content" data-trackable="secondary-navigation">
 						{{> n-header-footer/templates/partials/all nav=topLevelNavNew all=navNew}}
 					</ol>
 				</div>

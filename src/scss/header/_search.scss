@@ -1,7 +1,6 @@
 @import 'colors';
 
-
-.next-header-v2 .next-header__primary-tools__search {
+.next-header .next-header__primary-tools__search {
 	line-height: 24px;
 	margin: 0;
 
@@ -10,7 +9,7 @@
 	}
 }
 
-.next-header-v2__search-toggle {
+.next-header__search-toggle {
 	cursor: pointer;
 	position: relative;
 	display: block;
@@ -23,34 +22,34 @@
 		content: '';
 		margin: 5px 10px;
 
-		.next-header-v2__search-checkbox:checked + .next-header-v2__search__container & {
+		.next-header__search-checkbox:checked + .next-header__search__container & {
 			@include nextIcon(cross, oColorsGetPaletteColor('white'), 20);
 		}
 	}
 }
 
-.next-header-v2__search-toggle-text {
+.next-header__search-toggle-text {
 	width: 0;
 	overflow: hidden;
 }
 
-.next-header-v2__search-toggle-text--open {
+.next-header__search-toggle-text--open {
 	display: inline-block;
 
-	.next-header-v2__search-checkbox:checked + .next-header-v2__search__container & {
+	.next-header__search-checkbox:checked + .next-header__search__container & {
 		display: none;
 	}
 }
 
-.next-header-v2__search-toggle-text--close {
+.next-header__search-toggle-text--close {
 	display: none;
 
-	.next-header-v2__search-checkbox:checked + .next-header-v2__search__container & {
+	.next-header__search-checkbox:checked + .next-header__search__container & {
 		display: inline-block;
 	}
 }
 
-.next-header-v2__search-form {
+.next-header__search-form {
 	@include oColorsFor(nav, background);
 	visibility: hidden;
 	overflow: hidden;
@@ -64,7 +63,7 @@
 	z-index: 5;
 	transition: 0.2s width 0.25s ease-out, 0.2s left 0.25s ease-out, 0.2s right 0.25s ease-out;
 
-	.next-header-v2__search-checkbox:checked + .next-header-v2__search__container & {
+	.next-header__search-checkbox:checked + .next-header__search__container & {
 		visibility: visible;
 		right: 46px;
 		width: 100%;
@@ -90,7 +89,7 @@
 		}
 	}
 
-	.next-header-v2__search-form__button {
+	.next-header__search-form__button {
 		@include oColorsFor(nav, background);
 		margin-left: 40px;
 		position: absolute;
@@ -107,7 +106,7 @@
 		}
 	}
 
-	.next-header-v2__search-form__button span {
+	.next-header__search-form__button span {
 		@include nextIcon(search, oColorsGetPaletteColor('white'), 20);
 		display: block;
 		margin: 8px 8px 8px 14px;
@@ -134,7 +133,7 @@
 		}
 }
 
-.next-header-v2 {
+.next-header {
 	.typeahead {
 		list-style: none;
 		position: absolute;

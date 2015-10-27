@@ -71,13 +71,13 @@
 	}
 }
 
-.next-header-v2 .next-header__primary-tools__search {
+.next-header .next-header__primary-tools__search {
 	margin-left: 0;
 }
 
 // FIXME cleanup when removing mastheadV2 toggle
 
-.next-header-v2 {
+.next-header {
 	.next-header__primary-tools__item--account {
 		display: none;
 
@@ -111,7 +111,7 @@
 	}
 }
 
-.next-header-v2.next-header--light-on-dark .next-header__primary-tools--masthead {
+.next-header.next-header--light-on-dark .next-header__primary-tools--masthead {
 
 	.next-header__primary-tools__link {
 		color: $next-header-light-bg;

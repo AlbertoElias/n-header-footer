@@ -25,16 +25,6 @@ module.exports = {
 	init: function(flags) {
 		const header = document.querySelector('.next-header');
 
-		// handle clicking outside the subnav to collapse
-		document.addEventListener('click', function (ev) {
-			if (isOutside(ev.target, '.next-header__search-toggle') && isOutside(ev.target, '.js-search')) {
-				header.classList.remove('next-header--searching');
-			} else if (ev.target.classList.contains('next-header__search-toggle')) {
-				header.classList.toggle('next-header--searching');
-				header.querySelector('.next-header__search-form__input').focus();
-			}
-		});
-
 		const form = document.querySelector('.js-search');
 		const toggle = document.querySelector('.js-search-toggle');
 		const input = document.querySelector('.js-search-input');

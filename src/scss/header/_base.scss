@@ -2,7 +2,7 @@
 	position: relative;
 	z-index: 21;
 }
-.next-header-v2 {
+.next-header {
 	padding-bottom: 46px;
 
 	@include oGridRespondTo(M) {
@@ -65,7 +65,7 @@
 
 // FIXME grid overrides to cater for both grid versions
 
-.next-header-v2 {
+.next-header {
 	.next-header__row--inner {
 		min-width: 280px; // can't fit below that.
 
