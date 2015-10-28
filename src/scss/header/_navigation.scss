@@ -35,6 +35,34 @@ label > * {
 		background: center url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAAFCAYAAAC9+YhwAAAAAXNSR0IArs4c6QAAAIFJREFUaAXt16ENACAMBEBgpU6MZgG2gwVogqi8yk/z4tz3iDjNESBAgMCXwF7z688TAQIECBAg8BYY71hKgAABAgQIECBAgACBegEDpN5UIwECBAgQIECAAAECiYABksCICRAgQIAAAQIECBCoFzBA6k01EiBAgAABAgQIECCQCFyl4wOmY4gKVQAAAABJRU5ErkJggg==');
 		background-position: percentage($mobile-header-width / 12);
 	}
+
+	// @include oColorsFor(sub-nav, background);
+	width: 100%;
+	padding: 0 0 20px;
+	position: absolute;
+	left: 0;
+	// HACK: transition delay is necessary, otherwise the animation
+	// pretty much doesn't happen. Possibly a performance issue?
+	transition: 0.1s opacity 0.25s ease, 0s left 0.25s step-end;
+
+	.next-navigation-menu--nav & {
+		visibility: hidden;
+		opacity: 0;
+		height: 0;
+		left: -9999px;
+
+		@include oGridRespondTo(L) { width: 100%; }
+	}
+	.next-navigation-menu__group--sections:hover &,
+	.next-navigation-menu__checkbox:checked + .next-navigation-menu__container & {
+		visibility: visible;
+		opacity: 1;
+		height: auto;
+		left: 0;
+	}
+
+	&[aria-expanded="true"] { transition-delay: 0s; }
+	.next-navigation-menu__group--more & { padding-bottom: 0; }
 }
 
 .next-navigation__group {
@@ -214,9 +242,6 @@ label > * {
 	}
 }
 
-.next-navigation-menu__link__text--mobile {
-	@include oGridRespondTo(L) { display: none; }
-}
 // FIXME clean up after removing mastheadV2 toggle
 .next-navigation-menu__link__text--mobile {
 	display: block;
@@ -230,35 +255,6 @@ label > * {
 	}
 }
 
-.next-navigation-menu__group__items {
-	// @include oColorsFor(sub-nav, background);
-	width: 100%;
-	padding: 0 0 20px;
-	position: absolute;
-	left: 0;
-	// HACK: transition delay is necessary, otherwise the animation
-	// pretty much doesn't happen. Possibly a performance issue?
-	transition: 0.1s opacity 0.25s ease, 0s left 0.25s step-end;
-
-	.next-navigation-menu--nav & {
-		visibility: hidden;
-		opacity: 0;
-		height: 0;
-		left: -9999px;
-
-		@include oGridRespondTo(L) { width: 100%; }
-	}
-	.next-navigation-menu__group--sections:hover &,
-	.next-navigation-menu__checkbox:checked + .next-navigation-menu__container & {
-		visibility: visible;
-		opacity: 1;
-		height: auto;
-		left: 0;
-	}
-
-	&[aria-expanded="true"] { transition-delay: 0s; }
-	.next-navigation-menu__group--more & { padding-bottom: 0; }
-}
 .next-navigation-menu__group__item {
 	vertical-align: top;
 	clear: both;
@@ -329,7 +325,6 @@ label > * {
 						text-decoration: underline;
 					}
 				}
-
 
 				.next-header__primary-tools__link--inner {
 					padding-right: 15px;

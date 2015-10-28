@@ -62,17 +62,11 @@
 }
 
 .next-header__primary-tools__search {
-	margin-left: 15px;
-
 	@include oGridRespondTo(M) {
 		margin-left: 0;
 		margin-top: 8px;
 		margin-right: 8px;
 	}
-}
-
-.next-header .next-header__primary-tools__search {
-	margin-left: 0;
 }
 
 // FIXME cleanup when removing mastheadV2 toggle
@@ -99,19 +93,10 @@
 		.next-header__primary-tools__item {
 			display: inline-block;
 		}
-
-		.next-header__primary-tools__link {
-			color: black;
-		}
-
-		.next-header__primary-tools__link:hover,
-		.next-header__primary-tools__link:focus {
-			background-color: transparent;
-		}
 	}
 }
 
-.next-header.next-header--light-on-dark .next-header__primary-tools--masthead {
+.next-header--light-on-dark .next-header__primary-tools--masthead {
 
 	.next-header__primary-tools__link {
 		color: $next-header-light-bg;
