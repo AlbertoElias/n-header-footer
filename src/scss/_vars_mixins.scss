@@ -1,7 +1,6 @@
 $next-header-primary-height: 45px;
 $next-header-primary-bg: #333333;
 $next-header-secondary-bg: getColor('grey-tint5');
-$next-header-light-bg: #fdf8f2;
 
 @mixin nextHeaderNavItem() {
 	color: getColor('white');

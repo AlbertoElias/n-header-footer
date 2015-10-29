@@ -99,6 +99,6 @@
 .next-header--light-on-dark .next-header__primary-tools--masthead {
 
 	.next-header__primary-tools__link {
-		color: $next-header-light-bg;
+		color: getColor('white');
 	}
 }

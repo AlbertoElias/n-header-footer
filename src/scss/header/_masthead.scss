@@ -26,7 +26,7 @@
 		width: 336px;
 
 		.next-header--light-on-dark & {
-			@include nextIcon(brand-ft-masthead, $next-header-light-bg);
+			@include nextIcon(brand-ft-masthead, getColor('white'));
 			display: block;
 			height: 27px;
 			width: 336px;
