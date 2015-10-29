@@ -2,7 +2,7 @@ module.exports = {
 	init: function () {
 
 		document
-			.querySelector('.next-navigation-menu__checkbox')
+			.querySelector('.next-navigation__menu__checkbox')
 			.addEventListener('change', function(e) {
 				const checked = e.target.checked;
 				if(checked && (window.innerWidth <= 720)) {
@@ -17,8 +17,8 @@ module.exports = {
 			});
 
 		const decorateNavItem = function(el) {
-			const label = el.querySelector('.next-navigation-menu__link--sub-level-header');
-			const toggle = el.querySelector('.next-navigation-menu__link--radio');
+			const label = el.querySelector('.next-navigation__menu__link--sub-level-header');
+			const toggle = el.querySelector('.next-navigation__menu__link--radio');
 
 			if(!toggle || !label) return;
 
@@ -32,7 +32,7 @@ module.exports = {
 			label.addEventListener('click', handler);
 		};
 
-		const headers = document.querySelectorAll('.next-navigation-menu__sub-nav .next-navigation-menu__group__item');
+		const headers = document.querySelectorAll('.next-navigation__menu__sub-nav .next-navigation__menu__group__item');
 		for(let i = 0; i < headers.length; i++) {
 			decorateNavItem(headers[i]);
 		}
