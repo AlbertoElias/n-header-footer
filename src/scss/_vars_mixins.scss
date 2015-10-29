@@ -33,14 +33,3 @@ $next-header-light-bg: #fdf8f2;
 		padding-right: 0;
 	}
 }
-
-@mixin nextHeaderOldIe () {
-	// ie8
-	@media \0screen {
-		@content;
-	}
-	// ie7
-	*+html {
-		@content;
-	}
-}

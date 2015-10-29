@@ -1,14 +1,14 @@
-<input data-trackable="search-toggle" class="next-header-v2__search-checkbox n-util-visually-hidden" type="checkbox" id="search" name="search" value="" aria-label="Display search box" aria-controls="search-form"/>
-<div class="next-header-v2__search__container">
-	<label class="next-header-v2__search-toggle js-search-toggle" for="search" aria-hidden="true">
-		<span class="next-header-v2__search-toggle-text next-header-v2__search-toggle-text--open">Search</span>
-		<span class="next-header-v2__search-toggle-text next-header-v2__search-toggle-text--close">Close</span>
+<input data-trackable="search-toggle" class="next-header__search-checkbox n-util-visually-hidden" type="checkbox" id="search" name="search" value="" aria-label="Display search box" aria-controls="search-form"/>
+<div class="next-header__search__container">
+	<label class="next-header__search-toggle js-search-toggle" for="search" aria-hidden="true">
+		<span class="next-header__search-toggle-text next-header__search-toggle-text--open">Search</span>
+		<span class="next-header__search-toggle-text next-header__search-toggle-text--close">Close</span>
 	</label>
-	<form action="/search" id="search-form" class="next-header-v2__search-form js-search" data-trackable="search-form" role="search">
+	<form action="/search" id="search-form" class="next-header__search-form js-search" data-trackable="search-form" role="search">
 		<input id="search-term" type="search" name="q" class="next-header__search-form__input o-forms-text js-search-input" {{#if searchQuery}} value="{{searchQuery}}"{{/if}} autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
 		data-trackable="search-input" {{#ifAll headerData headerData.searchTerm}}{{#ifEquals headerData.searchTerm true}}{{else}} value="{{headerData.searchTerm}}"{{/ifEquals}}{{/ifAll}}/>
 		<label for="search-term" class="js-search-placeholder next-header__search-form__label">Type to search the Financial Times</label>
-		<button class="next-header-v2__search-form__button" for="search" data-trackable="search-button">
+		<button class="next-header__search-form__button" for="search" data-trackable="search-button">
 			<span>Search</span>
 		</button>
 	</form>

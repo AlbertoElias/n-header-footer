@@ -2,32 +2,8 @@
 	background-color: getColor('cold-2');
 }
 
-.next-footer__nav {
-	background-color: getColor('cold-2');
-	display: none;
-
-	.no-js & {
-		display: block;
-		padding-top: 10px;
-	}
-}
-
 @include oGridRespondTo(L) {
 	.next-footer__nav .nav__top-level {
 		display: none;
-	}
-}
-
-.next-footer__back-to-top {
-	margin: 5px;
-	a {
-		color: getColor('white');
-		text-decoration: none;
-		padding: 5px;
-		display: inline-block;
-
-		&:hover {
-			text-decoration: underline;
-		}
 	}
 }

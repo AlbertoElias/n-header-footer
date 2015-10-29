@@ -1,8 +1,8 @@
-  <li class="next-navigation-v2__group__item next-navigation-v2__group__item--desktop">
+  <li class="next-navigation__menu__group__item next-navigation__menu__group__item--desktop">
     {{#each all}}
       {{#unless children}}
-        <span class="next-navigation-v2__link--sub-level-header">
-          <a class="next-navigation-v2__link next-navigation-v2__link--sub-level next-navigation__link--outbound {{#if selected}}next-navigation__link--active{{/if}}" href={{href}} data-trackable="{{name}}" >{{name}}</a>
+        <span class="next-navigation__menu__link--sub-level-header">
+          <a class="next-navigation__menu__link next-navigation__menu__link--sub-level next-navigation__link--outbound {{#if selected}}next-navigation__link--active{{/if}}" href={{href}} data-trackable="{{name}}" >{{name}}</a>
         </span>
       {{/unless}}
     {{/each}}
@@ -10,28 +10,28 @@
 
   {{#each all}}
     {{#if children}}
-      <li class="next-navigation-v2__group__item">
-        <input class="next-navigation-v2__link--radio" type="radio" id="{{id}}" name="nav-item" value="{{name}}" {{#unless @index}}checked{{/unless}} />
-        <div class="next-navigation-v2__group__container">
-          <label class="next-navigation-v2__link--sub-level-header" for="{{id}}" data-navigation-href="{{href}}">
-            <span class="next-navigation-v2__link next-navigation-v2__link--sub-level" data-trackable="{{name}}" >{{name}}</span>
+      <li class="next-navigation__menu__group__item">
+        <input class="next-navigation__menu__link--radio" type="radio" id="{{id}}" name="nav-item" value="{{name}}" {{#unless @index}}checked{{/unless}} />
+        <div class="next-navigation__menu__group__container">
+          <label class="next-navigation__menu__link--sub-level-header" for="{{id}}" data-navigation-href="{{href}}">
+            <span class="next-navigation__menu__link next-navigation__menu__link--sub-level" data-trackable="{{name}}" >{{name}}</span>
           </label>
-          <ol class="next-navigation-v2__group__sub-items">
-            <li class="next-navigation-v2__group__sub-item">
-              <a class=" next-navigation-v2__link next-navigation-v2__link--sub-level {{#if selected}}next-navigation__link--active{{/if}}" href="{{href}}" data-trackable="{{name}}">All {{name}}</a>
+          <ol class="next-navigation__menu__group__sub-items">
+            <li class="next-navigation__menu__group__sub-item">
+              <a class=" next-navigation__menu__link next-navigation__menu__link--sub-level {{#if selected}}next-navigation__link--active{{/if}}" href="{{href}}" data-trackable="{{name}}">All {{name}}</a>
             </li>
             {{#each children}}
-              <li class="next-navigation-v2__group__sub-item">
-                  <a class="next-navigation-v2__link next-navigation-v2__link--sub-level {{#if selected}}next-navigation__link--active{{/if}}" href="{{href}}" data-trackable="{{name}}">{{name}}</a>
+              <li class="next-navigation__menu__group__sub-item">
+                  <a class="next-navigation__menu__link next-navigation__menu__link--sub-level {{#if selected}}next-navigation__link--active{{/if}}" href="{{href}}" data-trackable="{{name}}">{{name}}</a>
               </li>
             {{/each}}
           </ol>
         </div>
       </li>
     {{else}}
-      <li class="next-navigation-v2__group__item next-navigation-v2__group__item--mobile">
-        <span class="next-navigation-v2__link--sub-level-header">
-          <a class="next-navigation-v2__link next-navigation-v2__link--sub-level next-navigation__link--outbound {{#if selected}}next-navigation__link--active{{/if}}" href={{href}} data-trackable="{{name}}" >{{name}}</a>
+      <li class="next-navigation__menu__group__item next-navigation__menu__group__item--mobile">
+        <span class="next-navigation__menu__link--sub-level-header">
+          <a class="next-navigation__menu__link next-navigation__menu__link--sub-level next-navigation__link--outbound {{#if selected}}next-navigation__link--active{{/if}}" href={{href}} data-trackable="{{name}}" >{{name}}</a>
         </span>
       </li>
     {{/if}}

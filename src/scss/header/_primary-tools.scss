@@ -61,13 +61,7 @@
 	}
 }
 
-.next-header__primary-tools__mypage {
-	position: relative;
-}
-
 .next-header__primary-tools__search {
-	margin-left: 15px;
-
 	@include oGridRespondTo(M) {
 		margin-left: 0;
 		margin-top: 8px;
@@ -75,33 +69,9 @@
 	}
 }
 
-.next-header-v2 .next-header__primary-tools__search {
-	margin-left: 0;
-}
-
-.next-header__search-toggle {
-	@include nextHeaderNavItem;
-
-	@include oGridRespondTo (M) {
-		display: none;
-	}
-
-	&:before {
-		@include nextIcon(search, #ffffff, 15);
-		content: '';
-		position: relative;
-		top: 2px;
-		margin-right: 3px;
-	}
-
-	.next-header--searching & {
-		background: $next-header-secondary-bg;
-	}
-}
-
 // FIXME cleanup when removing mastheadV2 toggle
 
-.next-header-v2 {
+.next-header {
 	.next-header__primary-tools__item--account {
 		display: none;
 
@@ -123,129 +93,12 @@
 		.next-header__primary-tools__item {
 			display: inline-block;
 		}
-
-		.next-header__primary-tools__link {
-			color: black;
-		}
-
-		.next-header__primary-tools__link:hover,
-		.next-header__primary-tools__link:focus {
-			background-color: transparent;
-		}
-	}
-
-	.next-header__search-toggle {
-		width: 30px;
-		height: 45px;
-		overflow: hidden;
-
-		&:before {
-			@include nextIcon(search, #ffffff, 20);
-			content: '';
-			position: relative;
-			top: 5px;
-			margin-right: 0;
-		}
 	}
 }
 
-.next-header-v2.next-header--light-on-dark .next-header__primary-tools--masthead {
+.next-header--light-on-dark .next-header__primary-tools--masthead {
 
 	.next-header__primary-tools__link {
 		color: $next-header-light-bg;
-	}
-}
-
-.next-header__search-form {
-	display: none;
-	margin-bottom: 0;
-
-	@include oGridRespondTo (M) {
-		display: inline-block;
-		position: relative;
-	}
-
-	.next-header--searching & {
-		@include oGridRespondTo ($until: M) {
-			display: block;
-			position: absolute;
-			left: 0;
-			right: 0;
-			padding: 7px 5px;
-			background: $next-header-secondary-bg;
-		}
-	}
-}
-
-.next-header__search-form__input {
-	height: 30px;
-	line-height: 30px;
-	border-radius: 2px;
-	padding: 1px 26px 1px 5px;
-
-	@include oGridRespondTo (M) {
-		width: 150px;
-	}
-}
-
-.next-header__search-form__button {
-	border: 0;
-	background: none;
-	position: absolute;
-	right: 10px;
-	top: 50%;
-	height: 16px;
-	margin-top: -8px;
-	padding: 0;
-	line-height: 20px;
-	cursor: pointer;
-
-	@include oGridRespondTo (M) {
-		right: 5px;
-	}
-
-	&:after {
-		@include nextIcon(search, #000000, 16);
-		content: '';
-	}
-}
-
-.typeahead {
-	list-style: none;
-	position: absolute;
-	border: 1px solid #cec6b9;
-	border-top: 0;
-	background-color: white;
-	color: #333333;
-	z-index: 11;
-	text-align: left;
-	margin: 0px 5px;
-	padding: 0;
-	display: none;
-	left: 0px;
-	right: 0px;
-
-	@include oGridRespondTo (M) {
-		left: inherit;
-		min-width: 300px;
-		margin: 0;
-	}
-}
-
-.typeahead--active {
-	display: block;
-}
-
-.typeahead__item {
-	padding: 7px 5px;
-}
-
-.typeahead__link {
-	color: #333333;
-
-	&:hover,
-	&:focus {
-		color: #2e6e9e;
-		text-decoration-style: dotted;
 	}
 }
