@@ -10,11 +10,12 @@ label > * {
 
 .next-header__primary-nav {
 	float: left;
+	position: absolute;
+	top: 0;
+	left: 0;
 
-	@include oGridRespondTo($until: M) {
-		position: absolute;
-		top: 0;
-		left: 0;
+	@include oGridRespondTo(M) {
+		position: static;
 	}
 }
 

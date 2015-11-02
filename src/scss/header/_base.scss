@@ -7,14 +7,16 @@
 		padding-bottom: 0;
 	}
 	.next-header-before + & {
-		@include oGridRespondTo($until: M) {
-			padding-bottom: 0;
-			position: -webkit-sticky;
-			position: -moz-sticky;
-			position: -ms-sticky;
-			position: -o-sticky;
-			position: sticky;
-			top: 0;
+		padding-bottom: 0;
+		position: -webkit-sticky;
+		position: -moz-sticky;
+		position: -ms-sticky;
+		position: -o-sticky;
+		position: sticky;
+		top: 0;
+
+		@include oGridRespondTo(M) {
+			position: relative;
 		}
 	}
 	.next-header__row--primary {

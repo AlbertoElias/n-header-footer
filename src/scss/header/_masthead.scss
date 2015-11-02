@@ -19,18 +19,10 @@
 	text-align: center;
 
 	.next-header__logo__link {
-		@include nextIcon(brand-ft-masthead, getColor('black'));
+		@include nextIcon(brand-ft-masthead, getColor('white'), 336);
 		display: block;
 		margin: 17px auto;
 		height: 27px;
-		width: 336px;
-
-		.next-header--light-on-dark & {
-			@include nextIcon(brand-ft-masthead, getColor('white'));
-			display: block;
-			height: 27px;
-			width: 336px;
-		}
 
 		&:after {
 			content: none;
@@ -55,20 +47,21 @@
 	}
 
 	.next-header__logo__link {
-		@include nextIcon(brand-ft-masthead, getColor('white'));
+		@include nextIcon(brand-ft-masthead, getColor('white'), 138);
 		display: block;
 		height: 11px;
-		width: 138px;
 		margin: 0 auto;
 
 		@include oGridRespondTo(XS) {
+			@include nextIcon(brand-ft-masthead, getColor('white'), 177);
+			display: block;
 			height: 14px;
-			width: 177px;
 		}
 
 		@include oGridRespondTo(S) {
+			@include nextIcon(brand-ft-masthead, getColor('white'), 265);
+			display: block;
 			height: 21px;
-			width: 265px;
 		}
 		&:after {
 			content: none;
