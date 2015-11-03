@@ -263,7 +263,6 @@ label > * {
 		@include oGridColspan(3);
 		margin-top: 20px;
 		clear: none;
-		&:nth-child(4n+1) { clear: both; }
 	}
 
 	&--desktop {
