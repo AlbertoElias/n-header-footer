@@ -41,9 +41,6 @@ label > * {
 	padding: 0 0 20px;
 	position: absolute;
 	left: 0;
-	// HACK: transition delay is necessary, otherwise the animation
-	// pretty much doesn't happen. Possibly a performance issue?
-	transition: 0.1s opacity 0.25s ease, 0s left 0.25s step-end;
 
 	.next-navigation__menu--nav & {
 		visibility: hidden;
@@ -61,7 +58,6 @@ label > * {
 		left: 0;
 	}
 
-	&[aria-expanded="true"] { transition-delay: 0s; }
 	.next-navigation__menu__group--more & { padding-bottom: 0; }
 }
 
