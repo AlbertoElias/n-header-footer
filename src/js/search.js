@@ -65,7 +65,7 @@ module.exports = {
 			toggle.addEventListener('click', clickHandler);
 		}
 
-		if (flags.get('typeahead')) {
+		if(header && flags.get('typeahead')) {
 			const container = header.querySelector('.js-suggestions-container');
 
 			const typeahead = new Typeahead(
