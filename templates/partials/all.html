@@ -11,7 +11,7 @@
   {{#each all}}
     {{#if children}}
       <li class="next-navigation__menu__group__item">
-        <input class="next-navigation__menu__link--radio" type="radio" id="{{id}}" name="nav-item" value="{{name}}" {{#unless @index}}checked{{/unless}} />
+        <input class="next-navigation__menu__link--radio" type="radio" id="{{id}}" name="nav-item" value="{{name}}" {{#ifEquals @index 1}}checked{{/ifEquals}} />
         <div class="next-navigation__menu__group__container">
           <label class="next-navigation__menu__link--sub-level-header" for="{{id}}" data-navigation-href="{{href}}">
             <span class="next-navigation__menu__link next-navigation__menu__link--sub-level" data-trackable="{{name}}" >{{name}}</span>
