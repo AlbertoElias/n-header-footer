@@ -189,7 +189,6 @@ label > * {
 .next-navigation__menu__link--sub-level-header {
 	@include oGridColspan($mobile-header-width);
 	padding: 0 15px 0 0;
-	cursor: pointer;
 
 	@include oGridRespondTo(M) {
 		@include oGridResetColumn;
@@ -202,6 +201,7 @@ label > * {
 		color: oColorsGetPaletteColor('white');
 		text-align: right;
 		padding: 0 2px 0 0;
+		cursor: pointer;
 
 		span:after {
 			@include nextIcon(arrow-right, oColorsGetColorFor(nav, text), 10);
