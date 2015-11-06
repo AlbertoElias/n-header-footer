@@ -1,4 +1,3 @@
-/*jshint node:true,browser:true,-W030*/
 import search from './src/js/search';
 import checked from './src/js/checked';
 

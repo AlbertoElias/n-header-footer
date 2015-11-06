@@ -32,16 +32,14 @@ label > * {
 	background: oColorsGetPaletteColor('cold-2');
 }
 .next-navigation__menu__group__items {
-	@include oGridRespondTo($until: M) {
-		background: center url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAAFCAYAAAC9+YhwAAAAAXNSR0IArs4c6QAAAIFJREFUaAXt16ENACAMBEBgpU6MZgG2gwVogqi8yk/z4tz3iDjNESBAgMCXwF7z688TAQIECBAg8BYY71hKgAABAgQIECBAgACBegEDpN5UIwECBAgQIECAAAECiYABksCICRAgQIAAAQIECBCoFzBA6k01EiBAgAABAgQIECCQCFyl4wOmY4gKVQAAAABJRU5ErkJggg==');
-		background-position: percentage($mobile-header-width / 12);
-	}
-
-	// @include oColorsFor(sub-nav, background);
 	width: 100%;
 	padding: 0 0 20px;
 	position: absolute;
 	left: 0;
+	@include oGridRespondTo($until: M) {
+		background: center url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAAFCAYAAAC9+YhwAAAAAXNSR0IArs4c6QAAAIFJREFUaAXt16ENACAMBEBgpU6MZgG2gwVogqi8yk/z4tz3iDjNESBAgMCXwF7z688TAQIECBAg8BYY71hKgAABAgQIECBAgACBegEDpN5UIwECBAgQIECAAAECiYABksCICRAgQIAAAQIECBCoFzBA6k01EiBAgAABAgQIECCQCFyl4wOmY4gKVQAAAABJRU5ErkJggg==');
+		background-position: percentage($mobile-header-width / 12);
+	}
 
 	.next-navigation__menu--nav & {
 		visibility: hidden;

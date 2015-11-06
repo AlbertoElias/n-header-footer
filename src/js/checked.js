@@ -1,13 +1,23 @@
-const init = flags => {
-	const checkedEls = document.querySelectorAll('.js-checked');
-	console.log(checkedEls);
-	[...checkedEls].forEach(checkedEl => {
-		console.log(checkedEl);
-		checkedEl.addEventListener('click', ev => {
-			const forId = ev.target.getAttribute('for');
-			document.querySelector(`#${forId}`).classList.toggle('checked');
-		});
-	})
+import Delegate from 'ftdomdelegate';
+
+const init = () => {
+	const delegate = new Delegate(document.querySelector('.js-header'));
+	delegate.on('click', ev => {
+		const target = ev.target;
+		if (!target.classList.contains('js-checked')) {
+			return;
+		}
+		const inputEl = document.querySelector(`#${ev.target.getAttribute('for')}`);
+		if (inputEl.getAttribute('type') === 'checkbox') {
+			inputEl.classList.toggle('checked');
+		} else { // assume it's a radio button
+			 // uncheck others
+			[...document.querySelectorAll(`[name='${inputEl.getAttribute('name')}']`)].forEach(
+				radioEl => radioEl.classList.remove('checked')
+			);
+			inputEl.classList.add('checked');
+		}
+	});
 };
 
 export default {
