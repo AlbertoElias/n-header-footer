@@ -6,19 +6,28 @@
 				data-trackable="group--more"
 				data-on-expanded="noscroll-body"
 			>
-				<input class="next-navigation__menu__checkbox n-util-visually-hidden" data-trackable="menu-toggle" type="checkbox" id="sub-nav" name="sub-nav" value="" aria-label="Expand menu" aria-controls="secondary-navigation"/>
-				<div class="next-navigation__menu__container">
-					<label class="next-navigation__menu__toggle" for="sub-nav" aria-hidden="true">
-						<span class="next-navigation__menu__link next-navigation__menu__link--top-level js-sub-nav-toggle">
-							<span class="next-navigation__menu__link__text--mobile">
-								<span class="next-navigation__menu__link__inner-text--open">Menu</span>
-								<span class="next-navigation__menu__link__inner-text--close">Close</span>
-							</span>
+				<a class="next-navigation__menu__toggle next-navigation__menu__toggle--no-js n-util-hide-js" href="#footer-nav" data-trackable="footer-menu-link">
+					<span class="next-navigation__menu__link next-navigation__menu__link--top-level">
+						<span class="next-navigation__menu__link__text--mobile">
+							<span class="next-navigation__menu__link__inner-text--open">Menu</span>
 						</span>
-					</label>
-					<ol id="secondary-navigation" class="next-navigation__menu__group__items next-navigation__menu__group__items--nested o-expander__content" data-trackable="secondary-navigation">
-						{{> n-header-footer/templates/partials/all nav=topLevelNav all=nav}}
-					</ol>
+					</span>
+				</a>
+				<div class="n-util-hide-no-js">
+					<input class="next-navigation__menu__checkbox n-util-visually-hidden" data-trackable="menu-toggle" type="checkbox" id="sub-nav" name="sub-nav" value="" aria-label="Expand menu" aria-controls="secondary-navigation"/>
+					<div class="next-navigation__menu__container">
+						<label class="next-navigation__menu__toggle js-checked" for="sub-nav" aria-hidden="true">
+							<span class="next-navigation__menu__link next-navigation__menu__link--top-level js-sub-nav-toggle">
+								<span class="next-navigation__menu__link__text--mobile">
+									<span class="next-navigation__menu__link__inner-text--open">Menu</span>
+									<span class="next-navigation__menu__link__inner-text--close">Close</span>
+								</span>
+							</span>
+						</label>
+						<ol id="secondary-navigation" class="next-navigation__menu__group__items next-navigation__menu__group__items--nested o-expander__content" data-trackable="secondary-navigation">
+							{{> n-header-footer/templates/partials/all nav=topLevelNav all=nav}}
+						</ol>
+					</div>
 				</div>
 			</li>
 

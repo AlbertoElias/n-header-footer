@@ -52,7 +52,8 @@ label > * {
 		@include oGridRespondTo(L) { width: 100%; }
 	}
 	.next-navigation__menu__group--sections:hover &,
-	.next-navigation__menu__checkbox:checked + .next-navigation__menu__container & {
+	.next-navigation__menu__checkbox:checked + .next-navigation__menu__container &,
+	.next-navigation__menu__checkbox.checked + .next-navigation__menu__container & {
 		visibility: visible;
 		opacity: 1;
 		height: auto;
@@ -113,7 +114,6 @@ label > * {
 	text-decoration: none;
 	font-size: 18px;
 	padding-right: 4px;
-
 	@include oGridRespondTo(M) {
 		padding-right: 7px;
 		font-size: 16px;
@@ -122,10 +122,13 @@ label > * {
 		}
 	}
 
-
 	&:hover,
 	&:focus {
 		text-decoration: underline;
+
+		.next-navigation__menu__toggle--no-js & {
+			text-decoration: none;
+		}
 	}
 }
 
@@ -340,11 +343,19 @@ label > * {
 
 .next-navigation__menu__link__inner-text--open {
 	display: none;
-	@include oGridRespondTo(M) { display: inline; }
+	color: getColor('white');
+	@include oGridRespondTo(M) {
+		display: inline;
+	}
+
+	.next-navigation__menu__toggle--no-js:hover & {
+		text-decoration: underline;
+	}
 }
 .next-navigation__menu__link__inner-text--close { display: none; }
 
-.next-navigation__menu__checkbox:checked + .next-navigation__menu__container {
+.next-navigation__menu__checkbox:checked + .next-navigation__menu__container,
+.next-navigation__menu__checkbox.checked + .next-navigation__menu__container {
 	@include oGridRespondTo($until: M) {
 		& .next-navigation__menu__group__items {
 			position: fixed;
@@ -392,4 +403,7 @@ label > * {
 		&:before { left: 0; }
 		&:after { right: 0; }
 	}
+}
+.next-navigation__menu__toggle--no-js:hover {
+	text-decoration: none;
 }
