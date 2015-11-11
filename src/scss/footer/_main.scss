@@ -2,8 +2,42 @@
 	background-color: getColor('cold-2');
 }
 
-@include oGridRespondTo(L) {
-	.next-footer__nav .nav__top-level {
-		display: none;
+.next-search {
+	color: getColor('white');
+}
+.next-search__term-label,
+.next-search__term,
+.next-search__submit {
+	color: inherit;
+}
+.next-search__term,
+.next-search__submit {
+	background-color: transparent;
+}
+.next-search__submit {
+	padding: 0;
+	border: 0;
+}
+
+.next-global-nav__items {
+	list-style: none;
+}
+.next-global-nav__item--top-level {
+	font-weight: bold;
+	padding-bottom: 10px;
+
+	.next-global-nav__items--top-level & {
+		padding-bottom: 0;
+	}
+}
+.next-global-nav__item__link {
+	font-size: 14px;
+	line-height: 1.5;
+	color: getColor('white');
+	border-bottom: 0;
+
+	&:hover {
+		text-decoration: underline;
+		color: getColor('white');
 	}
 }

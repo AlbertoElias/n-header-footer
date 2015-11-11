@@ -1,4 +1,4 @@
-.PHONY: build
+.PHONY: test
 
 clean:
 	git clean -fxd
@@ -7,11 +7,7 @@ install:
 	npm install
 	obt install --verbose
 
-test:
+verify:
 	obt verify
 
-build:
-	obt build
-
-demo:
-	nct demo
+test: verify

@@ -24,15 +24,14 @@
 		left: 0;
 		right: 0;
 		transition: transform 150ms;
+		@include oGridRespondTo(M) {
+			position: relative;
+		}
 
 		&[data-o-grid-colspan] {
 			padding-top: 0;
 			padding-bottom: 0;
 		}
-		@include oGridRespondTo(M) {
-			position: relative;
-		}
-
 		.next-header-before + & {
 			position: relative;
 		}

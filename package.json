@@ -1,11 +1,10 @@
 {
-  "name": "ft-next-header-footer",
+  "name": "n-header-footer",
   "version": "0.0.0",
   "devDependencies": {
-    "ft-next-navigation": "^4.0.0",
     "origami-build-tools": "^4.1.0"
   },
   "engines": {
-    "node": "4.1.1"
+    "node": "4.2.2"
   }
 }

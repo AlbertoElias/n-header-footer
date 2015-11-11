@@ -1,8 +1,11 @@
-/*jshint node:true,browser:true,-W030*/
-const search = require('./src/js/search');
+import search from './src/js/search';
+import checked from './src/js/checked';
 
-function init(flags) {
+const init = flags => {
 	search.init(flags);
-}
+	checked.init(flags);
+};
 
-module.exports.init = init;
+export default {
+	init
+};
