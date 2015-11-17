@@ -11,6 +11,7 @@ label > * {
 .next-navigation-is-open {
 	@include oGridRespondTo($until: M) {
 		overflow-y: hidden;
+		height: 100%;
 	}
 }
 
