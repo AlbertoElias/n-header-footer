@@ -8,6 +8,13 @@ label > * {
 	pointer-events: none;
 }
 
+.next-navigation-is-open {
+	@include oGridRespondTo($until: M) {
+		overflow-y: hidden;
+		height: 100%;
+	}
+}
+
 .next-header__primary-nav {
 	float: left;
 	position: absolute;
