@@ -57,8 +57,7 @@ label > * {
 		@include oGridRespondTo(L) { width: 100%; }
 	}
 	.next-navigation__menu__group--sections:hover &,
-	.next-navigation__menu__checkbox:checked + .next-navigation__menu__container &,
-	.next-navigation__menu__checkbox.checked + .next-navigation__menu__container & {
+	.next-navigation__menu__toggle.toggle-on + & {
 		visibility: visible;
 		opacity: 1;
 		height: auto;
@@ -359,10 +358,27 @@ label > * {
 }
 .next-navigation__menu__link__inner-text--close { display: none; }
 
-.next-navigation__menu__checkbox:checked + .next-navigation__menu__container,
-.next-navigation__menu__checkbox.checked + .next-navigation__menu__container {
+.next-navigation__menu__toggle.toggle-on {
+	@include oGridRespondTo(M) {
+		.next-navigation__menu__link__inner-text--close {
+			display: inline;
+		}
+	}
+	.next-navigation__menu__link__inner-text--open {
+		display: none;
+	}
+	.next-navigation__menu__link__text--mobile:before {
+		@include nextIcon(cross, #ffffff, 20);
+		content: '';
+		position: relative;
+		top: 5px;
+		margin-right: 9px;
+	}
 	@include oGridRespondTo($until: M) {
-		& .next-navigation__menu__group__items {
+		.next-navigation__menu__link--top-level.js-sub-nav-toggle {
+			z-index: 3;
+		}
+		& + .next-navigation__menu__group__items {
 			position: fixed;
 			top: 44px;
 			bottom: 0;
@@ -375,30 +391,15 @@ label > * {
 				top: 83px;
 			}
 		}
-
-		& .next-navigation__menu__toggle .next-navigation__menu__link--top-level.js-sub-nav-toggle {
-			z-index: 3;
-		}
-	}
-
-	@include oGridRespondTo(M) {
-		.next-navigation__menu__link__inner-text--close { display: inline; }
-	}
-
-	.next-navigation__menu__link__inner-text--open { display: none; }
-
-	.next-navigation__menu__link__text--mobile:before {
-		@include nextIcon(cross, #ffffff, 20);
-		content: '';
-		position: relative;
-		top: 5px;
-		margin-right: 9px;
 	}
 }
 
 .next-navigation__menu__toggle {
 	display: block;
 	cursor: pointer;
+	background-color: transparent;
+	border: 0;
+	padding: 0;
 
 	@include oGridRespondTo(M) {
 		width: 79px;
