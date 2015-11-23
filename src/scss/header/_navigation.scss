@@ -205,8 +205,6 @@ label > * {
 	}
 
 	@include oGridRespondTo($until: M) {
-		background-color: transparent;
-		border: 0;
 		color: oColorsGetPaletteColor('white');
 		text-align: right;
 		padding: 0 2px 0 0;
