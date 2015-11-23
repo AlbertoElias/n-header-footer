@@ -21,10 +21,10 @@
 		@include nextIcon(search, oColorsGetPaletteColor('white'), 20);
 		content: '';
 		margin: 5px 10px;
+	}
 
-		.toggle-on& {
-			@include nextIcon(cross, oColorsGetPaletteColor('white'), 20);
-		}
+	&.toggle-on:after {
+		@include nextIcon(cross, oColorsGetPaletteColor('white'), 20);
 	}
 }
 
