@@ -133,6 +133,10 @@ label > * {
 		.next-navigation__menu__toggle--no-js & {
 			text-decoration: none;
 		}
+
+		.js-select & {
+			text-decoration: none;	
+		}
 	}
 }
 
