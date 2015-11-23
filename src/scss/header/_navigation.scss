@@ -205,6 +205,8 @@ label > * {
 	}
 
 	@include oGridRespondTo($until: M) {
+		background-color: transparent;
+		border: 0;
 		color: oColorsGetPaletteColor('white');
 		text-align: right;
 		padding: 0 2px 0 0;
@@ -220,30 +222,26 @@ label > * {
 	}
 }
 
-.next-navigation__menu__link--radio {
-	display: none;
+@include oGridRespondTo($until: M) {
+	.selected.next-navigation__menu__link--sub-level-header {
+		@include oColorsFor(sub-nav-hover, background);
+		text-decoration: none;
+		font-weight: bold;
+		color: oColorsGetPaletteColor('grey-tint5');
 
-	@include oGridRespondTo($until: M) {
-		&:checked + .next-navigation__menu__group__container .next-navigation__menu__link--sub-level-header {
-			@include oColorsFor(sub-nav-hover, background);
-			text-decoration: none;
-			font-weight: bold;
-			color: oColorsGetPaletteColor('grey-tint5');
-
-			span:after {
-				@include nextIcon(arrow-right, oColorsGetPaletteColor('grey-tint5'), 10);
-			}
-		}
-
-		&:checked + .next-navigation__menu__group__container .next-navigation__menu__link--sub-level-header:after {
-			background-color: oColorsGetColorFor(sub-nav-hover, background);
-			border-color: oColorsGetColorFor(sub-nav-hover, background);
+		span:after {
+			@include nextIcon(arrow-right, oColorsGetPaletteColor('grey-tint5'), 10);
 		}
 	}
 
-	&:checked + .next-navigation__menu__group__container .next-navigation__menu__group__sub-items {
-		display: block;
+	.selected.next-navigation__menu__link--sub-level-header:after {
+		background-color: oColorsGetColorFor(sub-nav-hover, background);
+		border-color: oColorsGetColorFor(sub-nav-hover, background);
 	}
+}
+
+.selected + .next-navigation__menu__group__sub-items {
+	display: block;
 }
 
 // FIXME clean up after removing mastheadV2 toggle
