@@ -1,5 +1,5 @@
 const init = () => {
-	document.querySelector('input[name=sub-nav]').addEventListener('change', () => {
+	document.querySelector('button.next-navigation__menu__toggle').addEventListener('click', () => {
 		document.documentElement.classList.toggle('next-navigation-is-open');
 		document.getElementsByTagName('body')[0].classList.toggle('next-navigation-is-open');
 	});	
