@@ -134,7 +134,7 @@ label > * {
 			text-decoration: none;
 		}
 
-		.js-select & {
+		.button-style-reset & {
 			text-decoration: none;	
 		}
 	}
@@ -375,7 +375,7 @@ label > * {
 		margin-right: 9px;
 	}
 	@include oGridRespondTo($until: M) {
-		.next-navigation__menu__link--top-level.js-sub-nav-toggle {
+		.next-navigation__menu__link--top-level {
 			z-index: 3;
 		}
 		& + .next-navigation__menu__group__items {
@@ -397,9 +397,6 @@ label > * {
 .next-navigation__menu__toggle {
 	display: block;
 	cursor: pointer;
-	background-color: transparent;
-	border: 0;
-	padding: 0;
 
 	@include oGridRespondTo(M) {
 		width: 79px;
