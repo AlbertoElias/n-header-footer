@@ -2,7 +2,7 @@
   "name": "n-header-footer",
   "version": "0.0.0",
   "devDependencies": {
-    "origami-build-tools": "^4.1.0"
+    "origami-build-tools": "^4.3.1"
   },
   "engines": {
     "node": "4.2.2"
