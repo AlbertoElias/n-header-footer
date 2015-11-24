@@ -2,6 +2,7 @@
   "name": "n-header-footer",
   "version": "0.0.0",
   "devDependencies": {
+  	"bower": "1.6.5",
     "origami-build-tools": "^4.1.0"
   },
   "engines": {
