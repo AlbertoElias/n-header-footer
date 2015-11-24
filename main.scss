@@ -5,6 +5,7 @@ $o-forms-is-silent: false;
 
 @import "src/scss/vars_mixins";
 
+@import "src/scss/header/helpers";
 @import "src/scss/header/base";
 @import "src/scss/header/ads";
 @import "src/scss/header/logo";

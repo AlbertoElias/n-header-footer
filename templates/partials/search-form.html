@@ -1,13 +1,12 @@
-<input data-trackable="search-toggle" class="next-header__search-checkbox n-util-visually-hidden" type="checkbox" id="search" name="search" value="" aria-label="Display search box" aria-controls="search-form"/>
 <div class="next-header__search__container">
 	<a class="next-header__search-toggle n-util-hide-js" href="#footer-search" data-trackable="footer-search-link">
 		<span class="next-header__search-toggle-text next-header__search-toggle-text--open">Search</span>
 	</a>
 	<div class="n-util-hide-no-js">
-		<label class="next-header__search-toggle js-search-toggle js-checked" for="search" aria-hidden="true" data-tour-stage="search">
+		<button class="next-header__search-toggle button-style-reset js-search-toggle js-toggle" aria-hidden="true" data-trackable="search-toggle" data-tour-stage="search">
 			<span class="next-header__search-toggle-text next-header__search-toggle-text--open">Search</span>
 			<span class="next-header__search-toggle-text next-header__search-toggle-text--close">Close</span>
-		</label>
+		</button>
 		<form action="/search" id="search-form" class="next-header__search-form js-search" data-trackable="search-form" role="search">
 			<input id="search-term" type="search" name="q" class="next-header__search-form__input o-forms-text js-search-input" {{#if searchQuery}} value="{{searchQuery}}"{{/if}} autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
 			data-trackable="search-input" {{#ifAll headerData headerData.searchTerm}}{{#ifEquals headerData.searchTerm true}}{{else}} value="{{headerData.searchTerm}}"{{/ifEquals}}{{/ifAll}}/>
