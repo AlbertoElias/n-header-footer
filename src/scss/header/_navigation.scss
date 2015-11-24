@@ -57,8 +57,7 @@ label > * {
 		@include oGridRespondTo(L) { width: 100%; }
 	}
 	.next-navigation__menu__group--sections:hover &,
-	.next-navigation__menu__checkbox:checked + .next-navigation__menu__container &,
-	.next-navigation__menu__checkbox.checked + .next-navigation__menu__container & {
+	.next-navigation__menu__toggle.toggle-on + & {
 		visibility: visible;
 		opacity: 1;
 		height: auto;
@@ -133,6 +132,10 @@ label > * {
 
 		.next-navigation__menu__toggle--no-js & {
 			text-decoration: none;
+		}
+
+		.button-style-reset & {
+			text-decoration: none;	
 		}
 	}
 }
@@ -221,30 +224,26 @@ label > * {
 	}
 }
 
-.next-navigation__menu__link--radio {
-	display: none;
+@include oGridRespondTo($until: M) {
+	.selected.next-navigation__menu__link--sub-level-header {
+		@include oColorsFor(sub-nav-hover, background);
+		text-decoration: none;
+		font-weight: bold;
+		color: oColorsGetPaletteColor('grey-tint5');
 
-	@include oGridRespondTo($until: M) {
-		&:checked + .next-navigation__menu__group__container .next-navigation__menu__link--sub-level-header {
-			@include oColorsFor(sub-nav-hover, background);
-			text-decoration: none;
-			font-weight: bold;
-			color: oColorsGetPaletteColor('grey-tint5');
-
-			span:after {
-				@include nextIcon(arrow-right, oColorsGetPaletteColor('grey-tint5'), 10);
-			}
-		}
-
-		&:checked + .next-navigation__menu__group__container .next-navigation__menu__link--sub-level-header:after {
-			background-color: oColorsGetColorFor(sub-nav-hover, background);
-			border-color: oColorsGetColorFor(sub-nav-hover, background);
+		span:after {
+			@include nextIcon(arrow-right, oColorsGetPaletteColor('grey-tint5'), 10);
 		}
 	}
 
-	&:checked + .next-navigation__menu__group__container .next-navigation__menu__group__sub-items {
-		display: block;
+	.selected.next-navigation__menu__link--sub-level-header:after {
+		background-color: oColorsGetColorFor(sub-nav-hover, background);
+		border-color: oColorsGetColorFor(sub-nav-hover, background);
 	}
+}
+
+.selected + .next-navigation__menu__group__sub-items {
+	display: block;
 }
 
 // FIXME clean up after removing mastheadV2 toggle
@@ -359,10 +358,27 @@ label > * {
 }
 .next-navigation__menu__link__inner-text--close { display: none; }
 
-.next-navigation__menu__checkbox:checked + .next-navigation__menu__container,
-.next-navigation__menu__checkbox.checked + .next-navigation__menu__container {
+.next-navigation__menu__toggle.toggle-on {
+	@include oGridRespondTo(M) {
+		.next-navigation__menu__link__inner-text--close {
+			display: inline;
+		}
+	}
+	.next-navigation__menu__link__inner-text--open {
+		display: none;
+	}
+	.next-navigation__menu__link__text--mobile:before {
+		@include nextIcon(cross, #ffffff, 20);
+		content: '';
+		position: relative;
+		top: 5px;
+		margin-right: 9px;
+	}
 	@include oGridRespondTo($until: M) {
-		& .next-navigation__menu__group__items {
+		.next-navigation__menu__link--top-level {
+			z-index: 3;
+		}
+		& + .next-navigation__menu__group__items {
 			position: fixed;
 			top: 44px;
 			bottom: 0;
@@ -375,24 +391,6 @@ label > * {
 				top: 83px;
 			}
 		}
-
-		& .next-navigation__menu__toggle .next-navigation__menu__link--top-level.js-sub-nav-toggle {
-			z-index: 3;
-		}
-	}
-
-	@include oGridRespondTo(M) {
-		.next-navigation__menu__link__inner-text--close { display: inline; }
-	}
-
-	.next-navigation__menu__link__inner-text--open { display: none; }
-
-	.next-navigation__menu__link__text--mobile:before {
-		@include nextIcon(cross, #ffffff, 20);
-		content: '';
-		position: relative;
-		top: 5px;
-		margin-right: 9px;
 	}
 }
 

@@ -21,11 +21,10 @@
 		@include nextIcon(search, oColorsGetPaletteColor('white'), 20);
 		content: '';
 		margin: 5px 10px;
+	}
 
-		.next-header__search-checkbox:checked + .next-header__search__container &,
-		.next-header__search-checkbox.checked + .next-header__search__container & {
-			@include nextIcon(cross, oColorsGetPaletteColor('white'), 20);
-		}
+	&.toggle-on:after {
+		@include nextIcon(cross, oColorsGetPaletteColor('white'), 20);
 	}
 }
 
@@ -37,8 +36,7 @@
 .next-header__search-toggle-text--open {
 	display: inline-block;
 
-	.next-header__search-checkbox:checked + .next-header__search__container &,
-	.next-header__search-checkbox.checked + .next-header__search__container & {
+	.next-header__search-toggle.toggle-on & {
 		display: none;
 	}
 }
@@ -46,8 +44,7 @@
 .next-header__search-toggle-text--close {
 	display: none;
 
-	.next-header__search-checkbox:checked + .next-header__search__container &,
-	.next-header__search-checkbox.checked + .next-header__search__container & {
+	.next-header__search-toggle.toggle-on & {
 		display: inline-block;
 	}
 }
@@ -66,8 +63,7 @@
 	z-index: 5;
 	transition: 0.2s width 0.25s ease-out, 0.2s left 0.25s ease-out, 0.2s right 0.25s ease-out;
 
-	.next-header__search-checkbox:checked + .next-header__search__container &,
-	.next-header__search-checkbox.checked + .next-header__search__container & {
+	.next-header__search-toggle.toggle-on + & {
 		visibility: visible;
 		right: 46px;
 		width: 100%;
