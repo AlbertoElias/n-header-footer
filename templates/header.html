@@ -12,6 +12,18 @@
 	<div class="o-grid-container">
 		<div class="o-grid-row">
 			<div class="next-header__masthead" data-o-grid-colspan="12">
+				{{#ifAll flags.editionSwitcher editions}}
+					<div class="edition-switcher n-util-hide-no-js">
+						<button class="edition-switcher__button js-edition-switcher-button" data-trackable="edition-switcher-toggler">{{editions.current.name}} Edition</button>
+						<ul class="edition-switcher__editions" aria-hidden>
+							<li class="edition-switcher__edition">
+								{{#each editions.others}}
+									<a href="/{{id}}?editionPref={{id}}" class="edition-switcher__edition__link" data-trackable="{{id}}">{{name}} Edition</a>
+								{{/each}}
+							</li>
+						</ul>
+					</div>
+				{{/ifAll}}
 				<div class="next-header__masthead__logo">
 					<a class="next-header__logo__link" data-trackable="logo-large" href="/" title="Go to Financial Times homepage">
 						<span class="n-util-visually-hidden">
