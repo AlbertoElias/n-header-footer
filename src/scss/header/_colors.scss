@@ -6,7 +6,6 @@
 
 @include oColorsSetUseCase(nav, text, 'white');
 @include oColorsSetUseCase(nav, background, 'grey-tint5');
-@include oColorsSetUseCase(link-hover, text, 'blue-2');
 @include oColorsSetUseCase(sub-nav, text, 'nav-warm-1');
 @include oColorsSetUseCase(sub-nav-heading, background, 'nav-warm');
 @include oColorsSetUseCase(sub-nav, background, 'cold-2');
