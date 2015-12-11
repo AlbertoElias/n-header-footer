@@ -96,10 +96,6 @@ label > * {
 		padding: 0 7px;
 		font-size: 16px;
 	}
-	&:hover,
-	&:focus {
-		@include oColorsFor(link-hover, text);
-	}
 }
 
 .next-navigation__menu__link {
