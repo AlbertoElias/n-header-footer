@@ -5,14 +5,14 @@ class EditionSwitcher {
 		this.editionSwitcherEl = editionSwitcherEl;
 		this.openClass = 'edition-switcher--open';
 		this.isOpen = false;
-    	editionSwitcherEl.querySelector('.js-edition-switcher-button')
-        	.addEventListener('click', this.toggle.bind(this));
-        document.body.addEventListener('click', this.click.bind(this));
+		editionSwitcherEl.querySelector('.js-edition-switcher-button')
+			.addEventListener('click', this.toggle.bind(this));
+		document.body.addEventListener('click', this.click.bind(this));
 	}
 
 	toggle() {
 		this.isOpen = !this.isOpen;
-    	this.editionSwitcherEl.classList.toggle(this.openClass);
+		this.editionSwitcherEl.classList.toggle(this.openClass);
 	}
 
 	click(ev) {
@@ -23,7 +23,7 @@ class EditionSwitcher {
 }
 
 export default {
-    init: (editionSwitcherEl, flags) => {
+	init: (editionSwitcherEl, flags) => {
 		if (flags.get('editionSwitcher')) {
 			new EditionSwitcher(editionSwitcherEl);
 		}
