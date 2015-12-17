@@ -5,4 +5,4 @@ const init = () => {
 	});	
 };
 
-export default { init: init };
+export default { init };
