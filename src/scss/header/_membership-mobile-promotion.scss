@@ -12,7 +12,6 @@
 	padding: 0;
 	list-style-type: none;
 	width: 100%;
-	min-height: 32px;
 }
 
 .next-header__membership-promo__item--subscribe,
@@ -31,6 +30,7 @@
 .next-header__membership-promo__item {
 	display: inline-block;
 	position: relative;
+	min-height: 32px;
 
 	&:after {
 		content: ' ';
