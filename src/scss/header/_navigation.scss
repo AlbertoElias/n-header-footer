@@ -106,6 +106,8 @@ label > * {
 	text-decoration: none;
 	font-size: 18px;
 	padding-right: 4px;
+	margin: 0;
+
 	@include oGridRespondTo(M) {
 		padding-right: 7px;
 		font-size: 16px;
@@ -114,14 +116,15 @@ label > * {
 		}
 	}
 
+	&.next-navigation__menu__link--selected {
+		text-decoration: underline;
+	}
+
 	&:hover,
 	&:focus {
 		text-decoration: underline;
 
-		.next-navigation__menu__toggle--no-js & {
-			text-decoration: none;
-		}
-
+		.next-navigation__menu__toggle--no-js &,
 		.button-style-reset & {
 			text-decoration: none;
 		}
