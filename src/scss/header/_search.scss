@@ -27,8 +27,20 @@
 		margin: 5px 10px;
 	}
 
-	&.toggle-on:after {
-		@include nextIcon(cross, oColorsGetPaletteColor('white'), 20);
+	&:focus {
+		outline: none;
+		&:after {
+			@include nextIcon(search, oColorsGetPaletteColor('red'), 20);
+		}
+	}
+
+	&.toggle-on {
+		&:after {
+			@include nextIcon(cross, oColorsGetPaletteColor('white'), 20);
+		}
+		&:focus:after {
+			@include nextIcon(cross, oColorsGetPaletteColor('red'), 20);	
+		}
 	}
 }
 
@@ -110,13 +122,22 @@
 		}
 	}
 
-	.next-header__search-form__button span {
-		@include nextIcon(search, oColorsGetPaletteColor('white'), 20);
-		display: block;
-		margin: 8px 8px 8px 14px;
-		background-position: center;
-		color: transparent;
-		overflow: hidden;
+	.next-header__search-form__button {
+		& span {
+			@include nextIcon(search, oColorsGetPaletteColor('white'), 20);
+			display: block;
+			margin: 8px 8px 8px 14px;
+			background-position: center;
+			color: transparent;
+			overflow: hidden;
+		}
+
+		&:focus {
+			outline: none;
+			& span {
+				@include nextIcon(search, oColorsGetPaletteColor('red'), 20);			
+			}
+		}
 	}
 }
 
