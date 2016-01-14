@@ -1,5 +1,7 @@
 # n-header-footer [![Circle CI](https://circleci.com/gh/Financial-Times/n-header-footer/tree/master.svg?style=svg)](https://circleci.com/gh/Financial-Times/n-header-footer/tree/master)
 
+*WARNING: This module is being deprecated, and [o-header](https://github.com/Financial-Times/o-header) will be used instead. If any work needs to be done, please speak with the Origami team*
+
 Header and footer for next.ft.com sites
 
 ## Installation
