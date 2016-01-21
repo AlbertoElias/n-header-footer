@@ -2,8 +2,8 @@ import isOutside from './is-outside';
 
 class EditionSwitcher {
 	constructor(editionSwitcherEl) {
-		const btnEl = editionSwitcherEl.querySelector('.js-edition-switcher-button');
-	
+		const btnEl = (editionSwitcherEl) ? editionSwitcherEl.querySelector('.js-edition-switcher-button') : null;
+
 		if (!btnEl) { return; }
 
 		this.editionSwitcherEl = editionSwitcherEl;
