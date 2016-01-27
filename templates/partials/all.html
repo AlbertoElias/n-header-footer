@@ -22,7 +22,7 @@
           {{/with}}
           {{#each editions.others}}
             <li class="next-navigation__menu__group__sub-item">
-              <a class=" next-navigation__menu__link next-navigation__menu__link--sub-level" href="/{{id}}?edition={{id}}" data-trackable="id">{{name}} Edition</a>
+              <a class=" next-navigation__menu__link next-navigation__menu__link--sub-level" href="/{{id}}?edition={{id}}" data-trackable="{{id}}">{{name}} Edition</a>
             </li>
           {{/each}}
         </ol>
